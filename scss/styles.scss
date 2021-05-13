@@ -1,35 +1,42 @@
-//Compass Import
-@import "compass/reset";
-@import "compass/css3";
-
 //Bootstrap Implementation
-@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
-@import 'references/*';
-@import 'basic/*';
-@import 'structure/*';
+@import "./references/backgrounds";
+@import "./references/mixins";
+@import "./references/typography";
+@import "./references/variables";
+@import "./basic/base";
+@import "./basic/buttons";
+@import "./basic/forms";
+@import "./basic/layout";
+@import "./basic/links";
+@import "./structure/footer";
+@import "./structure/header";
+@import "./structure/navigation";
 
-@import 'print.scss';
+@import "print.scss";
 
-.m {
-	@import 'views/**';
-}
+@import "./views/backgroundimg";
+@import "./views/infoblock";
+@import "./views/regularimage";
+@import "./views/revealimage";
+@import "./views/videoblock";
 
-@media (max-width:400px){
-	//DO NOT REMOVE, EXTRA SCREEN SIZE
-	.col-xxs-12 {
-		float: none;
-		width: 100%;
-	}
-	.hidden-xxs {
-		display: none!important;
-	}
+@media (max-width: 400px) {
+  //DO NOT REMOVE, EXTRA SCREEN SIZE
+  .col-xxs-12 {
+    float: none;
+    width: 100%;
+  }
+  .hidden-xxs {
+    display: none !important;
+  }
 }
 
 @media (min-width: 1430px) {
-	.container {
-		width: 1430px;
-		padding-left: 25px;
-		padding-right: 25px;
-	}
+  .container {
+    width: 1430px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
