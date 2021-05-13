@@ -1,0 +1,24 @@
+.n {
+  &-guitarnav {
+    z-index: 10;
+    @include centre(y);
+    position: fixed;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    max-width: 110px;
+
+    ul {
+      list-style: none;
+
+      li {
+        margin: 10px 0;
+
+        a {
+          color: $c-white;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

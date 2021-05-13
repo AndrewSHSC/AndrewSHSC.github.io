@@ -1,0 +1,23 @@
+.loading {
+  opacity: 1;
+  transition: all .8s ease-in-out;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 100;
+}
+.loading h1 {
+  color: #EEE;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0, -50%);
+}
+body.loaded .loading {
+  opacity: 0;
+  z-index: -1;
+}
