@@ -1,18 +1,18 @@
 /*REMOVE ON UMBRACO INSTALL*/
 .testmenu {
-	width: 100%;
-	display: block;
-	text-align: center;
-	padding: 10px;
-	background: #111111;
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: #111111;
 
-	select {
-		width: 270px;
-		font-size: 16px;
-		padding: 10px 5px;
-		margin-bottom: 0;
+  select {
+    width: 270px;
+    font-size: 16px;
+    padding: 10px 5px;
+    margin-bottom: 0;
     background: $c-white;
-	}
+  }
 }
 
 /*REMOVE END*/
@@ -21,68 +21,72 @@
   width: auto;
 }
 
-html, body {
-	overflow-x: visible;
-	-ms-overflow-style: auto !important;
+html,
+body {
+  overflow-x: visible;
+  -ms-overflow-style: auto !important;
 }
 
 body {
-	@include font-size(1.6, 2.4);
-	@include font-smoothing;
-	font-family: $body-font;
-	background: $c-black;
+  @include font-size(1.6, 2.4);
+  @include font-smoothing;
+  font-family: $body-font;
+  background: $c-black;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 h1 {
-	@include font-size(2.6, 3.6);
+  @include font-size(2.6, 3.6);
+  font-weight: bold;
 }
 h2 {
-	@include font-size(2.4, 3.2);
+  @include font-size(3, 3.6);
+  margin-bottom: 25px;
+  font-weight: bold;
 }
 h3 {
-	@include font-size(2.0, 2.8);
+  @include font-size(2, 2.8);
 }
 h4 {
-	@include font-size(1.8, 2.6);
+  @include font-size(1.8, 2.6);
 }
 
 p,
 ul li,
 ol li {
-	@include font-size(1.6, 2.4);
+  @include font-size(1.8, 2.6);
 }
 
 p {
-	&.preamble {
-		@include font-size(2.0, 2.8);
-		@include font-smoothing;
-	}
+  &.preamble {
+    @include font-size(2, 2.8);
+    @include font-smoothing;
+  }
 }
 
-ul, ol {
+ul,
+ol {
 }
 
 ul {
-	list-style:disc;
+  list-style: disc;
 }
 
 ol {
-	list-style: decimal;
+  list-style: decimal;
 }
 
 blockquote {
 }
 
 em {
-	font-style: italic;
+  font-style: italic;
 }
 
 // MEDIA QUERIES
 // -------------------------------
-@media (min-width:$screen-sm){
-
+@media (min-width: $screen-sm) {
 }
