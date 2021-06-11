@@ -1,4 +1,4 @@
 ### Watch scss
 
-run within root of project
-sass --no-source-map --watch ./scss:./css --style compressed
+run within root of scss folder
+sass --no-source-map --watch ./scss:./assets/css --style compressed
