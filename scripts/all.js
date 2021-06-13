@@ -70,9 +70,7 @@
       if (saveData3 == "yeschange" && saveData4 == "yesjs") {
         $(this).closest(".formComponent").hide();
         $(".complexComponentScreen").fadeIn();
-        console.log(12);
       } else {
-        console.log(555);
         $(this).closest(".formComponent").hide();
         $(this).closest(".formComponent").next().fadeIn();
       }
