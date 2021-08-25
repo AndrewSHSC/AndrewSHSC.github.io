@@ -1,0 +1,225 @@
+.m-surveyor {
+    padding: 50px 0;
+    @include clearfix();
+    position: relative;
+
+    &.reverse {
+        @media (min-width: $screen-sm) {
+            .e-image {
+                float: left;
+                padding-right: 35px;
+                padding-left: 0;
+            }
+
+            .e-text {
+                float: right;
+                padding-right: 0;
+                padding-left: 35px;
+            }
+        }
+    }
+
+    .e-image, .e-text {
+        @include grid(12, 6, 6, 6, 6, $padding: false);
+    }
+
+    .e-image {
+        display: none;
+    }
+
+    .e-text {
+        margin-top: 30px;
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+
+    .contact-details {
+        float: left;
+        margin-top: 25px;
+        margin-left: 2px;
+
+        .contact-detail {
+            position: relative;
+            padding-left: 24px;
+            font-size: 13px;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+            max-width: 195px;
+
+            a {
+                margin-top: 0px;
+                max-width: 195px;
+            }
+
+            .svg-inline--fa {
+                position: absolute;
+                top: 4px;
+                left: 0px;
+                font-size: 15px;
+                color: #00b6dd;
+            }
+
+            svg {
+                position: absolute;
+                top: 4px;
+                left: 0px;
+                height: 12px;
+                width: 12px;
+                color: #00b6dd;
+                fill: #00b6dd;
+            }
+        }
+
+        @media(max-width:$screen-lg) {
+            display: none;
+        }
+    }
+
+    .contact-details--mobile {
+        @extend .contact-details;
+        display: none;
+        float: none;
+        margin-top: 10px;
+        margin-left: 1px;
+
+        .contact-detail {
+            margin-bottom: 1px;
+            max-width: initial;
+
+            a {
+                max-width: initial;
+            }
+
+            .svg-inline--fa {
+                top: 6px;
+                font-size: 12px;
+            }
+        }
+
+        @media(max-width:$screen-lg) {
+            display: block;
+        }
+    }
+
+    .details-table-list {
+        display: table;
+        margin-top: 40px;
+        width: 100%;
+        //padding: 40px 60px;
+        .details-table-list__row {
+            display: table-row;
+
+            &:nth-child(odd) {
+                background: #f5f4f1;
+            }
+
+            .details-table-list__cell:first-child {
+                font-weight: bold;
+                font-size: 16px;
+                color: rgb(0,85,129);
+                width: 120px;
+            }
+        }
+
+        .details-table-list__cell {
+            display: table-cell;
+            padding: 30px 26px;
+            vertical-align: top;
+
+            p {
+                font-size: 1.4rem;
+            }
+
+            p:first-child {
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+
+            ol:first-child, ul:first-child {
+                margin-top: 0px;
+
+                li:first-child {
+                    margin-top: 0px;
+                }
+            }
+
+            ol:last-child, ul:last-child {
+                margin-bottom: 0px;
+            }
+
+            ol, ul {
+
+                li {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        @media(max-width:$screen-md) {
+            display: block;
+
+            .details-table-list__row {
+                display: block;
+
+                .details-table-list__cell:first-child {
+                    padding-bottom: 3px;
+                    padding-top: 25px;
+                    width: auto;
+                }
+            }
+
+            .details-table-list__cell {
+                display: block;
+                padding-top: 0px;
+                padding-bottom: 25px;
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        padding: 80px 0;
+
+        .e-image {
+            width: 25%;
+            display: block;
+        }
+
+        .e-text {
+            width: 75%;
+        }
+
+        .e-text {
+            margin-top: 0;
+            padding-right: 35px;
+        }
+
+        .e-image {
+            float: right;
+            padding-left: 35px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+
+        .e-image {
+            width: 20%;
+        }
+
+        .e-text {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        padding: 120px 0;
+    }
+}

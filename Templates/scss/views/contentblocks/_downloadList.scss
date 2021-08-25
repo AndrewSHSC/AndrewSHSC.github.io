@@ -1,0 +1,185 @@
+﻿.content-block--download-list {
+
+    .download {
+        margin: 0px;
+        display: block;
+        border-bottom: 1px solid $c-linegrey;
+        border-top: none;
+        padding: 24px 20px 20px 0px;
+        position: relative;
+        font-size: 16px;
+        
+        &::before {
+
+            $icon-dimensions: 20px;
+
+            content: " ";
+            background-image: url("/images/svgs/download-blue.svg");
+            width: $icon-dimensions;
+            height: $icon-dimensions;
+            position: absolute;
+            left: 0px;
+            top: 52%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        &:last-child {
+            border-bottom: none;
+            //padding-top: 0px;
+            /*&::before {
+                top: 40%;
+            }*/
+        }
+    }
+
+    &.content-block--download-list--inset {
+        @include contentBlockInset--white;
+    }
+
+    @media(min-width: $screen-xs) {
+
+        .download {
+            padding: 24px 20px 20px 50px;
+            font-size: 17px;
+
+            &::before {
+                display: block;
+            }
+
+            &:link, &:active, &:visited {
+                color: $c-navy;
+            }
+
+            &:hover {
+                color: $c-lightcyan;
+                border-bottom-color: $c-lightcyan;
+            }
+        }
+    }
+
+    @media(min-width: $screen-md) {
+
+        .download {
+            font-size: 18px;
+        }
+    }
+
+    &.content-block--download-list--cyan {
+        background-color: $c-lightcyan;
+
+        .btn {
+            @extend .btn--on-cyan-background;
+        }
+
+        h2, .preamble {
+            color: white;
+        }
+
+        .download {
+            color: white;
+            border-bottom-color: white;
+
+            &::before {
+                color: white;
+            }
+        }
+
+        &.content-block--download-list--inset {
+            @include contentBlockInset--cyan;
+        }
+
+        @media(min-width: $screen-xs) {
+
+            .download {
+
+                &:link, &:active, &:visited {
+                    color: white;
+                }
+
+                &:hover {
+                    color: $c-navy;
+                }
+            }
+        }
+    }
+
+    &.content-block--download-list--navy {
+        background-color: $c-navy;
+
+        .btn {
+            @extend .btn--on-white-background;
+        }
+
+        h2, .preamble {
+            color: white;
+        }
+
+        .download {
+            color: white;
+            border-bottom-color: $c-lightcyan;
+
+            &::before {
+                color: $c-lightcyan;
+            }
+        }
+
+        &.content-block--download-list--inset {
+            @include contentBlockInset--navy;
+        }
+
+        @media(min-width: $screen-xs) {
+
+            .download {
+
+                &:hover {
+                    color: $c-lightcyan;
+                }
+            }
+        }
+    }
+
+    &.content-block--download-list--light-grey {
+        background-color: $c-baige;
+
+        &.content-block--download-list--inset {
+            @include contentBlockInset--light-grey;
+        }
+    }
+
+    &.content-block--download-list--grey {
+        background: $c-brown;
+
+        .btn {
+            @extend .btn--on-grey-background;
+        }
+
+        h2, .preamble {
+            color: $c-white;
+        }
+
+        .download {
+            color: white;
+            border-bottom-color: white;
+
+            &::before {
+                color: $c-lightcyan;
+            }
+        }
+
+        &.content-block--download-list--inset {
+
+            @include contentBlockInset--grey;
+        }
+
+        @media(min-width: $screen-xs) {
+
+            .download {
+
+                &:hover {
+                    color: $c-lightcyan;
+                }
+            }
+        }
+    }
+}

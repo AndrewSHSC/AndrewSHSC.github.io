@@ -1,0 +1,262 @@
+﻿.bmt-grid {
+
+    p, ul, ol {
+
+        a:link, a:active, a:visited, a:hover {
+            color: $c-lightcyan;
+            border-bottom: none;
+        }
+    }
+
+
+
+    p, ul li, ol li, table, body {
+        line-height: 27px;
+    }
+
+    .bmt-grid-image {
+        margin: 30px 0px;
+
+        img {
+            max-width: 100%;
+        }
+
+        &.-centred {
+            text-align: center;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    hr {
+        margin: 30px 0px !important;
+        //border-top: 2px solid rgb(0,85,129) !important;
+        //border-top: 1px solid #00b6dd !important;
+        border-top: 1px solid #dcdcdc !important;
+    }
+
+    p {
+        & + ol.nice-list {
+            margin-top: 35px;
+
+            @media(min-width:$screen-md) {
+                margin-top: 35px;
+            }
+        }
+
+        & + .rte-box {
+            margin-top: 25px;
+
+            @media(min-width:$screen-md) {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    h3, h4, ol {
+        //margin: 15px 0 15px;
+        margin: 15px 0px 0px;
+
+        @media(min-width:$screen-md) {
+            margin: 20px 0px 0px;
+        }
+    }
+
+    strong {
+        color: $c-navy;
+    }
+
+    .bmt-grid__spacer {
+        height: 25px;
+
+        @media(min-width:$screen-xl) {
+            height: 30px;
+        }
+    }
+
+    blockquote {
+        padding: 8px 20px;
+        border-left: 7px solid #00537f;
+
+        @media(min-width:0) {
+            margin: 20px 0;
+        }
+
+        @media(min-width:$screen-md) {
+            margin: 30px 0;
+        }
+    }
+
+    ol {
+        margin-bottom: 20px;
+        margin-right: 6%;
+
+        &.nice-list {
+            counter-reset: gradient-counter;
+            list-style: none;
+            padding-left: 1rem;
+
+            > li {
+                counter-increment: gradient-counter;
+                padding: 1rem 1rem 1rem 4.2rem;
+                position: relative;
+                margin-top: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                min-height: 40px;
+                margin-bottom: 20px;
+
+                &::before,
+                &::after {
+                    background-color: $c-lightcyan;
+                    content: '';
+                    height: 3rem;
+                    left: -1rem;
+                    overflow: hidden;
+                    position: absolute;
+                    //top: 4px;
+                    top: -2px;
+                    width: 3rem;
+                }
+
+                &::before {
+                    align-items: center;
+                    content: counter(gradient-counter);
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    //padding: 1.8rem;
+                    padding: 1rem;
+                    z-index: 1;
+                }
+
+                &:last-child {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+
+        }
+
+        @media(min-width:$screen-md) {
+            margin-bottom: 35px;
+
+            &.nice-list {
+
+                > li {
+                    //padding: 0rem 1rem 1rem 5.2rem;
+                    min-height: 50px;
+                    margin-bottom: 25px;
+
+                    &::before,
+                    &::after {
+                        top: -2px;
+                    }
+
+                    &::before {
+                        //padding: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    /*ul {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 6%;
+
+        &.nice-list {
+            //counter-reset: gradient-counter;
+            list-style: none;
+            padding-left: 1rem;
+
+            > li {
+                //counter-increment: gradient-counter;
+                padding: 1rem 1rem 1rem 3.8rem;
+                position: relative;
+                margin-top: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                //min-height: 40px;
+                margin-bottom: 20px;
+
+                &::before {
+                    background-color: $c-lightcyan;
+                    content: '';
+                    top: -1px;
+                    height: 12px;
+                    width: 12px;
+                    left: 20px;
+                    overflow: hidden;
+                    position: absolute;
+                }*/
+    /*&::before {
+                    align-items: center;
+                    //content: counter(gradient-counter);
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    //padding: 1.8rem;
+                    padding: 1rem; 
+                    z-index: 1;
+                }*/
+    /*&:last-child {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        @media(min-width:$screen-md) {
+            margin-top: 35px;
+            margin-bottom: 35px;
+
+            &.nice-list {
+
+                > li {
+                    //padding: 0rem 1rem 1rem 5.2rem;
+                    //min-height: 50px;
+                    margin-bottom: 25px;
+
+                    &::before,
+                    &::after {
+                        top: -2px;
+                    }
+
+                    &::before {
+                        //padding: 2rem;
+                    }
+                }
+            }
+        }
+    }*/
+
+    .rte-box {
+        background-color: $c-softbrown;
+        padding: 30px;
+        margin: 20px 0px;
+
+        div {
+
+            *:first-child {
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+
+            *:last-child {
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+            }
+        }
+
+        & + p {
+            margin-top: 25px;
+
+            @media(min-width:$screen-md) {
+                margin-top: 30px;
+            }
+        }
+    }
+}

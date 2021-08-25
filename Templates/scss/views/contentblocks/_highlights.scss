@@ -1,0 +1,222 @@
+.m-highlights {
+  padding: 50px 0;
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  a {
+    margin: 0;
+  }
+
+  .highlights-container {
+    display: flex;
+    flex-direction: column;
+
+    .highlights-item {
+      margin-bottom: 20px;
+
+      .e-item {
+        position: relative;
+        display: flex;
+        border: none;
+
+        &:after {
+          content: "";
+          position: absolute;
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+          bottom: 0;
+          width: 100%;
+          height: 136px;
+        }
+
+        .e-image {
+          overflow: hidden;
+
+          img {
+            transition: transform 0.4s ease-in-out;
+            width: 100%;
+          }
+        }
+
+        .e-inner {
+          position: absolute;
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
+          z-index: 1;
+
+          .e-tag {
+            background-color: $c-rubinred;
+            color: $c-white;
+            padding: 3px 8px;
+            width: auto;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+          }
+
+          .e-title {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+              color: $c-white;
+              margin-top: 0px;
+              margin: 8px 0;
+              line-height: normal;
+            }
+
+            .icon {
+              border: 1px solid rgba($color: $c-linegrey, $alpha: 0.8);
+              padding: 13px 10.5px;
+              fill: $c-softgrey;
+              width: 17px;
+              height: 12px;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+        }
+
+        &:hover,
+        &:focus {
+          .e-image {
+            img {
+              transform: scale(1.05);
+            }
+          }
+          .e-inner {
+            .e-title {
+              .icon {
+                fill: $c-lightcyan;
+                background: $c-white;
+              }
+            }
+          }
+        }
+      }
+
+      .more-link {
+        display: flex;
+        max-width: calc(450px - 32px);
+        background-color: $c-navy;
+        padding: 16px;
+        align-items: center;
+        transition: color 0.3s ease-in-out;
+
+        svg {
+          fill: $c-lightcyan;
+          width: 10px;
+          height: 10px;
+          margin-left: 8px;
+          transform: rotate(270deg);
+          transition: fill 0.3s ease-in-out;
+        }
+
+        &:hover {
+          color: white;
+
+          svg {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-xs) {
+    h2 {
+      text-align: center;
+    }
+
+    .highlights-container {
+      .highlights-item {
+        margin-left: auto;
+        margin-right: auto;
+
+        .e-item {
+          .e-inner {
+            .e-tag {
+              // display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    h2 {
+      text-align: left;
+    }
+
+    .highlights-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+
+      .highlights-item {
+        width: calc(50% - 20px);
+        margin-bottom: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 100px 0;
+
+    .highlights-container {
+      .highlights-item {
+        max-width: calc(33% - 20px);
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    .highlights-container {
+      margin: 0 -30px;
+
+      .highlights-item {
+        max-width: 100%;
+        flex-basis: calc(33% - 60px);
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 60px;
+
+        &:first-child,
+        &:last-child {
+          flex-basis: calc(66% - 60px);
+        }
+
+        .e-item {
+          .e-inner {
+            bottom: 30px;
+            left: 30px;
+
+            .e-tag {
+              font-size: 14px;
+            }
+
+            .e-title {
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+
+              h3 {
+                font-size: 22px;
+                max-width: 70%;
+              }
+            }
+          }
+        }
+
+        .more-link {
+          max-width: calc(100% - 32px);
+          width: 100%;
+        }
+      }
+    }
+  }
+}

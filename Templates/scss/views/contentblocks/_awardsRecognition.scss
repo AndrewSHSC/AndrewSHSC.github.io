@@ -1,0 +1,86 @@
+.m-awardsRecognition {
+  padding: 50px 0;
+
+  .e-inner {
+    h2 {
+      color: $c-textgrey-dark;
+      text-align: center;
+    }
+
+    .awards-container {
+      margin: 50px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+
+      .award {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+
+        &:nth-child(odd) {
+          margin-right: 5px;
+        }
+
+        &:nth-child(even) {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0;
+
+    .e-inner {
+      .awards-container {
+        .award {
+          width: 33%;
+
+          &:nth-child(even) {
+            margin-left: 0px;
+          }
+
+          &:nth-child(odd) {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+
+    .e-inner {
+      .awards-container {
+        margin: 40px 0 0;
+        flex-wrap: nowrap;
+
+        .award {
+          margin-left: 0px;
+          margin-bottom: 0;
+
+          &:not(:last-child) {
+            margin-right: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    .e-inner {
+      .awards-container {
+        .award {
+          &:not(:last-child) {
+            margin-right: 80px;
+          }
+        }
+      }
+    }
+  }
+}

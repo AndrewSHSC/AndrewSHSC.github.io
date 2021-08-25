@@ -1,0 +1,25 @@
+
+@import 'references/variables.scss';
+@import 'references/family.scss';
+@import 'references/grid.scss';
+@import 'references/mixins.scss';
+@import 'references/typography-head.scss';
+
+@import 'basic/**/*';
+@import "structure/header";
+@import "structure/mobilenav";
+@import "structure/megamenu";
+@import "structure/searchbox";
+@import "structure/stickyconnect";
+@import "structure/stickysubnav";
+@import "views/shared/filtering";
+
+@import "views/banners/**/*";
+@import "views/contentblocks/5050carousel";
+@import "views/contentblocks/fullwidthcarousel";
+
+body,
+header.twenty-eighteen {
+    @include transition(opacity 0.2s ease-in-out);
+    opacity: 0;
+}

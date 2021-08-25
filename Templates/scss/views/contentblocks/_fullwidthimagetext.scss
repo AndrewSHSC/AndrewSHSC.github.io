@@ -1,0 +1,204 @@
+.m-fullwidthimagetext {
+    
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+
+
+    .text {
+        position: relative;
+        //padding: 80px 0;
+        padding: 98px 0 80px;
+        //max-width: 750px;
+        max-width: 1000px;
+        margin: 0 auto;
+        z-index: 2;
+        text-align: center;
+
+        p {
+            color: $c-white;
+            margin: 0;
+        }
+
+        .quote,
+        .author {
+            @include font-size(1.9, 2.9);
+        }
+
+        .quote {
+            position: relative;
+            font-style: italic;
+            // chars < 100
+            &.quote--short {
+                font-size: 2em;
+                line-height: 35px;
+            }
+            // chars < 200
+            &.quote--medium {
+                font-size: 1.6em;
+                line-height: 30px;
+                font-style: italic;
+            }
+            // chars < 350
+            &, &.quote--long {
+                font-size: 1.6em;
+                line-height: 25px;
+                font-style: italic;
+            }
+
+            .svg-inline--fa {
+                color: white;
+                opacity: 0.6;
+
+                &.fa-quote-left {
+                    position: relative;
+                    top: -25px;
+                    left: -5px;
+                }
+
+                &.fa-quote-right {
+                    position: relative;
+                    right: -5px;
+                    bottom: -25px;
+                }
+            }
+        }
+
+        .author {
+            font-weight: 600;
+            margin-top: 50px;
+        }
+
+        .job {
+            @include font-size(1.6, 2.4);
+            margin-top: -4px;
+        }
+    }
+
+    .image {
+        transition: transition 0.5s;
+
+        img {
+            @include image-cover();
+        }
+    }
+
+    @media (min-width: 500px) {
+        .text {
+            padding: 100px 0;
+
+            .quote {
+                // chars < 100
+                &.quote--short {
+                    font-size: 2.5em;
+                    line-height: 40px;
+                }
+                // chars < 200
+                &.quote--medium {
+                    font-size: 1.6em;
+                    line-height: 33px;
+                    font-style: italic;
+                }
+                // chars < 350
+                &.quote--long {
+                    font-size: 1.6em;
+                    line-height: 33px;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        max-height: 650px;
+
+        .text {
+            @include centre(both);
+            padding: 0;
+            margin: 0;
+            width: 100%;
+
+            .quote,
+            .author {
+                @include font-size(2.2, 3.2);
+            }
+
+            .quote {
+                // chars < 100
+                &.quote--short {
+                    font-size: 2.6em;
+                    line-height: 55px;
+                }
+                // chars < 200
+                &.quote--medium {
+                    font-size: 2.3em;
+                    line-height: 45px;
+                }
+                // chars < 350
+                &.quote--long {
+                    font-size: 1.6em;
+                    line-height: 33px;
+                    font-style: italic;
+                }
+            }
+
+            .author {
+                //margin-top: 30px;
+                margin-top: 50px;
+            }
+
+            .job {
+                @include font-size(1.7, 2.5);
+            }
+        }
+
+        .image {
+            img {
+                position: static;
+                @include transform(none);
+            }
+        }
+    }
+
+    &.m-fullwidthimagetext--parallax {
+
+        .image {
+
+            img {
+                min-width: 100vmax;
+                min-height: 650px;
+            }
+        }
+
+
+
+        @media (min-width: 500px) {
+        }
+
+        @media (min-width: $screen-sm) {
+            height: 650px;
+
+            .image {
+
+                img {
+                    min-width: 100vmax;
+                    min-height: 650px;
+                }
+            }
+
+
+
+            .image {
+                //height: 1000px;
+                z-index: -1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                pointer-events: none
+            }
+        }
+    }
+}

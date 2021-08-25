@@ -1,0 +1,33 @@
+﻿.corner-sash-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.corner-sash {
+    position: absolute;
+    width: 300px;
+    transform: rotate(-45deg);
+    left: -107px;
+    top: 44px;
+
+
+
+    .corner-sash__background {
+        position: absolute;
+        line-height: normal;
+        font-size: 1.6rem;
+        background-color: $c-rubinred;
+        color: white;
+        padding: 7px 0px 6px;
+        text-align: center;
+        border-top: 1px solid #FE168F;
+        border-bottom: 1px solid #FE168F;
+        backface-visibility: hidden;
+        @include boxShadow(0px 2px 8px 4px rgba(0,0,0,0.3));
+        width: 100%;
+
+        div {
+            margin: 0px 90px;
+        }
+    }
+}

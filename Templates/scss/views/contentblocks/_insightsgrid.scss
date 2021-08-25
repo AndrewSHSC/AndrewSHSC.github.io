@@ -1,0 +1,237 @@
+@import "../../basic/_buttons.scss";
+@import "../../references/_mixins.scss";
+
+.m-insightsgrid {
+    padding: 50px 0;
+    width: 100%;
+
+    .e-title {
+        margin-bottom: 15px;
+    }
+
+    .row {
+        margin-left: -25px;
+        margin-right: -25px;
+    }
+
+    .btn {
+        margin-top: 40px;
+    }
+
+    .e-item {
+        position: relative;
+        padding: 0 25px;
+        margin: 0;
+        border: none;
+        display: block;
+
+        &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+            display: none;
+        }
+
+        .e-text {
+            padding: 25px 0;
+            margin: 0;
+            border-bottom: 1px solid $c-linegrey;
+
+            .smalltitle {
+                color: $c-magenta;
+                font-weight: 600;
+                text-transform: uppercase;
+                @include font-size(1.2, 1.2);
+                margin-bottom: 8px;
+            }
+
+            h3 {
+                font-weight: 400;
+                margin-top: 0;
+            }
+
+            p {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    @media (min-width: 600px) {
+        font-size: 0;
+        line-height: 0;
+
+        .e-title {
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            .e-item {
+                flex: 0 0 35%;
+                flex: 0 0 calc(50% - 52px);
+                vertical-align: top;
+
+                &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+                    display: block;
+                }
+
+                .e-text {
+                    margin: 0 0 50px;
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        padding: 80px 0;
+
+        .e-title {
+            margin-bottom: 40px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+
+        .e-item {
+            &:hover {
+                .e-text {
+                    h3 {
+                        color: $c-lightcyan;
+                    }
+                }
+            }
+
+            .e-text {
+                h3 {
+                    @include font-size(2.1, 2.9);
+                    @include transition(all 0.3s ease-in-out);
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .e-title {
+            margin-bottom: 60px;
+        }
+
+        .e-btn {
+            margin-top: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .row {
+            .e-item {
+                flex: 0 0 26%;
+                flex: 0 0 calc(33.333% - 52px);
+            }
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        padding: 120px 0;
+    }
+
+}
+
+.m-insightsgrid--inset {
+
+    @include contentBlockInset;
+
+}
+
+.m-insightsgrid--navy {
+
+    @extend .m-insightsgrid;
+
+    .e-title {
+        color: white;
+    }
+
+    background-color: $c-navy;
+
+    .e-item {
+
+        &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+            display: block;
+        }
+
+        .e-text {
+
+            .smalltitle {
+                color: $c-lightcyan;
+            }
+
+            h3 {
+                color: white;
+            }
+
+            p {
+                color: white;
+            }
+        }
+    }
+
+    .btn {
+        color: white;
+    }
+}
+
+.m-insightsgrid--cyan {
+
+    @extend .m-insightsgrid;
+    background-color: $c-lightcyan;
+
+    .e-title {
+        color: white;
+    }
+
+    .e-item {
+
+        &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+            display: block;
+        }
+
+        .e-text {
+
+            .smalltitle {
+                color: $c-BMT-290C;
+            }
+
+            h3 {
+                color: white;
+            }
+
+            p {
+                color: white;
+            }
+        }
+    }
+
+    .btn {
+        @extend .btn--on-cyan-background;
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+
+        .e-item {
+            &:hover {
+                .e-text {
+                    h3 {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,219 @@
+.m-fullwidthtext {
+    padding: 50px 0;
+    position: relative;
+
+    &.reduced-padding-top {
+        @media (min-width: $screen-md) {
+            padding: 80px 0 100px;
+        }
+
+        @media (min-width: $screen-xl) {
+            padding: 80px 0 120px;
+        }
+    }
+
+    &.careers-detail {
+        .detail-list {
+            padding: 0;
+
+            li {
+                &:before {
+                    display: none;
+                }
+
+                p {
+                    color: $c-magenta;
+                    position: relative;
+                    padding-left: 25px;
+                    margin: 0;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        top: 3px;
+                        left: 0;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                &.location {
+                    p {
+                        &:before {
+                            background-image: url('/images/svgs/iconMapPin.svg');
+                            width: 11px;
+                            height: 16px;
+                            margin-left: 2px;
+                        }
+                    }
+                }
+
+                &.salary {
+                    p {
+                        &:before {
+                            background-image: url('/images/svgs/iconSalary.svg');
+                            width: 15px;
+                            height: 16px;
+                        }
+                    }
+                }
+
+                &.duration {
+                    p {
+                        &:before {
+                            background-image: url('/images/svgs/iconClock.svg');
+                            width: 15px;
+                            height: 16px;
+                        }
+                    }
+                }
+
+                &.company {
+                    p {
+                        &:before {
+                            background-image: url('/images/svgs/iconbuilding.svg');
+                            width: 11px;
+                            height: 16px;
+                        }
+                    }
+                }
+
+                &.date {
+                    p {
+                        &:before {
+                            background-image: url('/images/svgs/iconCalendar.svg');
+                            width: 15px;
+                            height: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.m-fullwidthtext--inset {
+        @include contentBlockInset--white;
+    }
+
+    &.m-fullwidthtext--light-grey {
+        background-color: $c-softgrey;
+
+        &.m-fullwidthtext--inset {
+            @include contentBlockInset--light-grey;
+        }
+    }
+
+    &.m-fullwidthtext--grey {
+        background: $c-brown;
+
+        h2, h3, h4 {
+            color: white;
+            /*&.title-underline {
+                &:after {
+                    background: white;
+                }
+            }*/
+        }
+
+        p, ul li, ol li, table {
+            color: $c-darkgreytext;
+        }
+
+        &.m-fullwidthtext--inset {
+            @include contentBlockInset--grey;
+        }
+    }
+
+    &.m-fullwidthtext--navy {
+        background-color: $c-navy;
+
+        h2, h3, h4 {
+            color: white;
+        }
+
+        p, ul li, ol li, table {
+            color: white;
+        }
+
+        &.m-fullwidthtext--inset {
+            @include contentBlockInset--navy;
+        }
+    }
+
+    &.m-fullwidthtext--cyan {
+        background-color: $c-lightcyan;
+
+        h2, h3, h4 {
+            color: white;
+
+            &.title-underline {
+                &:after {
+                    background: white;
+                }
+            }
+        }
+
+        p, ul li, ol li, table {
+            color: white;
+        }
+
+        li {
+            &:before {
+                background: white;
+            }
+        }
+
+        .btn {
+            color: white;
+
+            .icon {
+                fill: $c-softgrey;
+            }
+
+            &:hover, &:active {
+                background: white;
+                color: $c-lightcyan;
+                border-color: white;
+
+                .icon {
+                    fill: $c-lightcyan;
+                }
+            }
+        }
+
+        &.m-fullwidthtext--inset {
+            @include contentBlockInset--cyan;
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        padding: 80px 0;
+
+        & + .rte-block {
+            margin-top: -20px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+        /* Commented out by Steve - to prevent the text being output in to a narrow column */
+        /*.container {
+            max-width: 970px;
+        }*/
+    }
+    /* Added by Steve - apply same rule for maximum width as we have for the 50/50 content block */
+    @media (min-width: $screen-lg) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        padding: 120px 0;
+
+        & + .rte-block {
+            margin-top: -40px;
+        }
+    }
+}

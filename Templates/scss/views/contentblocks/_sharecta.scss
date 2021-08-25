@@ -1,0 +1,176 @@
+.m-sharecta {
+    background: $c-lightcyan;
+    padding: 40px 0;
+
+    &.background-black {
+        background: $c-brown;
+
+        ul {
+            li {
+                a {
+                    &:hover {
+                        .icon {
+                            fill: $c-lightcyan;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.background-grey {
+        background: $c-softgrey;
+
+        h2 {
+            color: $c-navy;
+        }
+
+        ul {
+            li {
+                a {
+                    &:hover {
+                        .icon {
+                            fill: $c-lightcyan;
+                        }
+                    }
+
+                    .icon {
+                        fill: $c-text;
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        @include font-size(2.5, 3.3);
+        color: $c-white;
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+        margin-top: 15px;
+
+        li {
+            display: inline-block;
+            margin: 0 20px 0 0;
+
+            &:before {
+                display: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                margin: 0;
+                border: none;
+
+                &:hover {
+                    .icon {
+                        fill: $c-navy;
+                    }
+                }
+
+                .icon {
+                    fill: $c-white;
+                    @include transition(all 0.3s ease-in-out);
+                }
+            }
+
+            &.twitter {
+                a {
+                    .icon {
+                        height: 18px;
+                        width: 21px;
+                    }
+                }
+            }
+
+            &.facebook {
+                a {
+                    .icon {
+                        height: 21px;
+                        width: 10px;
+                    }
+                }
+            }
+
+            &.youtube {
+                a {
+                    .icon {
+                        height: 30px;
+                        width: 24px;
+                    }
+                }
+            }
+
+            &.linkedin {
+                a {
+                    .icon {
+                        height: 21px;
+                        width: 21px;
+                    }
+                }
+            }
+
+            &.googleplus {
+                a {
+                    .icon {
+                        height: 18px;
+                        width: 27px;
+                    }
+                }
+            }
+
+            &.email {
+                a {
+                    .icon {
+                        height: 16px;
+                        width: 25px;
+                    }
+                }
+            }
+
+            &.print {
+                a {
+                    .icon {
+                        height: 21px;
+                        width: 23px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        @include clearfix();
+
+        h2 {
+            display: inline-block;
+            float: left;
+            vertical-align: middle;
+        }
+
+        ul {
+            display: inline-block;
+            float: right;
+            vertical-align: middle;
+            margin-top: 4px;
+
+            li {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        ul {
+            li {
+                margin-right: 40px;
+            }
+        }
+    }
+}

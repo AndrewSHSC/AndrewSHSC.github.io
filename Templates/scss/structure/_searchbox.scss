@@ -1,0 +1,79 @@
+.m-searchbox {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 151px;
+  background: $c-white;
+  z-index: 99999;
+  border-bottom: 1px solid $c-linegrey;
+
+  .container {
+    @include centre(both);
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $c-darkgreytext;
+      font-weight: 600;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: $c-darkgreytext;
+      font-weight: 600;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: $c-darkgreytext;
+      font-weight: 600;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: $c-darkgreytext;
+      font-weight: 600;
+    }
+
+    input {
+      border: none;
+      @include font-size(3.2, 4.2);
+      font-weight: 600;
+      color: $c-darkgreytext;
+    }
+
+    .e-close {
+      @include centre(y);
+      right: 35px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      &:hover {
+        span {
+          background: $c-lightcyan;
+        }
+      }
+
+      span {
+        background: $c-navy;
+        width: 22px;
+        height: 2px;
+        display: block;
+        @include transform(rotate(45deg));
+        @include transition(all 0.3s ease-in-out);
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 9px;
+
+        &:first-child {
+          @include transform(rotate(-45deg));
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    display: none!important;
+  }
+
+
+  @media (min-width: $screen-xl) {
+    height: 159px;
+  }
+}

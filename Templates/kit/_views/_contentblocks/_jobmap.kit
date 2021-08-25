@@ -1,0 +1,66 @@
+<!-- add cutoff-right or cutoff-left to m-projectsgridlist to cutoff background -->
+<!-- add background-brown to add background. shouldn't have blockpadding class if this is on -->
+
+<!-- add 'no-text' to 'm-jobmap' to hide text and any spacing attached to text -->
+<!-- add 'padding-top-none' to 'm-jobmap' to remove padding-top. Used on pages with filters -->
+
+<!-- requires assets/markerclusterer js -->
+<!-- requires google map api -->
+<!-- requires jobmap.js -->
+<section class='m-jobmap blockpadding'>
+  <div class="container">
+    <div class="e-intro">
+      <h2>Applications</h2>
+      <p class='preamble'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae, vero alias eveniet dolorem modi nisi delectus, aperiam accusamus debitis id. Reiciendis officia error reprehenderit possimus, quam nesciunt, assumenda facilis.</p>
+    </div>
+
+    <div class="jobmap-container">
+      <div class="e-overlay">
+        <h2>Where do you want to work?</h2>
+        <ul>
+          <li>
+            <span>Region</span>
+            <span>Vacancies</span>
+          </li>
+          <li>
+            <a href="">
+              <span>Africa</span>
+              <span>10</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>Asia-Pacific</span>
+              <span>5</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>Central & South America</span>
+              <span>2</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>Europe</span>
+              <span>38</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>North America</span>
+              <span>23</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="#" class='btn'>View All Jobs
+          <svg class="icon icon-buttonarrow">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-buttonarrow"></use>
+          </svg>
+        </a>
+      </div>
+      <div id="jobmap"></div>
+    </div>
+  </div>
+</section>

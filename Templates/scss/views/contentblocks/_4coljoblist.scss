@@ -1,0 +1,145 @@
+.m-4coljoblist {
+  padding: 50px 0;
+
+  .jobitem-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -35px;
+
+    .e-jobitem {
+      flex: 0 0 100%;
+      margin: 0 0 35px;
+      display: flex;
+      border: none;
+      position: relative;
+
+      &:hover {
+        .e-inner {
+          box-shadow: 0 0px 15px 5px $c-linegrey;
+
+          .e-jobtitle {
+            color: $c-lightcyan;
+          }
+
+          .e-date {
+            &:before {
+              width: 50px;
+            }
+          }
+        }
+      }
+
+      .e-inner {
+        padding: 30px 30px 130px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background: $c-white;
+        box-shadow: 0 0px 10px 0px $c-linegrey;
+        @include transition(box-shadow 0.3s ease-in-out);
+
+        .e-location {
+          color: $c-magenta;
+          margin: 0;
+          font-weight: 600;
+        }
+
+        .e-jobtitle {
+          margin: 15px 0 0;
+          @include transition(color 0.3s ease-in-out);
+        }
+
+        .e-date {
+          margin: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 25px 30px;
+          font-weight: 600;
+
+          &:before {
+            content:'';
+            display: block;
+            background: $c-lightcyan;
+            width: 25px;
+            height: 5px;
+            margin-bottom: 20px;
+            @include transition(width 0.3s ease-in-out);
+          }
+        }
+      }
+    }
+  }
+
+
+  @media (min-width: 600px) {
+    .jobitem-container {
+      margin: 0 -17.5px -35px;
+
+      .e-jobitem {
+        flex: 0 0 50%;
+
+        .e-inner {
+          margin: 0 17.5px;
+
+          .e-date {
+            left: 17.5px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+
+    .jobitem-container {
+      .e-jobitem {
+        flex: 0 0 33%;
+
+        .e-inner {
+          .e-jobtitle {
+            @include font-size(2.0, 2.8);
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    .jobitem-container {
+      .e-jobitem {
+        flex: 0 0 25%;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 120px 0;
+
+    .jobitem-container {
+      margin: 0 -25px -50px;
+
+      .e-jobitem {
+        margin-bottom: 50px;
+
+        .e-inner {
+          margin: 0 25px;
+          padding-bottom: 145px;
+
+          .e-jobtitle {
+            @include font-size(2.4, 3.2);
+
+            .e-date {
+              left: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

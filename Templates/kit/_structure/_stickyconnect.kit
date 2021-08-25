@@ -1,0 +1,28 @@
+<!-- href of anchor must match an ID of where it should scroll to when clicked -->
+<!-- requires scrollmagic js (called before stickyconnect js) -->
+<!-- requires stickyconnect js -->
+
+<!-- add 'hide-connect' class to 'm-stickyconnect' to hide the connect button.  -->
+<!-- add on-filterpage when used on filter page -->
+<!-- add class above and don't include js to use this block as a tabbed menu -->
+<section class="m-stickyconnect">
+  <div class="container">
+    <ul>
+      <li class="active"><a href="#">Overview</a></li>
+      <li><a href="#item1">Solutions</a></li>
+      <li><a href="#item2">Projects</a></li>
+      <li><a href="#item3">Insights</a></li>
+    </ul>
+    <a href="#" class="e-connect" id="js-connect-panel">
+      <svg class="icon icon-icon_connect">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="images/icons.svg#icon-icon_connect"
+        ></use>
+      </svg>
+      Connect with us
+    </a>
+  </div>
+</section>
+
+<!--@import ../_views/_shared/connect-panel-->

@@ -1,0 +1,94 @@
+.m-5050vesseldata {
+    padding: 50px 0;
+    @include clearfix();
+    position: relative;
+
+    &.reverse {
+
+        @media (min-width: $screen-sm) {
+            .e-image {
+                float: left;
+                padding-right: 15px;
+                padding-left: 0;
+            }
+
+            .e-stats {
+                float: right;
+                padding-right: 0;
+                padding-left: 15px;
+            }
+        }
+    }
+
+    .e-image, .e-stats {
+        @include grid(12, 6, 6, 6, 6, $padding: false);
+    }
+
+    .e-stats {
+        .m-table {
+            .container {
+                padding: 0 !important;
+            }
+
+            padding: 0 0;
+            background: white;
+        }
+    }
+
+    .e-image {
+        .m-imagegrid {
+            padding-top: 0;
+
+            .container {
+                padding: 0 !important;
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        padding: 80px 0;
+
+        .e-stats {
+            margin-top: 0;
+            padding-right: 15px;
+
+            .m-table {
+                .container {
+                    .e-tableitem {
+                        padding: 20px 20px 15px;
+                    }
+                }
+            }
+        }
+
+        .e-image {
+            float: right;
+            padding-left: 15px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+    }
+
+    @media (min-width: $screen-lg) {
+        .container {
+            //max-width: 1200px;
+        }
+
+        .e-stats {
+
+            .m-table {
+                .container {
+                    .e-tableitem {
+                        padding: 35px 35px 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        padding: 120px 0;
+    }
+}

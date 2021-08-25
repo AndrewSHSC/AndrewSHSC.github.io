@@ -1,0 +1,277 @@
+.m-7030links {
+    padding: 40px 0;
+    background: $c-baige;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .preamble {
+    }
+
+    .e-list {
+        ul {
+            padding: 0;
+            margin-top: 15px;
+
+            li {
+                margin-top: 0;
+                /*&:last-child {
+                    a {
+                        border-bottom-color: transparent;
+                        margin-bottom: 0;
+                    }
+                }*/
+                &:before {
+                    display: none;
+                }
+
+                &:last-child:nth-child(odd),
+                &:nth-last-child(2):nth-child(odd),
+                &:last-child:nth-child(even) {
+
+                    a {
+                        border-bottom-color: transparent;
+                    }
+                }
+
+                a {
+                    padding: 15px 0;
+                    margin: 0;
+                    border-bottom: 1px solid $c-linegrey;
+                    display: block;
+                    @include font-size(1.6, 2.4);
+                    font-weight: 500;
+                    padding-right: 20px;
+                    position: relative;
+                    color: $c-navy;
+
+                    &:hover {
+                        color: $c-lightcyan;
+                    }
+
+                    .icon {
+                        float: right;
+                        fill: $c-lightcyan;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.m-7030links--white {
+        background: $c-white;
+
+        &.m-7030links--inset {
+
+            @include contentBlockInset--white;
+        }
+
+        h2 {
+            color: $c-navy;
+        }
+
+        .e-list {
+            ul {
+                li {
+                    a {
+
+                        &:hover {
+                            color: $c-lightcyan;
+
+                            .icon {
+                                fill: $c-lightcyan;
+                            }
+                        }
+
+                        .icon {
+
+                            @include transition(all 0.3s ease-in-out);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.m-7030links--light-grey {
+
+        &.m-7030links--inset {
+
+            @include contentBlockInset--light-grey;
+        }
+    }
+
+    &.m-7030links--grey {
+        background: $c-brown;
+
+        h2 {
+            color: $c-white;
+        }
+
+        &.m-7030links--inset {
+
+            @include contentBlockInset--grey;
+        }
+
+        .e-list {
+            ul {
+                li {
+                    a {
+                        color: $c-white;
+                        border-bottom: 1px solid #6B6B6B;
+
+                        &:hover {
+                            color: $c-lightcyan;
+
+                            .icon {
+                                fill: $c-lightcyan;
+                            }
+                        }
+
+                        .icon {
+                            fill: $c-white;
+                            @include transition(all 0.3s ease-in-out);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.m-7030links--cyan {
+        background: $c-lightcyan;
+
+        h2 {
+            color: $c-white;
+        }
+
+        .e-list {
+            ul {
+                li {
+                    a {
+                        color: $c-white;
+                        border-bottom: 1px solid $c-cyanline;
+
+                        &:hover {
+                            color: $c-navy;
+
+                            .icon {
+                                fill: $c-navy;
+                            }
+                        }
+
+                        .icon {
+                            fill: $c-white;
+                            @include transition(all 0.3s ease-in-out);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.m-7030links--inset {
+
+            @include contentBlockInset--cyan;
+        }
+    }
+
+    &.m-7030links--navy {
+        background: $c-navy;
+
+        h2 {
+            color: $c-white;
+        }
+        //
+        .e-list {
+            ul {
+                li {
+                    a {
+                        color: white;
+                        border-bottom: 1px solid rgba(255,255,255,0.4);
+
+                        &:hover {
+                            color: $c-lightcyan;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.m-7030links--inset {
+
+            @include contentBlockInset--navy;
+        }
+    }
+
+    @media (min-width: 600px) {
+        padding: 60px 0;
+        line-height: 0;
+        font-size: 0;
+
+        .e-list {
+            ul {
+                line-height: 0;
+                font-size: 0;
+                margin: 30px -50px 0;
+                display: flex;
+                flex-wrap: wrap;
+
+                li {
+                    flex: 0 0 39%;
+                    flex: 0 0 calc(50% - 100px);
+                    margin: 0 50px;
+                    /*&:nth-child(5) {
+                        a {
+                            border-bottom-color: transparent;
+                            margin-bottom: 0;
+                        }
+                    }*/
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 80px 0;
+    }
+
+    @media (min-width: $screen-lg) {
+        padding: 100px 0;
+        @include clearfix();
+
+        h2 {
+            display: inline-block;
+            width: 38%;
+            vertical-align: top;
+            float: left;
+        }
+
+        .preamble {
+            width: 33%;
+            float: left;
+            clear:left;
+        }
+
+        .e-list {
+            vertical-align: top;
+            display: inline-block;
+            width: 62%;
+            float: right;
+
+            ul {
+                margin-top: 0;
+
+                li {
+                    a {
+                        @include font-size(1.8, 2.6);
+                    }
+                }
+            }
+        }
+    }
+}

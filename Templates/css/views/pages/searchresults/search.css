@@ -1,0 +1,17 @@
+/* Error: Undefined variable.
+ *    ,
+ * 17 |         background-color: $c-softgrey;
+ *    |                           ^^^^^^^^^^^
+ *    '
+ *   templates\scss\views\pages\searchresults\search.scss 17:27  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 17 \2502          background-color: $c-softgrey;\d\a    \2502                            ^^^^^^^^^^^\a    \2575 \a   templates\\scss\\views\\pages\\searchresults\\search.scss 17:27  root stylesheet";
+}

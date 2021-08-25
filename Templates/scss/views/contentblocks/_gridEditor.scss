@@ -1,0 +1,18 @@
+﻿.grid-editor {
+
+    &.grid-editor--inset {
+        @include contentBlockInset--white;
+    }
+
+    &.grid-editor--light-grey {
+        background-color: $c-baige;
+
+        &.grid-editor--inset {
+            @include contentBlockInset--light-grey;
+        }
+
+        .rte-box {
+            background-color: white;
+        }
+    }
+}
