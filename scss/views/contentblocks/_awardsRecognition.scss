@@ -1,85 +1,63 @@
 .m-awardsRecognition {
   padding: 50px 0;
 
-  .e-inner {
-    h2 {
-      color: $c-textgrey-dark;
-      text-align: center;
-    }
+  h2 {
+    color: $c-textgrey-dark;
+    text-align: center;
+    margin: 0 0 40px;
+  }
 
-    .awards-container {
-      margin: 50px 0;
+  .awards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -20px;
+
+    .award {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      width: 100%;
+      margin: 20px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: calc(50% - 40px);
+      max-width: calc(50% - 40px);
+    }
+  }
 
+  @media (min-width: 600px) {
+    .awards-container {
       .award {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
-
-        &:nth-child(odd) {
-          margin-right: 5px;
-        }
-
-        &:nth-child(even) {
-          margin-left: 5px;
-        }
+        flex-basis: calc(33.33% - 40px);
+        max-width: calc(33.33% - 40px);
       }
     }
   }
 
   @media (min-width: $screen-sm) {
     padding: 80px 0;
-
-    .e-inner {
-      .awards-container {
-        .award {
-          width: 33%;
-
-          &:nth-child(even) {
-            margin-left: 0px;
-          }
-
-          &:nth-child(odd) {
-            margin-right: 0px;
-          }
-        }
-      }
-    }
   }
 
   @media (min-width: $screen-md) {
     padding: 100px 0;
 
-    .e-inner {
-      .awards-container {
-        margin: 40px 0 0;
-        flex-wrap: nowrap;
+    .awards-container {
+      margin: -25px;
 
-        .award {
-          margin-left: 0px;
-          margin-bottom: 0;
-
-          &:not(:last-child) {
-            margin-right: 50px;
-          }
-        }
+      .award {
+        flex-basis: calc(16.66% - 50px);
+        max-width: calc(16.66% - 50px);
+        margin: 25px;
       }
     }
   }
 
   @media (min-width: $screen-xl) {
-    .e-inner {
-      .awards-container {
-        .award {
-          &:not(:last-child) {
-            margin-right: 80px;
-          }
-        }
+    .awards-container {
+      .award {
+        flex-basis: calc(16.66% - 80px);
+        max-width: calc(16.66% - 80px);
+        margin: 40px;
       }
     }
   }
