@@ -1,577 +1,635 @@
-@use '../references/variables' as *;
-@use '../references/mixins' as *;
+/*REMOVE ON UMBRACO INSTALL*/
+.testmenu {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #111111;
+
+    select {
+        width: 270px;
+        font-size: 16px;
+        padding: 10px 5px;
+        margin-bottom: 0;
+    }
+}
+/*REMOVE END*/
+
+.rte-float-right {
+    float: right;
+    padding: 0px 0px 20px 20px;
+}
+
+.rte-float-left {
+    float: left;
+    padding: 0px 20px 20px 0px;
+}
+
+.rte-centre-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rte-responsive-table {
+
+    @media(max-width:$screen-md) {
+        overflow-x: auto;
+        //margin: 0px -20px;
+
+        table {
+            //margin: 0px 20px;
+        }
+    }
+}
+
+.nice-table {
+    border-collapse: collapse;
+    //box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+    //border-color:;
+    font-family: "Open Sans",sans-serif;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    border-bottom: 1px solid $c-linegrey;
+
+    @media(max-width:$screen-md) {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    tbody {
+
+        @media(max-width:$screen-md) {
+            display: table;
+            width: 100%;
+        }
+
+        tr {
+            border-bottom: 1px solid $c-linegrey;
+
+            td {
+                border-right: 1px solid rgb(232,232,232);
+            }
+
+            td:first-child {
+                border-left: 1px solid $c-linegrey;
+            }
+
+            td:last-child {
+                border-right: 1px solid $c-linegrey;
+            }
+
+            &:nth-of-type(odd) {
+                background-color: #f3f3f3;
+            }
+
+            &:first-child {
+                background-color: $c-navy;
+
+                td {
+                    padding: 16px 18px 14px;
+                    border: none;
+                    border-left: 1px solid #00669D;
+                    border-bottom: 1px solid $c-navy;
+                    font-weight: bold;
+
+                    &:first-child {
+                        border-left: none;
+                    }
+                }
+
+                td, p {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    td, th {
+        padding: 14px 18px;
+        font-size: 1.4rem;
+
+
+        p:first-child {
+            margin-top: 0px;
+        }
+    }
+
+    a {
+        margin-top: 0px !important;
+    }
+}
+/*.nice-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.nice-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.nice-table th,
+.nice-table td {
+    padding: 12px 15px;
+}
+
+.nice-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.nice-table tbody tr:nth-of-type(even) { 
+    background-color: #f3f3f3;
+}
+
+.nice-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}*/
 
 @-ms-viewport {
-  width: auto;
+    width: auto;
+}
+
+.container {
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+}
+
+html,
+body {
+    &.fixed {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+
+        @media (max-width: $screen-md) {
+            position: fixed;
+        }
+    }
+
+    &.fixed-stay {
+        overflow: hidden;
+
+        @media (max-width: $screen-md) {
+            position: fixed;
+        }
+    }
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
-  @include font-size(1.6);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: normal;
-  line-height: 1.5;
-  max-width: 100vw;
-  overflow-x: hidden;
-  color: $text;
-  font-family: $ProximaNova;
-  background-color: #121212;
-  font-family: sans-serif;
+    @include font-size(1.4, 2.4);
+    @include font-smoothing;
+    font-family: $f-body;
+    overflow-x: hidden;
+    position: relative;
+    -ms-overflow-style: auto !important;
+    opacity: 1;
+    margin: 0;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-text-size-adjust: none;
+
+    &:before {
+        content: '';
+        background: $c-black;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 100%;
+        @include transition(opacity 0.3s ease-in-out);
+        z-index: 999;
+        opacity: 0;
+    }
+
+    &.show-overlay {
+        &:before {
+            opacity: 0.5;
+            width: 100%;
+        }
+    }
 }
 
-* {
-  box-sizing: border-box;
+div.background-softbrown {
+    background: $c-softbrown;
 }
 
-*,
-input,
-select,
-button,
-textarea,
-legend {
-  &:focus {
-    outline: none;
-  }
+div.background-softgrey {
+    background: $c-softgrey;
 }
 
-img,
-svg {
-  display: block;
-  max-width: 100%;
+img {
+    display: block;
+    max-width: 100%;
 }
-
+//RTE spacing
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3,
 h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin: 0 0 20px;
-  font-weight: bold;
-  color: $title;
-  font-family: sans-serif;
-  font-family: $AvantGarde;
-
-  & + ul,
-  & + ol {
-    margin-top: 20px;
-  }
-}
-
-h1,
-.h1 {
-  @include font-size(3.6);
-  line-height: 1.22;
-  letter-spacing: -0.29px;
-}
-
-h2,
-.h2 {
-  @include font-size(2.8);
-  line-height: 1.27;
-  letter-spacing: -0.3px;
-}
-
-h3,
-.h3 {
-  @include font-size(2);
-  line-height: 1.4;
-  letter-spacing: -0.24px;
-}
-
-h4,
-.h4 {
-  @include font-size(1.8);
-  line-height: 1.67;
-  letter-spacing: -0.38px;
-}
-
-h5,
-.h5 {
-  @include font-size(1.6);
-  line-height: 1.5;
-  letter-spacing: -0.4px;
-}
-
-h6,
-.h6 {
-  @include font-size(1.6);
-  line-height: 1.5;
-  letter-spacing: -0.4px;
-}
-
 p,
 ul,
 ol,
 a {
-  & + h1,
-  & + h2,
-  & + h3,
-  & + h4,
-  & + h5 {
-    margin-top: 35px;
-  }
+    margin: 15px 0 0;
+
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4 {
+        margin-top: 40px;
+    }
+
+    & + .btn {
+        margin-top: 25px;
+    }
+}
+
+blockquote {
+    margin: 40px 0;
 }
 
 p {
-  margin: 0 0 20px;
-
-  & + h1,
-  & + h2,
-  & + h3,
-  & + h4,
-  & + h5 {
-    margin-top: 35px;
-  }
-
-  & + ul,
-  & + ol {
-    margin-top: 20px;
-  }
-
-  &:empty {
-    & + p:empty {
-      display: none;
+    a {
+        margin: 0;
     }
-  }
 
-  &.preamble {
-    @include font-size(1.6);
-    color: $black;
-    line-height: 1.5;
-    font-family: $Tisa;
-  }
+    & + p {
+        margin-top: 15px;
+    }
+}
+//end
 
-  strong {
+h1,
+h2,
+h3,
+h4 {
+    color: $c-navy;
+    font-family: $f-title;
     font-weight: 600;
-  }
+
+    &.title-underline {
+        &:after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 5px;
+            background: $c-lightcyan;
+            margin-top: 15px;
+        }
+    }
+}
+
+h1,
+.h1 {
+    @include font-size(3, 3.8);
+    letter-spacing: 2px;
+}
+
+h2,
+.h2 {
+    @include font-size(2.6, 3.4);
+}
+
+h3,
+.h3 {
+    @include font-size(1.8, 2.6);
+    font-weight: 400;
+}
+
+h4,
+.h4 {
+    @include font-size(1.6, 2.4);
+    font-weight: 400;
+}
+
+p,
+ul li,
+ol li,
+table {
+    @include font-size(1.4, 2.4);
+    color: $c-text;
+    font-weight: 400;
+}
+
+p, span {
+    &.preamble {
+        @include font-size(1.6, 2.6);
+        color: #72838d;
+    }
 }
 
 ul,
 ol {
-  padding-left: 26px;
-  margin: 30px 0;
-}
-
-ul {
-  list-style: none;
-
-  li {
-    @include font-size(1.6);
-    font-family: sans-serif;
     position: relative;
-    padding-left: 0;
-    margin-bottom: 5px;
-
-    &:before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      position: absolute;
-      left: -15px;
-      top: 9px;
-      background: $black;
-    }
-  }
+    padding-left: 20px;
 }
 
 ol {
-  list-style: none;
-  list-style-type: none;
+    padding-left: 37px;
 
-  li {
-    @include font-size(1.6);
-    position: relative;
-    margin-bottom: 15px;
-    counter-increment: step-counter;
-
-    &:before {
-      @include font-size(1.6);
-      content: counter(step-counter) ".";
-      position: absolute;
-      color: $black;
-      font-weight: bold;
-      top: 1px;
-      left: -10px;
-      transform: translatex(-100%);
+    li {
+        margin-top: 10px;
     }
-  }
 }
 
-a,
-button {
-  font-family: $ProximaNova;
+ul {
+    padding-left: 37px;
+    list-style: none;
+
+    li {
+        display: block;
+        margin-top: 10px;
+        vertical-align: middle;
+
+        &:before {
+            @include border-radius(50%);
+            content: '';
+            width: 7px;
+            height: 7px;
+            float: left;
+            margin-top: 8px;
+            margin-right: 10px;
+            margin-left: -17px;
+            display: inline-block;
+            vertical-align: top;
+            background: $c-lightcyan;
+        }
+
+        ul {
+            margin-bottom: 0;
+            padding-left: 40px;
+
+            li {
+                clear: both;
+
+                ul {
+                    padding-left: 60px;
+                }
+            }
+        }
+    }
+}
+
+ul.nice-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 6%;
+    //counter-reset: gradient-counter;
+    list-style: none;
+    padding-left: 1rem;
+
+    > li {
+        //counter-increment: gradient-counter;
+        padding: 1rem 1rem 1rem 4.2rem;
+        position: relative;
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        //min-height: 40px;
+        margin-bottom: 20px;
+
+        &::before {
+            background-color: $c-lightcyan;
+            content: '';
+            top: 0px;
+            height: 10px;
+            width: 10px;
+            left: 28px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        &:last-child {
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+    }
+
+    &.m-2-col, &.m-3-col {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            flex-basis: calc(100%);
+        }
+
+        @media(min-width:$screen-sm) {
+            margin-left: -10px;
+            margin-right: -10px;
+
+            li {
+                flex-basis: calc(50% - 10px);
+            }
+        }
+
+        @media(min-width:$screen-lg) {
+
+            li {
+                flex-basis: calc(33.333333% - 10px);
+            }
+        }
+    }
+
+
+    @media(min-width:$screen-md) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        &.nice-list {
+
+            > li {
+                //padding: 0rem 1rem 1rem 5.2rem;
+                //min-height: 50px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+ol {
+    list-style: decimal;
+
+    ol {
+        clear: both;
+        margin-bottom: 0;
+    }
 }
 
 blockquote {
-  @include font-size(2);
-  line-height: 1.4;
-  position: relative;
-  color: $black;
-  font-family: sans-serif;
-  margin: 60px 0 40px;
-  font-weight: bold;
-  max-width: 730px;
-  padding-right: 40px;
-  letter-spacing: -0.08px;
-
-  &:before,
-  &:after {
-    position: absolute;
-    background-image: url("/assets/images/icons/quoteopen.svg");
-    content: "";
-    width: 21px;
-    height: 18px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-  }
-
-  &:before {
-    top: -25px;
-    left: 0;
-  }
-
-  &:after {
-    margin-left: auto;
-    transform: rotate(180deg);
-    bottom: 0;
-    right: 0;
-  }
-
-  & + .cite,
-  & + cite {
-    font-weight: 600;
-    margin-top: -20px;
-  }
-}
-
-cite,
-.cite {
-  @include font-size(1.4);
-  color: $text;
-  display: block;
-  margin: 10px 0;
-
-  span {
-    &.handwriting {
-      @include font-size(3.6);
-      color: $black;
-      font-family: sans-serif;
-      font-weight: normal;
-      display: inline-block;
-      margin: 15px 0 -10px;
-    }
-  }
+    @include font-size(1.6, 2.4);
+    padding: 20px;
+    margin: 40px 0;
+    font-weight: 500;
+    border-left: 8px solid $c-navy;
+    color: $c-navy;
 }
 
 em {
-  font-style: italic;
+    font-style: italic;
 }
 
-table {
-  border-spacing: 0px;
-  margin: 30px 0;
-  table-layout: fixed;
-  height: auto !important;
-  width: 100% !important;
-  max-width: 100%;
-  display: block;
-  border: none;
-  overflow-y: hidden;
-  overflow-x: auto;
+strong {
+    font-weight: 600;
+}
 
-  tbody {
-    border-radius: 10px;
-    background: $white;
-    border: 1px solid $border;
-  }
-
-  tr {
-    border-spacing: 0px;
-    border: none;
-    border-left: 1px solid $border;
-    border-right: 1px solid $border;
-
-    &:first-of-type {
-      td {
-        border-top: 1px solid $border;
-
-        &:first-child {
-          border-top-left-radius: 10px;
-        }
-
-        &:last-child {
-          border-top-right-radius: 10px;
-        }
-      }
+@media (min-width: 370px) {
+    h1,
+    .h1 {
+        @include font-size(4, 4.8);
+        letter-spacing: 2px;
     }
+}
 
-    &:last-of-type {
-      td {
-        &:first-child {
-          border-bottom-left-radius: 10px;
-        }
-
-        &:last-child {
-          border-bottom-right-radius: 10px;
-        }
-      }
-    }
-  }
-
-  td {
-    @include font-size(1.5);
-    border-spacing: 0px;
-    border: none;
-    border-right: 1px solid $border;
-    border-bottom: 1px solid $border;
-    padding: 25px 30px;
-    color: $text;
-
-    &:first-child {
-      border-left: 1px solid $border;
-    }
-
-    a {
-      word-break: break-all;
-    }
-
+@media (min-width: $screen-md) {
+    //RTE spacing
+    h1,
     h2,
     h3,
     h4,
-    h5,
-    p {
-      margin: 0;
+    p,
+    ul,
+    ol,
+    a {
+        margin: 20px 0 0;
 
-      & + h2,
-      & + h3,
-      & + h4,
-      & + h5,
-      & + p {
-        margin-top: 10px;
-      }
-    }
-
-    p {
-      font-size: inherit;
-    }
-  }
-}
-
-@media (min-width: $screen-sm) {
-  body {
-    @include font-size(1.6);
-    line-height: 1.67;
-  }
-
-  h1,
-  .h1 {
-    @include font-size(4.6);
-    line-height: 1.17;
-    letter-spacing: -0.37px;
-  }
-
-  h2,
-  .h2 {
-    @include font-size(4);
-    line-height: 1.25;
-    letter-spacing: -0.4px;
-  }
-
-  h3,
-  .h3 {
-    @include font-size(2.8);
-    line-height: 1.36;
-    letter-spacing: -0.33px;
-  }
-
-  h4,
-  .h4 {
-    @include font-size(2.2);
-    line-height: 1.45;
-    letter-spacing: -0.46px;
-  }
-
-  h5,
-  .h5 {
-    @include font-size(1.8);
-    line-height: 1.67;
-    letter-spacing: -0.45px;
-  }
-
-  h6,
-  .h6 {
-    @include font-size(1.8);
-    line-height: 1.67;
-    letter-spacing: -0.45px;
-  }
-
-  span {
-    &.handwriting {
-      @include font-size(4.6);
-      line-height: 1.17;
-    }
-  }
-
-  p,
-  ul,
-  ol,
-  a {
-    & + h1,
-    & + h2,
-    & + h3,
-    & + h4,
-    & + h5 {
-      margin-top: 45px;
-    }
-  }
-
-  p {
-    &.preamble {
-      @include font-size(2);
-    }
-  }
-
-  ul,
-  ol {
-    padding-left: 30px;
-    margin: 50px 0;
-
-    li {
-      @include font-size(1.6);
-    }
-  }
-
-  ul {
-    li {
-      margin-bottom: 10px;
-
-      &:before {
-        top: 8px;
-        left: -18px;
-        width: 9px;
-        height: 9px;
-      }
-    }
-  }
-
-  ol {
-    li {
-      margin-bottom: 20px;
-
-      &:before {
-        @include font-size(1.6);
-        top: 0px;
-      }
-    }
-  }
-
-  blockquote {
-    @include font-size(2.4);
-    margin: 50px 0;
-    max-width: 730px;
-    letter-spacing: -0.5px;
-
-    &:before,
-    &:after {
-      width: 29px;
-      height: 25px;
-    }
-
-    &:before {
-      top: -20px;
-      left: -35px;
-    }
-
-    &:after {
-      bottom: 0;
-    }
-
-    & + cite,
-    & + .cite {
-      @include font-size(1.7);
-      margin: -35px 0 35px;
-
-      span {
-        &.handwriting {
-          @include font-size(3.6);
-          margin: 15px 0 0;
+        & + h1,
+        & + h2,
+        & + h3,
+        & + h4 {
+            margin-top: 60px;
         }
-      }
+
+        & + .btn {
+            margin-top: 30px;
+        }
     }
 
-    & + cite + cite,
-    & + .cite + .cite {
-      @include font-size(1.7);
-      margin: -30px 0 60px;
+    blockquote {
+        margin: 60px 0;
     }
-  }
+
+    p {
+        a {
+            margin: 0;
+        }
+
+        & + p {
+            margin-top: 20px;
+        }
+    }
+    //end
+
+    p,
+    ul li,
+    ol li,
+    table,
+    body {
+        @include font-size(1.6, 2.4);
+    }
+
+    p, span {
+        &.preamble {
+            @include font-size(2, 2.8);
+        }
+    }
+
+    blockquote {
+        @include font-size(2, 2.8);
+    }
+
+    h1,
+    .h1 {
+        @include font-size(5, 5.8);
+    }
+
+    h2,
+    .h2 {
+        @include font-size(3.1, 3.9);
+    }
+
+    h3,
+    .h3 {
+        @include font-size(2.3, 3.1);
+    }
+
+    h4,
+    .h4 {
+        @include font-size(1.8, 2.6);
+    }
 }
 
-@media (min-width: $screen-lg) and (min-height: 800px) {
-  h1,
-  .h1 {
-    @include font-size(5.2);
-    line-height: 1.19;
-    letter-spacing: -0.42px;
-  }
-
-  h2,
-  .h2 {
-    @include font-size(4.2);
-    line-height: 1.22;
-    letter-spacing: -0.46px;
-  }
-
-  h3,
-  .h3 {
-    @include font-size(3.2);
-    line-height: 1.31;
-    letter-spacing: -0.38px;
-  }
-
-  h4,
-  .h4 {
-    @include font-size(2.4);
-    line-height: 1.42;
-    letter-spacing: -0.24px;
-  }
-
-  h5,
-  .h5 {
-    @include font-size(2);
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-  }
-
-  h6,
-  .h6 {
-    @include font-size(2);
-    line-height: 1.5;
-    letter-spacing: -0.5px;
-  }
-
-  p {
-    &.preamble {
-      @include font-size(2.4);
+@media (min-width: $screen-xl) {
+    p, span {
+        &.preamble {
+            @include font-size(2.4, 3.2);
+        }
     }
-  }
 
-  span {
-    &.handwriting {
-      @include font-size(5.6);
-      line-height: 1;
+    blockquote {
+        @include font-size(2.5, 3.3);
     }
-  }
+
+    h1,
+    .h1 {
+        @include font-size(6, 6.8);
+    }
+
+    h1 {
+        &.small-header {
+            @include font-size(4, 4.8);
+        }
+    }
+
+    h2,
+    .h2 {
+        @include font-size(3.6, 4.4);
+    }
+
+    h3,
+    .h3 {
+        @include font-size(2.8, 3.6);
+    }
+
+    h4,
+    .h4 {
+        @include font-size(2.1, 2.9);
+    }
+}
+
+.hide-mobile {
+
+    @media(max-width: $screen-sm) {
+        display: none;
+    }
+}
+
+.hide-tablet {
+
+    @media(min-width: $screen-sm) and (max-width: $screen-md) {
+        display: none;
+    }
+}
+
+.hide-desktop {
+
+    @media(min-width: $screen-md) {
+        display: none;
+    }
 }
