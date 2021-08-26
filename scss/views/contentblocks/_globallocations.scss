@@ -77,10 +77,8 @@
   @media (min-width: $screen-lg) {
     padding: 100px 0 0;
     margin-bottom: 200px;
-    margin-right: calc((100% - 1200px) / 2);
 
     .container {
-      right: calc((1130px - 100%) / 2);
       position: relative;
     }
 
@@ -101,10 +99,7 @@
   }
 
   @media (min-width: $screen-xl) {
-    margin-right: calc((100% - 1430px) / 2);
-
     .container {
-      right: calc((1360px - 100%) / 2);
       position: relative;
     }
 

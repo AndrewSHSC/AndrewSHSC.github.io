@@ -125,6 +125,10 @@
     .item-container {
       .e-item {
         padding-left: calc((100vw - 900px) / 2);
+
+        img {
+          top: 59%;
+        }
       }
     }
   }
@@ -146,6 +150,11 @@
           padding-left: calc((100vw - 1130px) / 2);
         }
 
+        img {
+          top: 50%;
+          left: 40%;
+        }
+
         h2 {
           margin-top: 0;
         }
@@ -161,6 +170,10 @@
         }
 
         padding-left: 90px;
+
+        img {
+          left: 50%;
+        }
 
         h2 {
           font-size: 36px;
