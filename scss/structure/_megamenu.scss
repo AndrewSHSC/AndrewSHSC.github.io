@@ -1,0 +1,691 @@
+.megamenu {
+    // display: none;
+    @media (min-width: $screen-lg) {
+        position: absolute;
+        width: 100%;
+        top: 110px;
+        left: 0;
+
+        &:focus {
+            display: block !important;
+        }
+
+        &.hover-variation {
+            .e-mega-item {
+                .e-sub {
+                    p {
+                        margin-top: 12px;
+                    }
+
+                    .top {
+                        &:hover {
+                            img {
+                                transition: none;
+                                transform: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.single-column-list {
+            .e-mega-item {
+                .e-sub {
+                    display: block !important;
+                    opacity: 1 !important;
+                    right: 0 !important;
+
+                    p {
+                        margin-top: 12px;
+                    }
+                }
+
+                & > .e-inner {
+                    .e-links {
+                        ul {
+                            li {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.language-selector {
+            .e-mega-item {
+                .e-inner {
+                    padding-right: 320px;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        background-image: url('/images/map.png');
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-size: cover;
+                    }
+
+                    &:after {
+                        display: none;
+                    }
+
+                    .e-text {
+                        position: relative;
+                        z-index: 2;
+                        max-width: 220px;
+
+                        .btn {
+                            text-align: center;
+                            color: $c-white;
+
+                            &:hover {
+                                color: $c-lightcyan;
+                            }
+                        }
+                    }
+
+                    .e-links {
+                        max-width: 580px;
+
+                        ul {
+                            li {
+                                width: calc(33.333% - 50px);
+
+                                a {
+                                    color: $c-navy;
+                                    padding-right: 25px;
+
+                                    &.active {
+                                        color: $c-lightcyan;
+                                        text-decoration: underline;
+
+                                        .icon {
+                                            opacity: 1;
+                                        }
+                                    }
+
+                                    .icon {
+                                        width: 12px;
+                                        height: 16px;
+                                        opacity: 0;
+                                        fill: $c-lightcyan;
+                                        @include transition(opacity 0.3s ease-in-out);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .e-sub {
+                    width: 270px;
+                    right: 0px;
+                    opacity: 1;
+
+                    .e-sublinks {
+                        padding: 88px 50px 30px 50px;
+
+                        h3 {
+                            @include font-size(1.6, 2.4);
+                            margin-top: 0;
+                        }
+
+                        ul {
+                            margin-top: 15px;
+                            width: 100%;
+
+                            li {
+                                width: 100%;
+
+                                a {
+                                    color: $c-navy;
+
+                                    &:before {
+                                        content: '';
+                                        width: 20px;
+                                        height: 20px;
+                                        display: inline-block;
+                                        margin-right: 10px;
+                                        vertical-align: middle;
+                                    }
+
+                                    &.active {
+                                        color: $c-lightcyan;
+                                        text-decoration: underline;
+
+                                        .icon {
+                                            opacity: 1;
+                                        }
+                                    }
+
+                                    .icon {
+                                        width: 12px;
+                                        height: 16px;
+                                        opacity: 0;
+                                        fill: $c-lightcyan;
+                                        @include transition(opacity 0.3s ease-in-out);
+                                    }
+                                }
+
+                                &.english {
+                                    a {
+                                        &:before {
+                                            background-image: url('/images/svgs/flag_UK.svg');
+                                        }
+                                    }
+                                }
+
+                                &.french {
+                                    a {
+                                        &:before {
+                                            background-image: url('/images/svgs/flag_France.svg');
+                                        }
+                                    }
+                                }
+
+                                &.spanish {
+                                    a {
+                                        &:before {
+                                            background-image: url('/images/svgs/flag_Spain.svg');
+                                        }
+                                    }
+                                }
+
+                                &.dutch {
+                                    a {
+                                        &:before {
+                                            background-image: url('/images/svgs/flag_Dutch.svg');
+                                        }
+                                    }
+                                }
+
+                                &.turkish {
+                                    a {
+                                        &:before {
+                                            background-image: url('/images/svgs/flag_Turkey.svg');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: $screen-xl) {
+                .e-mega-item {
+                    .e-inner {
+                        padding-right: 400px;
+
+                        .e-text {
+                            max-width: 240px;
+                        }
+
+                        .e-links {
+                            max-width: 650px;
+                        }
+                    }
+
+                    .e-sub {
+                        width: 350px;
+
+                        .e-sublinks {
+                            padding: 88px 80px 30px 60px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.map-fullwidth {
+            .e-mega-item {
+                .e-inner {
+                    width: 100%;
+                    padding: 65px 40px 150px 40px;
+
+                    &:after {
+                        display: none;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        background-image: url('/images/map.png');
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-size: cover;
+                    }
+
+                    .e-text {
+                        position: relative;
+                        z-index: 2;
+                        margin-right: 50px;
+
+                        .btn {
+                            text-align: center;
+                        }
+                    }
+
+                    .e-links {
+                        float: none;
+                        position: relative;
+                        z-index: 2;
+                        max-width: 650px;
+                        width: 100%;
+
+                        ul {
+                            width: 100%;
+
+                            li {
+                                width: calc(33.333% - 50px);
+                            }
+                        }
+                    }
+
+                    .e-links.two-column {
+                        ul {
+                            li {
+                                width: calc(50% - 50px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: $screen-xl) {
+                .e-mega-item {
+                    .e-inner {
+                        padding-right: 80px;
+
+                        .e-text {
+                            margin-right: 100px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container {
+            padding: 0 !important;
+        }
+
+        .e-mega-item {
+            position: relative;
+            width: 100%;
+
+            & > .e-inner {
+                background: $c-baige;
+                padding: 65px 465px 150px 40px;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative;
+                z-index: 2;
+                overflow: hidden;
+
+                &:after {
+                    content: '';
+                    background: $c-baigedark;
+                    position: absolute;
+                    width: 415px;
+                    height: 100%;
+                    right: 0;
+                    top: 0;
+                }
+
+                & > .e-text {
+                    max-width: 280px;
+                    display: inline-block;
+                    vertical-align: top;
+
+                    h2 {
+                        @include font-size(2.4, 3.2);
+                    }
+
+                    p {
+                        @include font-size(1.4, 2.4);
+                    }
+                }
+
+                & > .e-links {
+                    display: inline-block;
+                    vertical-align: top;
+                    float: right;
+                    max-width: 395px;
+                    margin-top: 62px;
+
+                    & > ul {
+                        margin: 0 -25px;
+                        padding: 0;
+                        display: inline-block;
+                        font-size: 0;
+
+                        & > li {
+                            margin: 0 25px;
+                            width: calc(50% - 50px);
+                            display: inline-block;
+                            vertical-align: bottom;
+                            font-size: 50px !important;
+
+                            &:before {
+                                display: none;
+                            }
+
+                            & > a {
+                                @include font-size(1.4, 2.2);
+                                padding: 10px 15px 10px 0;
+                                margin: 0;
+                                border-bottom: 1px solid $c-linegrey;
+                                color: $c-navy;
+                                display: block;
+                                position: relative;
+
+                                &:hover,
+                                &.focus,
+                                &.active {
+                                    color: $c-lightcyan;
+                                    border-bottom-color: $c-linegrey;
+                                }
+
+                                .icon {
+                                    width: 5px;
+                                    height: 10px;
+                                    fill: $c-lightcyan;
+                                    display: inline-block;
+                                    position: absolute;
+                                    top: 50%;
+                                    margin-top: -5px;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .e-sub {
+                width: 415px;
+                position: absolute;
+                top: 0;
+                right: -415px;
+                height: 100%;
+                background: $c-white;
+                line-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                z-index: 3;
+
+                &.active {
+                    @include transition(opacity 0.3s ease-in-out);
+                    right: 0px;
+                    opacity: 1;
+                }
+
+                .top {
+                    position: relative;
+                    margin: 0;
+                    border: none;
+                    width: 100%;
+
+                    &:hover {
+                        img {
+                            @include scale(1.05);
+                        }
+
+                        .e-text {
+                            .icon {
+                                fill: $c-lightcyan;
+                                background: $c-white;
+                            }
+                        }
+                    }
+
+                    .e-image {
+                        position: relative;
+
+                        &:before {
+                            content: '';
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background: rgba($c-black, 0.5);
+                            z-index: 1;
+                        }
+                    }
+
+                    img {
+                        @include transition(all 0.3s ease-in-out);
+                        width: 100%;
+                    }
+
+                    .e-text {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 20px 65px 20px 30px;
+                        box-sizing: border-box;
+                        z-index: 2;
+
+                        h3 {
+                            @include font-size(2.4, 3.2);
+                            color: $c-white;
+                            font-weight: 500;
+                            margin-top: 0;
+                        }
+
+                        p {
+                            color: $c-lightcyan;
+                            margin-top: 0;
+                            @include font-size(1.4, 2.2);
+                            font-weight: 600;
+                        }
+
+                        .icon {
+                            border: 1px solid #ebebeb;
+                            width: 17px;
+                            height: 12px;
+                            fill: $c-white;
+                            padding: 13px 10.5px;
+                            position: absolute;
+                            right: 20px;
+                            @include transition(all 0.3s ease-in-out);
+                            bottom: 20px;
+                        }
+                    }
+                }
+
+                .e-sublinks {
+                    padding: 15px 35px 30px;
+                    position: relative;
+                    background: $c-white;
+
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        font-size: 0;
+                        float: none;
+
+                        li {
+                            margin: 0;
+                            width: 180px;
+                            display: block;
+                            vertical-align: bottom;
+
+                            &:before {
+                                display: none;
+                            }
+
+                            a {
+                                @include font-size(1.4, 2.2);
+                                padding: 10px 15px 10px 0;
+                                margin: 0;
+                                border-bottom: 1px solid $c-linegrey;
+                                color: $c-lightcyan;
+                                display: block;
+                                position: relative;
+
+                                &:hover {
+                                    color: $c-navy;
+                                    border-bottom-color: $c-linegrey;
+                                }
+
+                                .icon {
+                                    width: 5px;
+                                    height: 10px;
+                                    fill: $c-lightcyan;
+                                    display: inline-block;
+                                    position: absolute;
+                                    top: 50%;
+                                    margin-top: -5px;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .e-mega-item--languages {
+
+            & > .e-inner {
+
+                & > .e-links {
+
+                    & > ul {
+
+                        & > li {
+                            /*& > a {
+                                color: $c-navy !important;
+                                padding-right: 25px;
+
+                                &.active {
+                                    color: $c-lightcyan;
+                                    text-decoration: underline;
+
+                                    .icon {
+                                        opacity: 1;
+                                    }
+                                }
+
+                                .icon {
+                                    width: 12px;
+                                    height: 16px;
+                                    opacity: 0;
+                                    fill: $c-lightcyan;
+                                    @include transition(opacity 0.3s ease-in-out);
+                                }
+                            }*/
+                            & > a {
+                                color: $c-navy !important;
+                                padding-right: 25px;
+
+                                &:before {
+                                    content: '';
+                                    width: 20px;
+                                    height: 20px;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    vertical-align: middle;
+                                }
+
+                                &.active {
+                                    color: $c-lightcyan !important;
+                                    text-decoration: underline !important;
+
+                                    .icon {
+                                        opacity: 1 !important;
+                                    }
+                                }
+
+                                .icon {
+                                    width: 12px;
+                                    height: 16px;
+                                    opacity: 0;
+                                    fill: $c-lightcyan;
+                                    @include transition(opacity 0.3s ease-in-out);
+                                }
+                            }
+
+                            &.english {
+                                a {
+                                    &:before {
+                                        background-image: url('/images/svgs/flag_UK.svg');
+                                    }
+                                }
+                            }
+
+                            &.french {
+                                a {
+                                    &:before {
+                                        background-image: url('/images/svgs/flag_France.svg');
+                                    }
+                                }
+                            }
+
+                            &.spanish {
+                                a {
+                                    &:before {
+                                        background-image: url('/images/svgs/flag_Spain.svg');
+                                    }
+                                }
+                            }
+
+                            &.dutch {
+                                a {
+                                    &:before {
+                                        background-image: url('/images/svgs/flag_Dutch.svg');
+                                    }
+                                }
+                            }
+
+                            &.turkish {
+                                a {
+                                    &:before {
+                                        background-image: url('/images/svgs/flag_Turkey.svg');
+                                    }
+                                }
+                            }
+
+                            &.portuguese {
+                                a {
+                                    &:before {
+                                        background-image: url('/images/svgs/flag_Brazil.svg');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        top: 114px;
+
+        .e-mega-item {
+            & > .e-inner {
+                padding-right: 505px;
+
+                & > .e-text {
+                    max-width: 330px;
+                    margin-right: 100px;
+                }
+
+                .e-links {
+                    max-width: 440px;
+                }
+            }
+        }
+    }
+}

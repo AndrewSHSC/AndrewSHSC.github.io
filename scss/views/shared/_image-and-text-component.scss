@@ -1,0 +1,22 @@
+﻿.image-and-text-component {
+    display: flex;
+    background-color: #f5f4f1;
+    margin: 24px 0px;
+
+    > img {
+        width: 150px;
+    }
+
+    > div {
+        padding: 20px 26px;
+        word-break: break-word;
+
+        > p {
+            margin-top: 0px;
+        }
+    }
+
+    &.m--white {
+        background-color: white;
+    }
+}

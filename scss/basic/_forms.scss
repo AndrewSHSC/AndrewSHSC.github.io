@@ -1,0 +1,220 @@
+.m-form {
+    @include grid(12, 12, 9, 7, 7, false);
+    background: $c-white;
+    padding: 30px 0;
+
+    .wrapper {
+        padding: 20px;
+        box-sizing: border-box;
+        background: $c-softgrey;
+    }
+}
+
+.m-contact-form {
+    background: $c-white;
+    padding: 30px 0;
+
+    .wrapper {
+        padding: 20px;
+        box-sizing: border-box;
+        background: $c-softgrey;
+    }
+
+    .radiobuttonlist {
+        margin-bottom: 15px;
+        display: block;
+
+        input[type="radio"] {
+            @include border-radius(12px);
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px 15px 0;
+            opacity: 0;
+
+            & + label {
+                @include transition(all 0.3s ease-in-out);
+                font-family: $f-body;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 0 15px -32px;
+                position: relative;
+                padding-left: 30px;
+
+                &:before,
+                &:after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                }
+
+                &:before {
+                    @include transition(all 0.3s ease-in-out);
+                    @include border-radius(12px);
+                    width: 24px;
+                    height: 24px;
+                    background: $c-white;
+                    left: 0;
+                    top: 0;
+                    border: solid 1px #e7e7e7;
+                    box-sizing: border-box;
+                }
+
+                &:after {
+                    @include transition(all 0.3s ease-in-out);
+                    @include border-radius(6px);
+                    width: 10px;
+                    height: 10px;
+                    background: #ddd;
+                    top: 7px;
+                    left: 7px;
+                    transform-origin: center;
+                    transform: scale(0);
+                }
+
+                &:hover {
+                    color: #ddd;
+                    cursor: pointer;
+                }
+            }
+
+            &:checked {
+                & + label {
+                    &:after {
+                        transform: scale(1);
+                    }
+                }
+
+                &:active,
+                &:focus,
+                &:active:focus {
+                    & + label {
+                        &:before {
+                            border-color: #ddd;
+                        }
+                    }
+                }
+            }
+
+            &:active,
+            &:focus,
+            &:active:focus {
+                & + label {
+                    &:before {
+                        border-color: #ddd;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.help-block {
+    @include font-size(1.4, 1.8);
+}
+
+label {
+    @include font-size(1.8);
+    width: 100%;
+    display: block;
+    color: $c-title;
+    font-family: $f-title;
+
+    &.error {
+        color: $c-red;
+        margin-top: 5px;
+    }
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+input:not([type=checkbox]),
+textarea {
+    @include border-radius(0 !important);
+    @include transition(all 0.2s ease-in-out);
+    width: 100%;
+    margin: 5px 0;
+    padding: 15px 20px !important;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid $c-linegrey;
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+        border: 1px solid $c-title;
+    }
+
+    &.error {
+        outline: none;
+        border: 1px solid $c-red;
+        background: $c-errorbg;
+    }
+}
+
+textarea {
+    min-height: 200px;
+}
+
+input:not([type=checkbox]) {
+    padding: 8px 10px 9px;
+    border-radius: 4px;
+
+    &[type='submit'] {
+        color: $c-red;
+    }
+}
+
+select {
+    @include font-size(1.6, 2.4);
+    @include border-radius(0);
+    padding: 0 15px;
+    min-height: 50px;
+    cursor: pointer;
+    min-width: 160px;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: $c-white;
+    border: 1px solid $c-linegrey;
+    background-image: url('/images/svgs/menu_arrow_down-lightblue.svg') !important;
+    padding-right: 50px !important;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-size: 9px 6px !important;
+    box-sizing: border-box;
+
+    &:hover {
+        background-image: url('/images/svgs/menu_arrow_down-blue.svg') !important;
+    }
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+@media (min-width: $screen-xs) {
+    .m-form {
+        .wrapper {
+            padding: 40px;
+        }
+    }
+}
+
+@media (min-width: $screen-md) {
+    .m-form {
+        padding: 50px 0;
+    }
+}
+
+@media (min-width: $screen-lg) {
+    .m-form {
+        padding: 60px 0;
+    }
+}

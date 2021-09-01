@@ -1,0 +1,424 @@
+﻿.m-brochure-preview-grid {
+    padding: 50px 0;
+    background: $c-brown;
+    @include cutoff();
+
+    .btn {
+        margin-top: 25px;
+        color: white;
+    }
+
+    .desktop-btn {
+        display: none;
+    }
+
+    .e-intro {
+        h2,
+        .preamble {
+            color: $c-white;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .preamble {
+            display: none;
+            margin-bottom: 25px;
+        }
+
+        .preamble, .btn {
+            margin-top: 0px;
+        }
+    }
+
+    .e-grid {
+        margin-top: 15px;
+
+        .e-item {
+            //margin-top: 0;
+            //padding: 15px 0;
+            margin: 30px 0;
+            display: block;
+
+            img {
+                display: none;
+            }
+
+            .e-brochure-image {
+                //flex: 0 0 200px;
+                display: none;
+
+                > div {
+                    padding: 33px 0px 33px 33px;
+                }
+
+                img {
+                    //display: block;
+                    display: none;
+                }
+            }
+
+            .e-inner {
+                position: relative;
+                flex: 1;
+                padding: 33px 33px 100px 33px;
+                background-color: $c-deepbrown;
+
+                h3 {
+                    display: inline-block;
+                    //@include font-size(1.6, 2.4);
+                    @include font-size(2.1, 2.9);
+                    font-weight: 500;
+                    margin-top: 0;
+                    padding-right: 20px;
+                    color: $c-white;
+                }
+
+                .icon {
+                    fill: $c-lightcyan;
+                    @include transition(all 0.3s ease-in-out);
+                    position: absolute;
+                    bottom: 33px;
+                    left: 33px;
+                    top: auto;
+                    border: 1px solid #ebebeb;
+                    width: 17px;
+                    height: 12px;
+                    padding: 13px 10.5px;
+                }
+
+                p {
+                    display: block;
+                    margin-top: 10px;
+                    @include font-size(1.6, 2.4);
+                    color: $c-softgreytext;
+                }
+            }
+
+            &:hover {
+                border-bottom-color: transparent;
+            }
+        }
+    }
+
+    &.m-brochure-preview-grid--white {
+        background: $c-white !important;
+
+        .btn {
+            color: $c-navy;
+
+            &:hover {
+                color: $c-white;
+            }
+        }
+
+        .e-intro {
+            h2 {
+                color: $c-navy;
+            }
+
+            p {
+                color: #72838d;
+            }
+        }
+
+        .e-grid {
+            .e-item {
+                border: 1px solid rgb(230,230,230);
+                box-sizing: border-box;
+                background-color: $c-softgrey !important;
+
+                &:hover {
+                    .e-inner {
+
+                        .icon {
+                            background: $c-navy;
+                            fill: $c-white;
+                            border-color: $c-navy;
+                        }
+                    }
+                }
+
+                .e-brochure-image, .e-inner {
+                    background-color: $c-softgrey !important;
+                }
+
+                .e-inner {
+
+                    .icon {
+                        border: 1px solid rgb(220,220,220);
+                    }
+
+                    h3 {
+                        color: $c-navy;
+                    }
+
+                    p {
+                        color: $c-text;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $screen-sm) {
+            .e-grid {
+                .e-item {
+                    background: $c-white;
+                }
+            }
+        }
+    }
+
+    &.m-brochure-preview-grid--light-grey {
+        background: $c-softgrey;
+
+        .btn {
+            color: $c-navy;
+
+            &:hover {
+                color: $c-white;
+            }
+        }
+
+        .e-intro {
+            h2 {
+                color: $c-navy;
+            }
+
+            p {
+                color: #72838d;
+            }
+        }
+
+        .e-grid {
+            .e-item {
+                //border-bottom-color: $c-linegrey;
+                &:hover {
+                    .e-inner {
+
+                        .icon {
+                            background: $c-navy;
+                            fill: $c-white;
+                            border-color: $c-navy;
+                        }
+                    }
+                }
+
+                .e-brochure-image, .e-inner {
+                    background-color: $c-white;
+                }
+
+                .e-inner {
+
+
+                    h3 {
+                        color: $c-navy;
+                    }
+
+                    p {
+                        color: $c-text;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $screen-sm) {
+            .e-grid {
+                .e-item {
+                    background: $c-white;
+                }
+            }
+        }
+    }
+
+    &.m-brochure-preview-grid--navy {
+        background-image: url(/images/svgs/bmt-mark-navy.svg);
+        background-color: rgb(0,85,129);
+
+        .e-grid {
+            .e-item {
+                border-bottom-color: transparent;
+
+                .e-brochure-image, .e-inner {
+                    background-color: rgb(032,120,161);
+                }
+
+                .e-inner {
+
+
+                    h3 {
+                        color: white;
+                    }
+
+                    p {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $screen-sm) {
+
+            .e-grid {
+
+                .e-item {
+                }
+            }
+        }
+    }
+    /*&.m-brochure-preview-grid--cyan {
+        background-image: url(/images/svgs/bmt-mark-cyan.svg);
+        background-color: #00b6dd;
+
+        .e-grid {
+            .e-item {
+                //background-color: rgb(0,85,129);
+                .e-inner {
+
+                    h3 {
+                        color: white;
+                    }
+
+                    p {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $screen-sm) {
+
+            .e-grid {
+
+                .e-item {
+                    background-color: rgb(032,120,161);
+                }
+            }
+        }
+    }*/
+    &.m-brochure-preview-grid--inset {
+
+        @include contentBlockInset;
+    }
+
+    @media (min-width: $screen-sm) {
+        padding: 80px 0;
+        background-image: url('/images/svgs/bmt-mark.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% -8%;
+        overflow: hidden;
+        position: relative;
+
+        .desktop-btn {
+            display: inline-block;
+        }
+
+        .mobile-btn {
+            display: none;
+        }
+
+        .e-intro {
+            .preamble,
+            .btn-wrap {
+                display: block;
+                max-width: 750px;
+                color: $c-softgreytext;
+            }
+        }
+
+        .e-grid {
+            margin: 60px -25px 0;
+            -js-display: flex;
+            display: flex;
+            flex-wrap: wrap;
+
+            .e-item {
+                display: flex;
+                align-items: stretch;
+                position: relative;
+                margin: 0;
+                padding: 0;
+                border: none;
+                margin: 0 25px 50px;
+                flex: 0 0 40%;
+                flex: 0 0 calc(50% - 50px);
+                background: #181a18;
+            }
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+
+        .e-grid {
+            margin-top: 80px;
+
+            .e-item {
+                font-size: 0;
+                line-height: 0;
+                overflow: hidden;
+                -js-display: flex;
+                display: flex;
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        .e-intro {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 0;
+            line-height: 0;
+            @include clearfix();
+
+            h2 {
+                max-width: 30%;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .preamble,
+            .btn-wrap {
+                width: 100%;
+                max-width: 70%;
+                display: inline-block;
+                vertical-align: top;
+                float: right;
+            }
+
+            .preamble {
+                margin-bottom: 30px;
+            }
+        }
+
+        .e-grid {
+
+            .e-item {
+
+                .e-brochure-image {
+                    flex: 0 0 200px;
+                    display: block;
+
+                    > div {
+                        padding: 33px 0px 33px 33px;
+                    }
+
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        padding: 120px 0;
+
+        .e-grid {
+            margin-top: 100px;
+        }
+    }
+}

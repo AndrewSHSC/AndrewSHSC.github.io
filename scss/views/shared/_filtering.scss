@@ -1,0 +1,20 @@
+#filtering-system.m-loading {
+    //    .container {
+    min-height: 50vh;
+    background-image: url(/images/ajax-loader.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    //  }
+}
+
+
+#filtering-system {
+    .e-filtercontainer {
+        .container {
+        .e-filter.select select[disabled] {
+             color: #ccc;
+             background-image:none !important;
+        }
+        }
+    }
+}

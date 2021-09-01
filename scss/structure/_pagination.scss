@@ -1,0 +1,188 @@
+.m-pagination {
+  padding: 0 0 30px;
+
+  &.background-grey {
+    background: $c-softgrey;
+  }
+
+  .pag-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .e-first,
+  .e-last {
+    @include font-size(2, 2.8);
+    margin: 0;
+    border: none !important;
+    flex: 0 0 auto;
+    display: none;
+    color: $c-lightcyan;
+
+    .icon {
+      @include transition(all 0.3s ease-in-out);
+      width: 15px;
+      height: 12px;
+      margin-top: -2px;
+      fill: $c-lightcyan;
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: $c-navy;
+
+      .icon {
+        fill: $c-navy;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      color: $c-textgrey;
+      pointer-events: none;
+
+      .icon {
+        fill: $c-textgrey;
+      }
+    }
+  }
+
+  .e-first {
+    .icon {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+
+  .e-counter {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .arrow {
+      @include font-size(2, 2.8);
+      display: inline-block;
+      margin: 0 15px 0 0;
+      border: none !important;
+
+      &:last-child {
+        margin: 0 0 0 15px;
+      }
+
+      &:hover {
+        color: $c-navy;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        color: $c-textgrey;
+        pointer-events: none;
+
+        .icon {
+          fill: $c-textgrey;
+        }
+      }
+
+      span {
+        margin: 0 5px;
+      }
+
+      .icon {
+        width: 15px;
+        height: 12px;
+        margin-top: -2px;
+        fill: $c-lightcyan;
+      }
+    }
+
+    .count {
+      display: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        @include font-size(2, 2.8);
+        color: $c-navy;
+        margin: 0 10px;
+        display: inline-block;
+        height: 50px;
+
+        &:before {
+          display: none;
+        }
+
+        &.current {
+          a {
+            width: 50px;
+            text-align: center;
+            color: $c-lightcyan;
+            display: inline-block;
+            position: relative;
+
+            &:before {
+              content: "";
+              width: 50px;
+              height: 50px;
+              border: 1px solid $c-linegrey;
+              position: absolute;
+              left: 50%;
+              margin-left: -25px;
+              top: -12.5px;
+            }
+          }
+        }
+
+        a {
+          margin: 0;
+          border: none !important;
+          color: $c-textgrey;
+
+          &:hover {
+            color: $c-lightcyan;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 0 0 60px;
+  }
+
+  @media (min-width: $screen-md) {
+    .e-first,
+    .e-last {
+      display: inline-block;
+    }
+
+    .e-counter {
+      justify-content: flex-start;
+      flex: 0 0 auto;
+
+      .count {
+        display: inline-block;
+      }
+
+      .arrow {
+        margin: 0 60px 0 0;
+
+        &:last-child {
+          margin: 0 0 0 60px;
+        }
+
+        span {
+          display: inline-block;
+        }
+
+        .icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0 0 90px;
+  }
+}

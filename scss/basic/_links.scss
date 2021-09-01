@@ -1,0 +1,33 @@
+a, .link {
+    color: $c-lightcyan;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    @include transition(all 0.3s ease-in-out);
+    //display: inline-block;
+    display: inline;
+    cursor: pointer;
+
+    &:hover {
+        border-bottom-color: $c-lightcyan;
+    }
+
+    &.e-back {
+        margin-top: 80px;
+        font-weight: 600;
+        border: none !important;
+
+        &:hover {
+            color: $c-navy;
+
+            .icon {
+                fill: $c-navy;
+            }
+        }
+
+        .icon {
+            fill: $c-lightcyan;
+            margin-right: 20px;
+            @include transition(fill 0.3s ease-in-out);
+        }
+    }
+}

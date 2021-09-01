@@ -1,0 +1,114 @@
+.m-accordion {
+  padding: 50px 0;
+  background: $c-baige;
+
+  .blocktitle {
+    margin-bottom: 30px;
+  }
+
+  .e-accordionitem {
+    padding: 30px 0;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+
+    &:last-child {
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    .e-close {
+      width: 35px;
+      height: 35px;
+      flex: 0 0 35px;
+      border: 1px solid $c-linegrey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50px;
+      min-width: 0px;
+      padding: 0;
+
+      svg {
+        transition: transform 0.2s ease-in-out;
+        width: 15px;
+        height: 15px;
+        fill: $c-navy;
+        transform: rotate(90deg);
+        margin: 0;
+        float: none;
+      }
+    }
+
+    .title {
+      margin: 0;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &.active {
+        .e-close {
+          svg {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    .e-more {
+      display: none;
+      padding-top: 25px;
+
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0;
+
+    .blocktitle {
+      margin: 0 0 40px;
+    }
+
+    .e-accordionitem {
+      padding: 60px 0;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+
+    .e-accordionitem {
+      padding: 40px 0;
+
+      .e-close {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    .e-accordionitem {
+      padding: 60px 0;
+
+      .title {
+        @include font-size(2.6);
+      }
+
+      .e-more {
+        width: 85%;
+        max-width: 1110px;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+﻿section.awards {
+    //padding: 90px 0 108px;
+    padding: 69px 0 88px;
+    text-align: center;
+
+    h3 {
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+
+    .carousel-container {
+        position: relative;
+
+        > img {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            opacity: 0.8;
+        }
+
+        .left {
+            left: -50px;
+        }
+
+        .right {
+            right: -74px;
+        }
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: stretch;
+
+        .item {
+            display: flex;
+            flex: 1;
+            align-items: stretch;
+            text-align: center;
+            height: 70px;
+            //padding:0px 20px;
+            //background-color: green;
+            > div {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                align-content: center;
+                //margin: 0px 20px;
+                //background-color: red;
+            }
+
+
+            img {
+                display: block;
+                margin: 0 auto;
+                //width: 100%;
+                //max-width: 160px;
+                //height: 100%;
+                max-height: 70px;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<!--GLOBAL SCRIPTS GO HERE-->
+<script src="assets/jquery-3.2.1.js"></script>
+<script src="assets/enquire.js"></script>
+<script src="assets/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="assets/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="assets/jquery-accessibleMegaMenu.js"></script>
+<script src="assets/svg4everybody.min.js"></script>
+<script src="scripts/all.js"></script>
+
+<noscript id="deferred-styles">
+  <link href="css/core.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/print.css" rel="stylesheet">
+</noscript>
+
+<noscript>
+  <link rel="stylesheet" type="text/css" href="cdn/no-script.css">
+</noscript>
+
+<script>
+  document.documentElement.className = "js";
+  var loadDeferredStyles = function () {
+    var addStylesNode = document.getElementById("deferred-styles");
+    var replacement = document.createElement("div");
+    replacement.innerHTML = addStylesNode.textContent;
+    document.body.appendChild(replacement);
+    addStylesNode.parentElement.removeChild(addStylesNode);
+  };
+  var raf = requestAnimationFrame ||
+    mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame ||
+    msRequestAnimationFrame;
+  if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
+  else window.addEventListener('load', loadDeferredStyles);
+</script>

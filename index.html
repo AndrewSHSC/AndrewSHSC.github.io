@@ -1,176 +1,2165 @@
-﻿ <!-- Builder file. This file is used for building static components before integration. -->
-
-<!-- !!! CHANGES TO THIS FILE SHOULD NEVER BE COMMITTED. FLAG AS AN ISSUE IF THIS MESSAGE IS SEEN ON PR !!!! -->
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-  <head>
-    <title>Front-end estimating tool</title>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html class="no-js" lang="en" itemscope itemtype="http://schema.org/WebPage">
 
-    <link rel="preload" href="assets/css/styles.css" as="style">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script type='text/javascript' src="scripts/plugins/jquery-3.5.1.js"></script>
-    <script type='text/javascript' src="scripts/all.js"></script>
-  </head>
+<head>
+  <title>BMT</title>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
 
-  <body>
-    <header>
-      <div class="container">
-        <a href="/">
-          <svg class="logo" role="presentation" aria-hidden="true" viewBox="0 0 605.7 71.8" width="605.7px"><path d="M34.3,69H17.8c-8.3,0-14.4-5.2-15-12.4c-0.1-0.8,0.6-1.4,1.2-1.4h7.1c0.6,0,1.1,0.6,1.4,1.4
-              c0.7,3.9,5.6,4.2,6.7,4.2h13.8c1,0,6.8-0.4,6.8-5.6v-2.1c0-5.2-5.8-5.4-6.8-5.4H17.7c-8.8,0-15.2-5.8-15.2-13.8v-0.7
-              c0-8,6.4-13.8,15.2-13.8h15.3c8.2,0,14.3,5.1,15.1,12.4c0,0.8-0.7,1.4-1.4,1.4h-6.9c-0.8,0-1.3-0.6-1.4-1.4
-              c-0.9-3.9-5.7-4.2-6.8-4.2H19.2c-1.1,0-6.9,0.4-6.9,5.6v0.7c0,5.2,5.8,5.4,6.9,5.4h15.2c8.8,0,15.2,5.8,15.2,13.8v2.1
-              C49.5,63.1,43.1,69,34.3,69" class="st0"></path> <path d="M81.1,69h-5.6c-13.3,0-20.7-7.3-20.7-20.7V40c0-13.3,7.4-20.6,20.7-20.6h5.6c11.3,0,18.3,5.4,20.1,15.1
-              c0.2,0.8-0.6,1.4-1.4,1.4h-7c-0.8,0-1.1-0.6-1.4-1.4c-1.4-4.7-5.2-6.9-11.7-6.9H77c-8.7,0-12.4,3.7-12.4,12.4v8.2
-              c0,8.8,3.7,12.5,12.4,12.5h2.8c6.5,0,10.3-2.2,11.7-6.8c0.3-0.8,0.5-1.4,1.4-1.4h7c0.8,0,1.6,0.6,1.4,1.4
-              C99.4,63.6,92.4,69,81.1,69" class="st0"></path> <path d="M108.9,68.3L108.9,68.3l0.1-34.4c0-8,6.3-13.8,15.1-13.8h11.8c0.6,0,1.4,0.6,1.4,1.4V27c0,0.7-0.6,1.4-1.4,1.4
-              h-10.3c-1.2,0-6.9,0.2-6.9,5.6v34.4h0L108.9,68.3z" class="st0"></path> <path d="M165.5,27.6h-2.7c-8.6,0-12.4,3.7-12.4,12.4h27.5C177.9,31.3,174.3,27.6,165.5,27.6 M186.2,48.2h-35.8
-              c0.3,8.3,4,11.8,12.4,11.8h17.9c0.7,0,1.4,0.6,1.4,1.4v5.5c0,0.8-0.6,1.4-1.4,1.4h-19.2c-13.2,0-20.7-7.3-20.7-20.5V40
-              c0-13.3,7.4-20.6,20.7-20.6h5.5c13.4,0,20.7,7.3,20.7,20.6v6.8C187.6,47.6,187.1,48.2,186.2,48.2" class="st0"></path> <path d="M218.9,27.6h-2.7c-8.6,0-12.4,3.7-12.4,12.4h27.5C231.3,31.3,227.7,27.6,218.9,27.6 M239.6,48.2h-35.8
-              c0.3,8.3,4,11.8,12.4,11.8h17.9c0.7,0,1.4,0.6,1.4,1.4v5.5c0,0.8-0.6,1.4-1.4,1.4h-19.3c-13.2,0-20.7-7.3-20.7-20.5V40
-              c0-13.3,7.4-20.6,20.7-20.6h5.5c13.4,0,20.7,7.3,20.7,20.6v6.8C241,47.6,240.5,48.2,239.6,48.2" class="st0"></path> <path d="M292.1,68.2h-6.8c-0.7,0-1.4-0.6-1.4-1.4V40c0-8.7-3.7-12.4-12.3-12.4h-0.4c-8.7,0-12.4,3.7-12.4,12.4v26.8
-              c0,0.8-0.6,1.4-1.4,1.4h-6.9c-0.8,0-1.4-0.6-1.4-1.4V21.5c0-0.8,0.6-1.4,1.4-1.4h6.9c0.7,0,1.4,0.6,1.4,1.4v0.9
-              c3.2-1.9,7.4-3.1,12.4-3.1h1.7c13.3,0,20.7,7.3,20.7,20.6v26.8C293.6,67.7,292.9,68.2,292.1,68.2" class="st0"></path> <path d="M354.3,68.2h-6.9c-0.8,0-1.4-0.6-1.4-1.4V33.2c0-5.3-4.7-5.5-5.7-5.5c-1.3,0-6,0.3-6,5.5v33.7
-              c0,0.8-0.5,1.4-1.3,1.4h-7c-0.7,0-1.4-0.6-1.4-1.4V33.2c0-5.3-4.5-5.5-5.7-5.5c-1.1,0-5.8,0.3-5.8,5.5v33.7c0,0.8-0.6,1.4-1.4,1.4
-              h-6.9c-0.8,0-1.5-0.6-1.5-1.4V21.5c0-0.8,0.6-1.4,1.4-1.4h5.6c0.6,0,0.9,0.2,1.3,0.7c2.1-0.9,4.4-1.5,7-1.5c4.5,0,8.2,1.6,11,4.1
-              c2.7-2.5,6.6-4.1,11-4.1c8.8,0,15.3,5.8,15.3,13.8v33.7C355.7,67.7,355.1,68.2,354.3,68.2" class="st0"></path> <path d="M388.9,27.6h-2.7c-8.6,0-12.4,3.7-12.4,12.4h27.5C401.3,31.3,397.7,27.6,388.9,27.6 M409.7,48.2h-35.8
-              c0.3,8.3,4,11.8,12.4,11.8h17.9c0.7,0,1.4,0.6,1.4,1.4v5.5c0,0.8-0.6,1.4-1.4,1.4h-19.2c-13.2,0-20.7-7.3-20.7-20.5V40
-              c0-13.3,7.4-20.6,20.7-20.6h5.5c13.4,0,20.7,7.3,20.7,20.6v6.8C411.1,47.6,410.5,48.2,409.7,48.2" class="st0"></path> <path d="M454.5,40c0-8.7-3.7-12.4-12.4-12.4h-2.8c-8.7,0-12.4,3.7-12.4,12.4v8.2c0,8.8,3.7,12.5,12.4,12.5h2.8
-              c8.7,0,12.4-3.7,12.4-12.5V40z M462.9,68.2h-6.9c-0.7,0-1.4-0.6-1.4-1.4v-0.9c-3.2,1.9-7.4,3.1-12.4,3.1H438
-              c-13.3,0-20.7-7.3-20.7-20.7V40c0-13.3,7.4-20.6,20.7-20.6h4.2c5,0,9.2,1.1,12.4,3.1V3.5c0-0.7,0.7-1.4,1.4-1.4h6.9
-              c0.7,0,1.4,0.6,1.4,1.4v63.3C464.2,67.7,463.7,68.2,462.9,68.2" class="st0"></path> <path d="M481.6,11.9h-6.9c-0.7,0-1.4-0.7-1.4-1.4V3.5c0-0.7,0.6-1.4,1.4-1.4h6.9c0.7,0,1.4,0.6,1.4,1.4v6.9
-              C482.9,11.2,482.4,11.9,481.6,11.9 M473.2,68.3V21.5c0-0.8,0.6-1.4,1.4-1.4h6.9c0.7,0,1.4,0.6,1.4,1.4v46.8" class="st0"></path> <path d="M529.7,50.3c0-5.2-5.8-5.5-6.9-5.5H509c-1.1,0-6.9,0.3-6.9,5.5v4.9c0,5.2,5.7,5.6,6.9,5.6h13.8
-              c1.1,0,6.9-0.4,6.9-5.6V50.3z M538,68.2h-6.9c-0.6,0-1-0.4-1.3-0.7c-2,0.8-4.4,1.5-7,1.5h-15.2c-8.8,0-15.3-5.8-15.3-13.8v-4.9
-              c0-8,6.5-13.6,15.3-13.6h15.2c2.4,0,4.7,0.3,6.7,1.3c-0.7-6.8-4.6-9.6-12.1-9.6h-18c-0.7,0-1.3-0.6-1.3-1.4v-5.5
-              c0-0.8,0.6-1.4,1.3-1.4h19.4c13.1,0,20.7,7.3,20.7,20.5v26.2C539.4,67.7,538.7,68.2,538,68.2" class="st0"></path> <path d="M602.4,25.1v4.5c0,10.9-6,16.9-17,16.9h-6.7c-10.9,0-16.9-6.1-16.9-16.9v-4.5c0-9.2,4.4-15,12.3-16.4
-              c0.7-0.2,1.1,0.5,1.1,1.1v5.7c0,0.7-0.5,0.9-1.1,1.1c-3.9,1.1-5.6,4.2-5.6,9.5v2.3c0,7.1,3,10.1,10.1,10.1h6.7
-              c7.2,0,10.2-3,10.2-10.1v-2.3c0-5.3-1.8-8.4-5.6-9.5c-0.7-0.2-1.1-0.5-1.1-1.1V9.9c0-0.7,0.5-1.3,1.1-1.1
-              C598,10.2,602.4,15.9,602.4,25.1" class="st0"></path> <path d="M579.3,2h5.7c0.6,0,1.1,0.5,1.1,1.1v19.2c0,0.6-0.5,1.1-1.1,1.1h-5.7c-0.6,0-1.1-0.5-1.1-1.1V3.1
-              C578.1,2.5,578.6,2,579.3,2" class="st0"></path></svg>
+<!--FAVICON ITEMS-->
+<!--GENERATE THIS OUT FROM - https://realfavicongenerator.net/ -->
+<link
+  rel="apple-touch-icon"
+  sizes="144x144"
+  href="images/ficons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="images/ficons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="images/ficons/favicon-16x16.png"
+/>
+<link rel="manifest" href="images/ficons/site.webmanifest" />
+<link
+  rel="mask-icon"
+  href="images/ficons/safari-pinned-tab.svg"
+  color="#00537f"
+/>
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="theme-color" content="#ffffff" />
+
+<!--SOCIAL MEDIA-->
+<meta itemprop="name" content="BMT" />
+<meta itemprop="description" content="BMT CONTENT DESC" />
+<!-- SITE IMAGE TO BE 1200px x 630px -->
+<meta itemprop="image" content="/images/site-image.jpg" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="BMT" />
+<meta name="twitter:description" content="BMT CONTENT DESC" />
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="BMT" />
+<meta name="og:description" content="BMT CONTENT DESC" />
+<!-- SITE IMAGE TO BE 1200px x 630px -->
+<meta name="og:image" content="/images/site-image.jpg" />
+<meta name="og:url" content="" />
+<meta name="og:site_name" content="BMT" />
+<meta name="og:locale" content="en_UK" />
+<meta name="og:type" content="website" />
+
+<link inline href="css/head.css" rel="stylesheet" />
+<link
+  inline=""
+  href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+  rel="stylesheet"
+/>
+
+</head>
+<body>
+
+<header class="header-2021">
+  <div class="header-2021__container">
+    <div class="header-2021__centred">
+      <div class="header-2021__centred-inset">
+        <a href="/" class="header-2021__logo" tabindex="0">
+          <svg class="icon -color">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-Logo"></use>
+          </svg>
+          <svg class="icon -white">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-Logo-white"></use>
+          </svg>
+        </a>
+        <div class="header-2021__controls">
+          <div class="control control--burger-icon -has-menu">
+            <div class="burger-icon">
+              <div class="inner">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="control control--search">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+              <title>Search</title>
+              <path id="Search" d="M25,22.68l-8.11-7.46A8.27,8.27,0,0,0,19,9.74C19,4.92,14.74,1,9.5,1S0,4.92,0,9.74s4.26,8.74,9.5,8.74a10,10,0,0,0,6-2L23.59,24Zm-15.51-6c-4.14,0-7.5-3.09-7.5-6.9s3.36-6.9,7.5-6.9S17,5.93,17,9.74,13.64,16.64,9.5,16.64Z" />
+            </svg>
+          </div>
+          <div class="control control--navigation">
+            <nav role="navigation" class="main-navigation">
+              <div class="menu-item -has-menu">
+                <a href="#">
+                  Who we are
+                  <svg class="icon icon-menu_arrow_down">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-menu_arrow_down"></use>
+                  </svg>
+                </a>
+                <!--<div class="mega-menu">
+                  <div class="mega-menu__box-shadow"></div>
+                  <div class="mega-menu__2-level">
+                    <div class="mega-menu__2-level-left-panel">
+                      <div>
+                        <div>
+                          <div>
+                            <div class="heading">
+                              Who we are
+                            </div>
+                            <div class="description">
+                              A unique business group made up of outstanding people
+                            </div>
+                          </div>
+                          <div>
+                            <nav class="level-1">
+                              <ul>
+                                <li class="-active">
+                                  <a href="#" class="">
+                                    Maritime design and consultancy
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">Vessel design</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Ship surveys</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Consutancy</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Structural design</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Engineering</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Expert witness</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Material specification</a>
+                                          </li>
+                                          <li>
+                                            <a href="#">Claims and casualty investgation</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Asset monitoring and optimisation
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Enviroment and climate
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Government and security
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Defence
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Training
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>-->
+              </div>
+              <div class="menu-item -has-menu">
+                <a href="#">
+                  What we do
+                  <svg class="icon icon-menu_arrow_down">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-menu_arrow_down"></use>
+                  </svg>
+                </a>
+                <div class="mega-menu">
+                  <div class="mega-menu__box-shadow"></div>
+                  <div class="mega-menu__2-level">
+                    <div class="mega-menu__2-level-left-panel">
+                      <div>
+                        <div>
+                          <div>
+                            <div class="heading">
+                              What we do
+                            </div>
+                            <div class="description">
+                              BMT provides engineering and scientific services to industry, commerce, policy makers, regulators and public sector operators
+                            </div>
+                          </div>
+                          <div>
+                            <nav class="level-1">
+                              <ul>
+                                <li class="">
+                                  <a href="#" class="">
+                                    Maritime design and consultancy
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2 ">
+                                    <div>
+                                      <div class="heading">
+                                        Capabilities
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              Vessel design
+                                              <svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Ship surveys<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Consutancy<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Structural design<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Engineering<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Expert witness<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Material specification<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Claims and casualty investgation<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Asset monitoring and optimisation
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Capabilities
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              Automation and robotics<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Data acquisition and analytics<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Design audits<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Discrete event simulation<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Predictive maintenance<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Position/navigation sytems<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Structural integrity<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Environmental monitoring<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Lifecycle services<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Welding centre of excellence<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Enviroment and climate
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Capabilities
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              Water Management<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Ecosystem Restoration<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Software Solutions<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Climate Adaptation and Resilience<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Remediation and Contamination<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Flood Hazard and Risk Management<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Field Data Collection and Laboratory Services<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Coastal Engineering and Management<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Environmental Regulatory Compliance<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Marine and Aquatic Environment Management<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Government and security
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Capabilities
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              Acquisition Support<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Business Transformation<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Cyber Security<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Digital Transformation<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Consultancy Engineering<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Training Services<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Vessel Design and Integration<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              App Development and Data Services<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Lifecycle Delivery and Through-life Support<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Defence
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Capabilities
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              Acquisition Support<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Business Transformation<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Cyber Security<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Consultancy Engineering<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Digital Transformation<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Lifecycle Delivery<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Training Services<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Technical Information and Content<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Vessel Design and Integration<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              App Development and Data Services<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </li>
+                                <!--<li>
+                                  <a href="#">
+                                    Training
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Training academy
+                                      </div>
+                                      <div class="description">
+                                        At BMT, we offer a number of industry-specific training courses, where we share our extensive experience and knowledge with the aim of supporting your learning and development needs.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>-->
+                              </ul>
+                            </nav>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-item  -has-menu">
+                <a href="#">
+                  Industries
+                  <svg class="icon icon-menu_arrow_down">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-menu_arrow_down"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="menu-item  -has-menu">
+                <a href="#">
+                  Careers
+                  <svg class="icon icon-menu_arrow_down">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-menu_arrow_down"></use>
+                  </svg>
+                </a>
+                <!--<div class="mega-menu">
+                  Careers
+                </div>-->
+              </div>
+              <div class="menu-item">
+                <a href="#">Contact</a>
+              </div>
+              <div class="menu-item -has-menu">
+                <a href="#">
+                  More
+                  <svg class="icon icon-menu_arrow_down">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-menu_arrow_down"></use>
+                  </svg>
+                </a>
+                <div class="mega-menu">
+                  <div class="mega-menu__box-shadow"></div>
+                  <div class="mega-menu__2-level">
+                    <div class="mega-menu__2-level-left-panel">
+                      <div>
+                        <div>
+                          <div>
+                            <div class="heading">
+                              More
+                            </div>
+                            <div class="description">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                          </div>
+                          <div>
+                            <nav class="level-1">
+                              <ul>
+                                <!--<li>
+                                  <a href="#" class="">
+                                    Industry sectors
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Industry sectors
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              Defence<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Energy and resources<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Marine transport and leisure<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Coastal infrastructure<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Government and security<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Water and environment<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+
+                                  </div>
+                                </li>-->
+                                <li>
+                                  <a href="#">
+                                    Products
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Products
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              BMT Deep<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              BMT Rembrandt<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              BMT Saris<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              TUFLOW<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              BMT Mate<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Traning
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Training
+                                      </div>
+                                      <div class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Newsroom
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Newsroom
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              News<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Events<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Insights<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Publications<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Sustainability
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Sustainability
+                                      </div>
+                                      <nav>
+                                        <ul>
+                                          <li>
+                                            <a href="#">
+                                              New identity<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Our footprint<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Our people<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              Charitable giving / communities<svg>
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                              </svg>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <a href="#">
+                                    Projects
+                                    <svg>
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-right_arrow"></use>
+                                    </svg>
+                                  </a>
+                                  <div class="level-2">
+                                    <div>
+                                      <div class="heading">
+                                        Projects
+                                      </div>
+                                      <div class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <div class="content">
+      Mobile menu
+    </div>
+  </div>
+</header>
+
+
+  <!-- Add 'dark-overlay' to 'e-slide' to add 0.3 opacity black overlay -->
+<!-- Add 'has-video' to 'e-background' to hide the image and show video if provided -->
+
+<!-- required slick js (called before homepagebanner js) -->
+
+<!-- requires homepagebanner js -->
+<section class='m-homepagebanner-2021'>
+  <div class='m-homepagebanner-2021__video-container'>
+    <div></div>
+    <video loop="" muted="" preload="none">
+      <source src="video/homepage-hero-9.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class='m-homepagebanner-2021__banner-container'>
+    <div class='m-homepagebanner-2021__value-proposition'>
+      <span class='first'>We guide. </span>
+      <span class='second'>We protect. </span>
+      <span class='third'>We sustain. </span>
+      <br />
+      <span class='fourth'>We train. </span>
+      <span class='fifth'>We transform.</span>
+    </div>
+    <div class='search-box'>
+      <input type='text' placeholder='Search www.bmt.org' />
+      <div>
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+          <title>Search</title>
+          <path id="Search" d="M25,22.68l-8.11-7.46A8.27,8.27,0,0,0,19,9.74C19,4.92,14.74,1,9.5,1S0,4.92,0,9.74s4.26,8.74,9.5,8.74a10,10,0,0,0,6-2L23.59,24Zm-15.51-6c-4.14,0-7.5-3.09-7.5-6.9s3.36-6.9,7.5-6.9S17,5.93,17,9.74,13.64,16.64,9.5,16.64Z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="home-slider">
+      <div class="slide" style="background-image:url('../../images/views/banners/homepagebanner-2021/aerial-windfarms.jpg');"></div>
+      <div class="slide" style="background-image:url('../../images/views/banners/homepagebanner-2021/aerial-windfarms.jpg');"></div>
+    </div>
+    <div class='m-homepagebanner-2021__prompt'>
+      <div>What we do</div>
+      <svg class='bounce' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+        <g>
+          <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" />
+          </g>
+        </svg>
+      </div>
+    </section>
+  
+  <section class="what-we-do">
+  <div class="centred-container">
+    <div class="centred-container__content">
+      <h2>What we do</h2>
+      <div id="what-we-do-app"></div>
+    </div>
+  </div>
+</section>
+
+  
+  <section class="who-we-are">
+  <div class="transparent-overlay-blue">
+
+  </div>
+  <div class="content">
+    <div class="centred-container">
+      <div class="centred-container__content">
+        <div class="left">
+          <h2>Who we are</h2>
+          <p>Our customers live in a world of ever-increasing change: growing compliance, new global competitors, the pressure to do more with less, ever faster innovation cycles and less time to exploit market positions or new technologies. We bring domain experience coupled with management, engineering, science and technology know-how to help our customers compete in this world of accelerated change.</p>
+          <a href="#" class="btn btn--always-active">
+            About BMT
+            <svg class="icon icon-buttonarrow">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-buttonarrow"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="right">
+          <div class="figures">
+            <div class="item">
+              <div class="figure">1500+</div>
+              <div class="title">Profesisonals</div>
+            </div>
+            <div class="item">
+              <div class="figure">40+</div>
+              <div class="title">Offices</div>
+            </div>
+            <div class="item">
+              <div class="figure">25</div>
+              <div class="title">Countries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="awards">
+  <div class="container">
+    <h3>Awards &amp; accreditations</h3>
+    <div class="carousel-container">
+      <img class="left" src="/images/views/content-blocks/awards/left-arrow.fw.png" />
+      <img class="right" src="/images/views/content-blocks/awards/right-arrow.fw.png" />
+      <div class="carousel">
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image1.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image2.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image3.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image4.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image5.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image6.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image1.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image2.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image3.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image4.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image5.fw.png" />
+          </div>
+        </div>
+        <div class="item">
+          <div>
+            <img src="/images/views/content-blocks/awards/image6.fw.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <section class="our-technical-specialists-2">
+  <div class="centred-container">
+    <div class="centred-container__content">
+      <div class="left">
+        <h2>Our technical specialists</h2>
+        <p>Our people strive to deliver the best service, engineering excellence and value for all our customers. Meet some of our talented professionals.</p>
+        <a href="/about-us/" class="btn btn--always-active -desktop-button">
+          Browse all specialists
+          <svg class="icon icon-buttonarrow">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-buttonarrow"></use>
+          </svg>
         </a>
       </div>
-    </header>
-    <section class="formComponent nextClick">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Welcome to the front-end component estimator</h1>
-          <p class="preamble">This tool is for high-level estimates only. Results from tool should always be verified by a front-end developer</p>
-
-          <div class="buttons">
-            <button>Start</button>
+      <div class="right">
+        <div class="specialist-category">
+          <select>
+            <option>Naval Architects</option>
+            <option>Ship Surveyors</option>
+            <option>Defence Specialists</option>
+          </select>
+        </div>
+        <div class="specialists-carousel">
+          <div class="specialists-carousel-nav -left">
+            <img src="/images/left-arrow-grey.fw.png" />
+          </div>
+          <div class="specialists-carousel__center">
+            <div class="specialists-carousel__overflow">
+              <div class="specialists-carousel__container">
+                <!--<div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="specialists-carousel__column">
+                <div class="specialist">
+                  <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                  <div class="specialist__overlay">
+                    <div>
+                      <div class="specialist__name">Rebecca Smith</div>
+                      <div class="specialist__role">Naval Architect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>-->
+                <div class="specialists-carousel__column">
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-10.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Rebecca Smith</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-11.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">John Smith</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="specialists-carousel__column">
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-12.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Barry Gibbs</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-13.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Martin Thomas</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="specialists-carousel__column">
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-14.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Steve Kawolski</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-15.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Emma Thorn</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="specialists-carousel__column">
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-16.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Beverly Sands</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                  <div class="specialist">
+                    <img src="/images/views/content-blocks/our-technical-specialists/image-17.fw.png" />
+                    <div class="specialist__overlay">
+                      <div>
+                        <div class="specialist__name">Eoghan O'Connor</div>
+                        <div class="specialist__role">Naval Architect</div>
+                      </div>
+                    </div>
+                    <a class="specialist__profile-link">
+                      <span>view profile</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="specialists-carousel-nav -right">
+            <img src="/images/right-arrow-grey.fw.png" />
+          </div>
+        </div>
+        <div class="links">
+          <div class="links__centred">
+            <a href="#" class="btn btn--light-grey-line">
+              Browse Naval Architects
+              <svg class="icon icon-buttonarrow">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-buttonarrow"></use>
+              </svg>
+            </a>
+            <a href="#" class="btn btn--always-active -mobile-button">
+              Browse all specialists
+              <svg class="icon icon-buttonarrow">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-buttonarrow"></use>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="formComponent restartScreen hidden">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Is the component new or existing?</h1>
 
-          <div class="buttons">
-            <button class="newPath">New component</button>
-            <button class="existingPath">Existing component</button>
+  <!-- requires newsandevents js -->
+
+  <section class="m-newsandevents blockpadding">
+    <div class='e-intro'>
+      <div class="container" style="max-width: 1200px;">
+        <div class="row">
+          <div class="e-title">
+            <h2>Latest from BMT</h2>
+
+            <div class='mobile-nav'>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="e-text">
+            <div class="e-text-inner">
+              <p class='preamble'>BMT is a leading international design, engineering, science and risk management
+                consultancy with a reputation for engineering excellence. We're driven by a belief that things can
+                always be better, safer, faster and more efficient.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="formComponent hidden nextClick newPathStart">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">What layout does your new component follow?</h1>
+    <!-- href must match ID of tabbed content -->
+    <div class="container" style="max-width: 1200px;">
+      <ul class='e-tabs'>
+        <li>
+          <a href="#latestnews" class='active'>Latest news</a>
+        </li>
+        <li>
+          <a href="#events">Events</a>
+        </li>
+        <li>
+          <a href="#careers">Careers</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+      </ul>
 
-          <div class="buttons">
-            <button data-val="grid" class="data-1">Grid layout</button>
-            <button data-val="nonStandard" class="data-1">Non-standard layout</button>
+      <div class="e-grid" id='latestnews'>
+        <a href="" class="e-featured">
+          <div class="e-inner">
+            <div class="e-image">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="images/featured-test.jpg" media="(min-width: 991px)">
+                <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img src='images/featured-test.jpg'>
+              </picture>
+            </div>
+
+            <div class="e-content">
+              <h3>Featured news heading - Latest news</h3>
+              <p class='smalltitle'>Published 20/06/2016</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aspernatur ad nemo rem, rerum, aperiam
+                eaque deleniti. Neque dolores expedita cupiditate. Nesciunt eligendi mollitia aliquam quas, culpa cum
+                veritatis expedita.</p>
+            </div>
           </div>
+        </a>
+        <div class="e-item-container">
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="formComponent hidden nextClick">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Does your new component require additional JavaScript functionality?</h1>
-          <p class="preamble">e.g. carousel, tabs, scroll effect</p>
+      <div class="e-grid" id='events'>
+        <div class='m-insightsgrid'>
+          <div class="row">
+            <a href="" class="e-item">
+              <div class="e-text">
+                <p class='smalltitle'>Andrew Gray</p>
+                <h3>Delivering Benefits to Clients</h3>
+                <p>BMT completed design audits for Sino Gold, based in Syndey with operations primarily in China</p>
+              </div>
+            </a>
 
-          <div class="buttons">
-            <button data-val="yesjs" class="data-2">Yes</button>
-            <button data-val="nojs" class="data-2">No</button>
+            <a href="" class="e-item">
+              <div class="e-text">
+                <p class='smalltitle'>Simon Luck</p>
+                <h3>The Value of Training in Virtual Reality</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi libero accusamus animi explicabo
+                  accusantium, aut, quam quisquam ducimus</p>
+              </div>
+            </a>
+
+            <a href="" class="e-item">
+              <div class="e-text">
+                <p class='smalltitle'>Mr Author</p>
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi libero accusamus animi explicabo
+                  ucimus</p>
+              </div>
+            </a>
+
+            <a href="" class="e-item">
+              <div class="e-text">
+                <p class='smalltitle'>Mr author</p>
+                <h3>The Value of Training in Virtual Reality</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum maiores itaque quis. M totam, iste
+                  assumenda labore corporis! Illum possimus, placeat magni repellendus.</p>
+              </div>
+            </a>
+
+            <a href="" class="e-item">
+              <div class="e-text">
+                <p class='smalltitle'>Another author</p>
+                <h3>The Value of Training in Virtual Reality</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi libero accusamus animi explicabo
+                  accusantium, aut, quam quisquam ducimus</p>
+              </div>
+            </a>
+
+            <a href="" class="e-item">
+              <div class="e-text">
+                <p class='smalltitle'>Author</p>
+                <h3>The Value of Training in Virtual Reality</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus sint modi nam quibusdam
+                  praesentium, dolore debitis adt.</p>
+              </div>
+            </a>
           </div>
+
+          <a href="" class='btn'>View more
+            <svg class="icon icon-buttonarrow">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-buttonarrow"></use>
+            </svg>
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="formComponent hidden">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Your new component could take <span class="newResult"></span> to complete</h1>
-          <p class="preamble">Results from tool should always be verified by a front-end developer</p>
+      <div class="e-grid" id='careers'>
+        <a href="" class="e-featured">
+          <div class="e-inner">
+            <div class="e-image">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="images/featured-test.jpg" media="(min-width: 991px)">
+                <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img src='images/featured-test.jpg'>
+              </picture>
+            </div>
 
-          <div class="buttons">
-            <button class="restartBtn btn">Restart</button>
+            <div class="e-content">
+              <h3>Featured news heading - Careers</h3>
+              <p class='smalltitle'>Published 20/06/2016</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aspernatur ad nemo rem, rerum, aperiam
+                eaque deleniti. Neque dolores expedita cupiditate. Nesciunt eligendi mollitia aliquam quas, culpa cum
+                veritatis expedita.</p>
+            </div>
           </div>
+        </a>
+        <div class="e-item-container">
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="formComponent hidden nextClick existingPathStart">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Is there a change to the existing components layout?</h1>
+      <div class="e-grid" id='projects'>
+        <a href="" class="e-featured">
+          <div class="e-inner">
+            <div class="e-image">
+              <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="images/featured-test.jpg" media="(min-width: 991px)">
+                <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                <!--[if IE 9]></video><![endif]-->
+                <img src='images/featured-test.jpg'>
+              </picture>
+            </div>
 
-          <div class="buttons">
-            <button data-val="yeschange" class="data-3">Yes</button>
-            <button data-val="nochange" class="data-3">No</button>
+            <div class="e-content">
+              <h3>Featured news heading - Projects</h3>
+              <p class='smalltitle'>Published 20/06/2016</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aspernatur ad nemo rem, rerum, aperiam
+                eaque deleniti. Neque dolores expedita cupiditate. Nesciunt eligendi mollitia aliquam quas, culpa cum
+                veritatis expedita.</p>
+            </div>
           </div>
-        </div>
+        </a>
+        <div class="e-item-container">
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>  
+
+          <a href="" class="e-item">
+            <div class="e-inner">
+              <div class="e-image">
+                <picture>
+                  <!--[if IE 9]><video style="display: none;"><![endif]-->
+                  <source srcset="images/newstest.jpg" media="(min-width: 767px)">
+                  <source srcset="images/featured-test-mob.jpg" media="(min-width: 0px)">
+                  <!--[if IE 9]></video><![endif]-->
+                  <img src='images/newstest.jpg'>
+                </picture>
+              </div>
+
+              <div class="e-content">
+                <h3>News heading</h3>
+                <p class='smalltitle'>Published 20/06/2016</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitia aliquam quas, culpa cum veritatis
+                  expedita.</p>
+              </div>
+            </div>
+          </a>
+        </div> 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="formComponent hidden">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Is there a change to the component functionality?</h1>
-          <p class="preamble">e.g. carousel, tabs, scroll effect</p>
+  <section class="careers-at-bmt -inview">
+  <div class="image">
 
-          <div class="buttons">
-            <button data-val="yesjs" class="data-4">Yes</button>
-            <button data-val="nojs" class="data-4">No</button>
-          </div>
-        </div>
+  </div>
+  <div class="careers-at-bmt__content">
+    <div class="half-width-container">
+      <div>
+        <h2>Careers at BMT</h2>
+        <p>Our success is down to the quality and talent of our people. We’re always on the lookout for ambitious individuals to help us shape the future of the world.  </p>
+        <a href="/about-us/" class="btn btn--always-active">
+          Learn more
+          <svg class="icon icon-buttonarrow">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-buttonarrow"></use>
+          </svg>
+        </a>  
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="formComponent hidden">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">Your existing component could take <span class="existingResult"></span> to change</h1>
-          <p class="preamble">Results from tool should always be verified by a front-end developer</p>
-
-          <div class="buttons">
-            <button class="restartBtn btn">Restart</button>
-          </div>
-        </div>
+  <section class="train-with-us -inview">  
+  <div class="train-with-us__content">
+    <div class="half-width-container">
+      <div>
+        <h2>Train with us</h2>
+        <p>Whatever your role, you will benefit from our expert training and be given the opportunity to gain accreditation from some of our certified courses. We are here to help you to prepare for the next step in your career.</p>
+        <a href="/about-us/" class="btn btn--always-active">
+          Learn more
+          <svg class="icon icon-buttonarrow">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/icons.svg#icon-buttonarrow"></use>
+          </svg>
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+  <div class="image">
 
-    <section class="formComponent hidden complexComponentScreen">
-      <div class="container">
-        <div class="inner">
-          <h1 class="h2">It is likely there are too many changes to re-use your existing component</h1>
-          <p class="preamble"> Please contact a member of the front-end team for an estimate, or restart this tool and select 'New component'</p>
+  </div>
+</section>
 
-          <div class="buttons">
-            <button class="restartBtn btn">Restart</button>
-          </div>
-        </div>
+  <footer>
+  <div class="container">
+    <div class="e-footer-links">
+      <svg class="icon icon-logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-Logo-white"></use>
+      </svg>
+
+      <div class="e-block">
+        <h4><a href="">Markets</a></h4>
+        <ul>
+          <li><a href="">Defence and Security</a></li>
+          <li><a href="">Water and Environment</a></li>
+          <li><a href="">Oil and Gas</a></li>
+          <li><a href="">Surveys</a></li>
+          <li><a href="">Ports and Terminals</a></li>
+          <li><a href="">Rail Infrastructure</a></li>
+          <li><a href="">Mining and Bulk Handling</a></li>
+          <li><a href="">Specialist Vessels</a></li>
+          <li><a href="">Built Environment</a></li>
+        </ul>
       </div>
-    </section>
-  </body>
+
+      <div class="e-block">
+        <h4><a href="">Careers</a></h4>
+        <ul>
+          <li><a href="">Current Vacancies</a></li>
+          <li><a href="">Our People</a></li>
+          <li><a href="">Our Benefits</a></li>
+          <li><a href="">Career Events</a></li>
+          <li><a href="">Our Recruitment</a></li>
+          <li><a href="">Women in Engineering</a></li>
+          <li><a href="">Our Scholarships & Sponsors</a></li>
+        </ul>
+      </div>
+
+      <div class="e-block half hidden-mobile">
+        <h4>BMT Group</h4>
+        <ul>
+          <li><a href="">About BMT</a></li>
+          <li><a href="">Locations</a></li>
+          <li><a href="">Research and Development</a></li>
+          <li><a href="">Corporate and Social Responsibility</a></li>
+          <li><a href="">News</a></li>
+          <li><a href="">Events</a></li>
+        </ul>
+      </div>
+
+      <div class="e-block half">
+        <h4><a href="">Projects</a></h4>
+        <ul>
+          <li><a href="">Project Directory</a></li>
+          <li><a href="">Research Directory</a></li>
+        </ul>
+      </div>
+
+      <div class="e-block half">
+        <h4><a href="">Insights</a></h4>
+        <ul>
+          <li><a href="">Market insights</a></li>
+          <li><a href="">Marine Technology Abstracts</a></li>
+          <li><a href="">Corporate Publications</a></li>
+        </ul>
+      </div>
+
+      <div class="e-block half hidden-mobile social-links">
+        <h4>Social</h4>
+        <ul>
+          <li>
+            <a href="">
+              <svg class="icon facebook">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <svg class="icon twitter">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <svg class="icon linkedin">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <svg class="icon youtube">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="e-footer-details">
+      <svg class="icon icon-logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-Logo-white"></use>
+      </svg>
+
+      <ul>
+        <li>Goodrich House</li>
+        <li>1 Waldegrave Road</li>
+        <li>Teddington</li>
+        <li>TW11 8LZ</li>
+        <li>UK</li>
+      </ul>
+      <ul>
+        <li>Tel: <a href="">+44 (0)20 8943 5544</a></li>
+        <li>Fax: <a href="">+44 (0)20 8943 5347</a></li>
+        <li>E-mail: <a href="">enquiries@bmtglobal.com</a></li>
+      </ul>
+    </div>
+
+    <div class="e-mobile-social">
+      <ul>
+        <li>
+          <a href="">
+            <svg class="icon facebook">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="">
+            <svg class="icon twitter">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="">
+            <svg class="icon linkedin">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="">
+            <svg class="icon youtube">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="e-lower-footer">
+    <div class="container">
+      <p>© BMT Group Ltd - All rights reserved</p>
+      <ul>
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Copyright Notice</a></li>
+        <li><a href="">Legal Disclaimer</a></li>
+        <li><a href="">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <div class="testmenu">
+	<select id="smartNav" onchange="location = this.options[this.selectedIndex].value;">
+		<option selected="" disabled="">Select Template</option>
+		<option value="index.html">01. Homepage</option>
+		<option value="Template-Markets.html">02. Markets</option>
+		<option value="Template-Markets-Sub-1.html">03. Markets Sub 1</option>
+		<option value="Template-Markets-Sub-2.html">04. Markets Sub 2</option>
+		<option value="Template-Markets-Tabbed-1.html">05. Markets Tabbed 1</option>
+		<option value="Template-Markets-Tabbed-2.html">06. Markets Tabbed 2</option>
+		<option value="Template-Markets-Tabbed-3.html">07. Markets Tabbed 3</option>
+		<option value="Template-Markets-Tabbed-4.html">08. Markets Tabbed 4</option>
+		<option value="Template-Solution.html">09. Solution</option>
+		<option value="Template-Services.html">10. Services</option>
+		<option value="Template-Projects.html">11. Projects</option>
+		<option value="Template-Projects-1.html">12. Projects 1</option>
+		<option value="Template-Projects-2.html">13. Projects 2</option>
+		<option value="Template-Insights.html">14. Insights</option>
+		<option value="Template-Insights-1.html">15. Insights 1</option>
+		<option value="Template-Insights-2.html">16. Insights 2</option>
+		<option value="Template-Insights-3.html">17. Insights 3</option>
+		<option value="Template-Insights-Form.html">18. Insights Form</option>
+		<option value="Template-Careers.html">29. Careers</option>
+		<option value="Template-Careers-Search.html">20. Careers Search</option>
+		<option value="Template-Careers-Item.html">21. Careers Item</option>
+		<option value="Template-People.html">22. People</option>
+		<option value="Template-Location.html">23. Location</option>
+		<option value="Template-News.html">24. News</option>
+		<option value="Template-News-Item.html">25. News Item</option>
+		<option value="Template-Search-Results.html">26. Search Results</option>
+		<option value="Template-404.html">27. 404</option>
+		<option value="Template-500.html">28. 500</option>
+		<option value="Template-Content-Blocks.html">29. Content Blocks</option>
+		<option value="Template-RTE.html">30. RTE</option>
+	</select>
+</div>
+
+
+  <!--GLOBAL SCRIPTS GO HERE-->
+<script src="assets/jquery-3.2.1.js"></script>
+<script src="assets/enquire.js"></script>
+<script src="assets/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+<script src="assets/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="assets/jquery-accessibleMegaMenu.js"></script>
+<script src="assets/svg4everybody.min.js"></script>
+<script src="scripts/all.js"></script>
+
+<noscript id="deferred-styles">
+  <link href="css/core.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/print.css" rel="stylesheet">
+</noscript>
+
+<noscript>
+  <link rel="stylesheet" type="text/css" href="cdn/no-script.css">
+</noscript>
+
+<script>
+  document.documentElement.className = "js";
+  var loadDeferredStyles = function () {
+    var addStylesNode = document.getElementById("deferred-styles");
+    var replacement = document.createElement("div");
+    replacement.innerHTML = addStylesNode.textContent;
+    document.body.appendChild(replacement);
+    addStylesNode.parentElement.removeChild(addStylesNode);
+  };
+  var raf = requestAnimationFrame ||
+    mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame ||
+    msRequestAnimationFrame;
+  if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
+  else window.addEventListener('load', loadDeferredStyles);
+</script>
+
+  <script defer src="assets/slick/slick.js"></script>
+  <script defer src="/scripts/lib/jquery.inview.js"></script>
+  <!--<script defer src="scripts/contentblocks/homepagebanner.js"></script>-->
+  <script defer src="scripts/contentblocks/5050carousel.js"></script>
+  <script defer src="scripts/contentblocks/newsandevents.js"></script>
+  <script defer src="scripts/contentblocks/homepagebanner-2021.js"></script>
+  <script defer src="scripts/contentblocks/awards.js"></script>
+  <script defer src="scripts/contentblocks/careersatbmt.js"></script>
+  <script defer src="scripts/contentblocks/whoweare.js"></script>
+  <script defer src="/scripts/contentblocks/whatwedo/build/whatwedo.js"></script>
+  <script defer src="/scripts/contentblocks/ourtechnicalspecialists.js"></script>
+  <script defer src="/scripts/shared/header-2021.js"></script>  
+  
+</body>
+
 </html>

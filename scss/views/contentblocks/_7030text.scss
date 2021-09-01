@@ -1,0 +1,56 @@
+.m-7030text {
+  padding: 50px 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0;
+    line-height: 0;
+    font-size: 0;
+
+    .e-left, .e-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .e-left {
+      width: 30%;
+
+      .e-inner {
+        padding-right: 35px;
+      }
+    }
+
+    .e-right {
+      width: 70%;
+
+      .e-inner {
+        padding-left: 35px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+  }
+
+  @media (min-width: $screen-lg) {
+    .container {
+      max-width: 1200px;
+    }
+
+    .e-left {
+      .e-inner {
+        padding-right: 50px;
+      }
+    }
+
+    .e-right {
+      .e-inner {
+        padding-left: 50px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 120px 0;
+  }
+}

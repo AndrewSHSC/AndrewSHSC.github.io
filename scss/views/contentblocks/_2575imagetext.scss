@@ -1,0 +1,69 @@
+.m-7525textimage {
+    padding: 50px 0;
+    @include clearfix();
+    position: relative;
+
+    &.reverse {
+        @media (min-width: $screen-sm) {
+            .e-image {
+                float: left;
+                padding-right: 35px;
+                padding-left: 0;
+            }
+
+            .e-text {
+                float: right;
+                padding-right: 0;
+                padding-left: 35px;
+            }
+        }
+    }
+
+    .e-image, .e-text {
+        @include grid(12, 6, 6, 6, 6, $padding: false);
+    }
+
+    .e-text {
+        margin-top: 30px;
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+
+    @media (min-width: $screen-sm) {
+        padding: 80px 0;
+
+        .e-image {
+            width: 33.3%;
+        }
+
+        .e-text {
+            width: 66.6%;
+        }
+
+        .e-text {
+            margin-top: 0;
+            padding-right: 35px;
+        }
+
+        .e-image {
+            float: right;
+            padding-left: 35px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        padding: 100px 0;
+    }
+
+    @media (min-width: $screen-lg) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        padding: 120px 0;
+    }
+}

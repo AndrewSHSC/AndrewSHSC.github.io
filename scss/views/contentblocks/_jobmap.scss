@@ -1,0 +1,427 @@
+.m-jobmap {
+  padding: 50px 0;
+  @include cutoff();
+
+  &.background-brown {
+    background: $c-softbrown;
+  }
+
+  &.padding-top-none {
+    padding-top: 0;
+  }
+
+  &.no-text {
+    .e-intro {
+      display: none!important;
+    }
+  }
+
+  .e-intro {
+    margin-bottom: 30px;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .preamble {
+      display: none;
+    }
+  }
+
+  .jobmap-container {
+    position: relative;
+    // height: 50vh;
+    // min-height: 350px;
+    // max-height: 600px;
+
+    .e-overlay {
+      // position: absolute;
+      // @include centre(y);
+      // left: 35px;
+      z-index: 2;
+      background: $c-navy;
+      // display: none;
+      // max-width: 340px;
+      box-sizing: border-box;
+
+      h2 {
+        color: $c-white;
+        padding: 30px 40px;
+        @include font-size(2.0, 2.8);
+        margin: 0;
+        font-weight: 500;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0;
+          border-bottom: 1px solid #006399;
+          display: block;
+          font-size: 0;
+
+          &:first-child {
+            background: #004266;
+          }
+
+          &:before {
+            display: none;
+          }
+
+          a {
+            margin: 0;
+            display: flex;
+            width: 100%;
+            border: none!important;
+
+            &:hover {
+              background: #004266;
+            }
+          }
+
+          span {
+            color: $c-white;
+            @include font-size(1.4, 2.2);
+            font-weight: 600;
+            width: 59%;
+            padding: 20px 20px 20px 40px;
+            box-sizing: border-box;
+            display: inline-block;
+
+            &:last-child {
+              width: 40%;
+              text-align: center;
+              border-left: 1px solid #006399;
+              padding: 20px 35px 20px 25px;
+            }
+          }
+        }
+      }
+
+      .btn {
+        margin: 30px 40px;
+        border-color: $c-white;
+        color: $c-white;
+        font-weight: 600;
+
+        &:hover {
+          background: $c-white;
+          color: $c-lightcyan;
+
+          .icon {
+            fill: $c-lightcyan;
+          }
+        }
+
+        .icon {
+          fill: $c-lightcyan;
+        }
+      }
+    }
+
+    #jobmap {
+      display: none;
+
+      .gm-style-mtc, .gm-fullscreen-control, .gmnoprint, .gm-svpc {
+        display: none!important;
+      }
+
+      .gm-style-iw {
+        width: 250px!important;
+        top: 0!important;
+        left: 0!important;
+      }
+
+      .gm-style-pbc + div > div > div {
+        &:last-child {
+          & > div {
+            width: 250px!important;
+            margin-top: 25px;
+            margin-left: 25px;
+
+            img {
+              opacity: 0;
+            }
+
+            &:after {
+              content:'';
+              width: 0;
+              height: 0;
+              border-left: 11px solid transparent;
+              border-right: 11px solid transparent;
+              border-top: 11px solid #f5f4f1;
+              position: absolute;
+              bottom: 12px;
+              left: 50%;
+              margin-left: -10px;
+            }
+
+            & > div {
+              &:first-child {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      .e-infowindow {
+        width: 250px;
+        @include border-radius(5px);
+        position: relative;
+
+        .e-close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 15px;
+          height: 15px;
+          padding-right: 15px;
+          padding-top: 15px;
+          z-index: 1;
+
+          span {
+            width: 15px;
+            height: 2px;
+            background: $c-lightcyan;
+            display: block;
+            @include transform(rotate(45deg));
+            position: absolute;
+            left: 0;
+            bottom: 7.5px;
+
+            &:first-child {
+              @include transform(rotate(-45deg));
+            }
+          }
+        }
+
+        .e-top {
+          background: $c-white;
+          box-shadow: 0 4px 10px 0 $c-linegrey;
+          padding: 25px 35px;
+          position: relative;
+
+          h3 {
+            @include font-size(1.8, 2.6);
+            font-weight: 500;
+            margin-top: 0;
+          }
+
+          p {
+            @include font-size(1.4, 2.2);
+            margin-top: 5px;
+          }
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #dcdbd8;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dcdbd8;
+        }
+
+        .e-content {
+          background: #f5f4f1;
+          padding: 20px 35px 25px;
+          height: 156px;
+          box-sizing: border-box;
+          overflow-y: scroll;
+
+          h4 {
+            font-weight: 500;
+            margin-top: 35px;
+
+            &:first-of-type {
+              margin-top: 0;
+            }
+          }
+
+          h4, p {
+            @include font-size(1.4, 2.2);
+          }
+
+          p {
+            margin-top: 5px;
+
+            &.tel {
+              a {
+                border: none!important;
+                color: $c-text;
+                margin: 0;
+              }
+            }
+
+            &.email {
+              a {
+                border-bottom: 1px solid $c-lightcyan;
+                margin: 0;
+                color: $c-lightcyan;
+
+                &:hover {
+                  border-bottom-color: $c-lightcyan;
+                  color: $c-lightcyan;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0;
+
+    .e-intro {
+      .preamble {
+        display: block;
+        max-width: 750px;
+      }
+    }
+
+    .jobmap-container {
+      position: relative;
+      height: 636px;
+
+      .e-overlay {
+        position: absolute;
+        @include centre(y);
+        left: 0px;
+        max-width: 320px;
+      }
+
+      #jobmap {
+        display: block;
+        height: 636px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 100px 0;
+
+    .e-intro {
+      margin-bottom: 50px;
+    }
+
+    .jobmap-container {
+      height: 679px;
+      max-height: none;
+      min-height: auto;
+
+      .e-overlay {
+        display: block;
+        max-width: 340px;
+        left: 35px;
+      }
+
+      #jobmap {
+        height: 679px;
+        max-height: none;
+        min-height: auto;
+
+        .gm-style-iw {
+          width: 300px!important;
+        }
+
+        .gm-style-pbc + div > div > div {
+          &:last-child {
+            & > div {
+              width: 300px!important;
+            }
+          }
+        }
+
+        .e-infowindow {
+          width: 300px;
+
+          .e-content {
+            height: 346px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    .e-intro {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 0;
+      line-height: 0;
+      @include clearfix();
+      margin-bottom: 70px;
+
+      h2 {
+        max-width: 30%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .preamble {
+        max-width: 70%;
+        margin-left: 100px;
+        display: inline-block;
+        margin-top: 0;
+        vertical-align: top;
+        float: right;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 120px 0;
+
+    .jobmap-container {
+      height: 745px;
+
+      .e-overlay {
+        left: 60px;
+        max-width: 450px;
+
+        h2 {
+          @include font-size(2.6, 3.4);
+          padding: 40px 50px;
+        }
+
+        ul {
+          li {
+            span {
+              @include font-size(1.6, 2.4);
+              width: 68%;
+              padding: 20px 20px 20px 50px;
+
+              &:last-child {
+                width: 32%;
+              }
+            }
+          }
+        }
+
+        .btn {
+          margin: 30px 50px;
+        }
+      }
+
+      #jobmap {
+        height: 745px;
+      }
+    }
+  }
+}

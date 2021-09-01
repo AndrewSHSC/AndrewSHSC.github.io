@@ -1,0 +1,92 @@
+@mixin clearHeader() {
+  margin-top: 100px;
+
+  @media (min-width: 1050px) {
+    margin-top: 120px;
+  }
+}
+
+@mixin resetlist() {
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin sticky() {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin flex($value) {
+  flex-basis: $value;
+  max-width: $value;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+@mixin centre($axis: "both") {
+  position: absolute;
+
+  @if $axis == "y" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @if $axis == "x" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin height-aspect-ratio($width, $height) {
+  $ratio: ($width / $height);
+  height: 100vw / $ratio;
+}
+
+@mixin image-cover($width: "", $height: "") {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+
+  @if $width != "" and $height != "" {
+    $ratio: ($width / $height);
+    height: 100vw / $ratio;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+}

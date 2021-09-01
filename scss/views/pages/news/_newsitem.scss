@@ -1,0 +1,57 @@
+.m-newsheader {
+
+    @media (min-width: $screen-lg) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+        padding: 50px 0;
+        padding-bottom: 0;
+
+        .e-date {
+            @include font-size(1.6, 2.4);
+            color: $c-magenta;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .e-tags {
+            margin: 0 0 10px;
+            font-size: 0;
+
+            span {
+                @include font-size(1.4, 2.2);
+                color: $c-lightcyan;
+                font-weight: 400;
+                display: inline-block;
+
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &:after {
+                    content: '|';
+                    display: inline-block;
+                    margin: 0 5px;
+                    @include font-size(1.6, 2.2);
+                    position: relative;
+                    top: -1.5px;
+                }
+            }
+        }
+    }
+
+.m-newsitem {
+
+    > section:first-child {
+        padding-top: 0;
+    }
+
+    // prevent the right column image in news stories from being hidden
+    .m-5050textimage .e-image { display: block; }
+        
+    padding-bottom: 30px;
+}

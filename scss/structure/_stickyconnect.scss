@@ -1,0 +1,205 @@
+.m-stickyconnect {
+
+    &.on-filterpage {
+        @media (min-width: $screen-sm) {
+            .e-connect {
+                margin-top: -85px;
+            }
+        }
+
+        @media (min-width: $screen-lg) {
+            border-bottom: 1px solid $c-linegrey;
+
+            .e-connect {
+                margin-top: 0;
+            }
+
+            ul {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &.hide-connect {
+        position: relative;
+        border-bottom: 1px solid #ebebeb;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: -5px;
+            left: 0;
+            background: #eeeeee;
+            background: linear-gradient(unquote('#0000001f'), transparent);
+            display: block;
+        }
+
+        .e-connect {
+            display: none;
+        }
+
+        ul {
+            margin-right: 0;
+            padding-right: 0;
+            border: none;
+
+            li {
+                border-bottom: 3px solid transparent;
+
+                &.active {
+                    border-bottom: 3px solid $c-lightcyan;
+                }
+
+                a {
+                    padding: 33px 50px;
+                }
+            }
+        }
+    }
+
+    .container {
+        position: relative;
+        padding: 0 !important;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        margin-right: 250px;
+        padding-right: 100px;
+        display: none;
+
+        li {
+            margin: 0;
+            flex: 0 0 auto;
+            @include transition(all 0.3s ease-in-out);
+            border-bottom: 2px solid transparent;
+
+            &:before {
+                display: none;
+            }
+
+            &:hover {
+                a {
+                    color: $c-navy;
+                }
+            }
+
+            &.active {
+                border-bottom: 2px solid $c-lightcyan;
+
+                a {
+                    color: $c-navy;
+                }
+            }
+
+            a {
+                margin: 0;
+                padding: 28px 50px;
+                @include font-size(1.8, 2.6);
+                font-weight: 500;
+                color: $c-lightcyan;
+                text-align: center;
+                border: none;
+                display: block;
+            }
+        }
+    }
+
+    .e-connect {
+        color: $c-white;
+        @include font-size(1.8, 2.6);
+        font-weight: 500;
+        padding: 27px 40px;
+        margin: 0;
+        background: $c-lightcyan;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            fill: $c-white;
+        }
+    }
+
+    .e-connect.m-emergency {
+        background: $c-rubinred;
+
+        &:hover {
+            background: #ff3d91;
+        }
+    }
+
+    @media (max-width: $screen-lg) {
+        position: relative !important;
+        width: auto !important;
+    }
+
+    @media (min-width: $screen-sm) {
+        @include clearfix();
+        z-index: 10;
+        position: relative;
+
+        .container {
+            padding-left: 35px !important;
+            padding-right: 35px !important;
+        }
+
+        .e-connect {
+            width: auto;
+            float: right;
+            margin-top: -40px;
+        }
+    }
+
+    @media (min-width: $screen-lg) {
+        background: white;
+        width: 100% !important;
+        border-bottom: 1px solid $c-linegrey;
+
+        &:before {
+            @include transition(background 0.3s ease-in-out);
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: -5px;
+            left: 0;
+            background: transparent;
+            display: block;
+        }
+
+        &.sticky {
+            top: 0 !important;
+
+            &:before {
+                background: #eeeeee;
+                background: linear-gradient(unquote('#0000001f'), transparent);
+            }
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .e-connect {
+            position: absolute;
+            top: 0;
+            right: 35px;
+            margin: 0;
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+        ul {
+            padding-right: 180px;
+        }
+    }
+}

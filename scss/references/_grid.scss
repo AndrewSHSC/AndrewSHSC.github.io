@@ -1,0 +1,58 @@
+$screen-xs: 500px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1230px;
+$screen-xl: 1460px;
+$screen-sxl: 2000px;
+
+$gutter-width:35px;
+$gutter-width-xl:35px;
+
+//Include this on an element: @include grid(12, 6, 6, 4, 4, $padding: false);
+@mixin grid($xs, $sm, $md, $lg, $xl, $padding: true) {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding-left:if($padding, $gutter-width, 0);
+  padding-right:if($padding, $gutter-width, 0);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  @media (min-width: $screen-xs) {
+    width: percentage($xs / 12);
+  }
+
+  @media (min-width: $screen-sm) {
+    width: percentage($sm / 12);
+  }
+
+  @media (min-width: $screen-md) {
+    width: percentage($md / 12);
+  }
+
+  @media (min-width: $screen-lg) {
+    width: percentage($lg / 12);
+  }
+
+  @media (min-width: $screen-xl) {
+    width: percentage($xl / 12);
+    padding-left:if($padding, $gutter-width-xl, 0);
+    padding-right:if($padding, $gutter-width-xl, 0);  
+  }
+}
+
+
+@mixin grid-margin($value) {
+  @media (min-width: $screen-md) {
+    margin-right: percentage($value / 12);
+  }
+
+  @media (min-width: $screen-lg) {
+    margin-right: percentage($value / 12);
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-right: percentage($value / 12);
+  }
+}

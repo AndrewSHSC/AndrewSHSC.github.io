@@ -1,0 +1,146 @@
+.covid-19-response-banner {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: $c-rubinred;
+    color: white;
+    padding: 50px 0px;
+    z-index: 200;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+
+    .covid-19-response-banner__title {
+        color: white; 
+        margin-top: 0px;
+        margin-bottom: 12px;
+    }
+
+    .covid-19-response-banner__text {
+    }
+
+    .btn {
+        margin-top: 30px;
+
+        &:active, &:hover {
+            border-color: white !important;
+        }
+    }
+
+    .container {
+        position: relative;
+        padding: 0px 200px 0px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .covid-19-response-banner__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+
+        .fa-times {
+            font-size: 24px;
+            fill: #FE4BA9;
+            color: #FE4BA9;
+        }
+    }
+
+
+    @media(min-width:$screen-sm) {
+        padding: 30px 0px;
+
+        .container {
+            flex-direction: row;
+        }
+
+        .covid-19-response-banner__button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn {
+            margin-top: 0px;
+            margin-left: 50px;
+        }
+    }
+
+    @media(min-width:$screen-md) {
+
+        .btn {
+            margin-top: 0px;
+            margin-left: 50px;
+            //align-self: flex-end;
+        }
+
+        .covid-19-response-banner__button-container {
+        }
+    }
+
+    @media(min-width:$screen-lg) {
+
+        .covid-19-response-banner__title {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .btn {
+            margin-left: 100px;
+        }
+    }
+
+    &.covid-19-response-banner--small {
+        padding: 10px 0px;
+        cursor: pointer;
+
+        .container {
+            text-align: center;
+        }
+
+        .covid-19-response-banner__text-container {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            flex-direction: column;
+        }
+
+        .covid-19-response-banner__title {
+            font-size: 20px;
+            margin-bottom: 0px;
+        }
+
+        .covid-19-response-banner__text {
+            display: none;
+        }
+
+        .covid-19-response-banner__button-container, .covid-19-response-banner__close {
+            display: none;
+        }
+
+        @media(min-width:$screen-xs) {
+            .covid-19-response-banner__text {
+                display: block;
+            }
+        }
+
+        @media(min-width:$screen-md) {
+            padding: 0px 0px;
+
+            .covid-19-response-banner__text-container {
+                flex-direction: row;
+            }
+
+            .covid-19-response-banner__text {
+                margin-left: 20px;
+                padding-top: 1px;
+            }
+
+            .covid-19-response-banner__button-container, .covid-19-response-banner__close {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.m-stats {
+  background-color: $c-softbrown;
+  padding: 40px 0;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+
+  .statItem {
+    margin-bottom: 30px;
+  }
+
+  .stat {
+    @include font-size(4.4, 4.4);
+    font-family: $f-title;
+    color: #4c4c57;
+    font-weight: 500;
+    margin: 0 0 10px;
+
+    .blue {
+      color: $c-lightcyan;
+    }
+  }
+
+  .text {
+    @include font-size(1.8, 2.8);
+    color: #71858e;
+    margin: 0;
+  }
+
+  @media (min-width: 500px) {
+    .itemContainer {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -15px;
+    }
+
+    .statItem {
+      margin: 0 15px;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    padding: 50px 0;
+
+    .stat {
+      @include font-size(6.4, 6.4);
+      margin: 0 0 20px;
+    }
+
+    .text {
+      @include font-size(2.2, 3.2);
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 65px 0;
+
+    .inner {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h2 {
+      margin: 0 100px 0 0;
+      flex-grow: 1;
+    }
+
+    .itemContainer {
+      max-width: 880px;
+      flex-grow: 1;
+    }
+
+    .text {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 75px 0;
+  }
+}

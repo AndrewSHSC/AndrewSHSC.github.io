@@ -1,0 +1,65 @@
+.m-slimapply {
+  background: $c-softbrown;
+  padding: 35px;
+  margin: 40px 0;
+  font-size: 0;
+
+  & + .e-back {
+    margin-top: 0;
+  }
+
+  .e-image {
+    display: none;
+  }
+
+  .e-text {
+    .e-inner {
+      h3, h4 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    .e-image {
+      display: inline-block;
+      width: 30%;
+      vertical-align: top;
+
+      .e-inner {
+        padding-right: 25px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .e-text {
+      display: inline-block;
+      width: 70%;
+      vertical-align: top;
+
+      .e-inner {
+        padding-left: 25px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 40px 80px;
+    margin: 60px 0;
+
+    .container {
+      max-width: 970px;
+    }
+
+    .e-image {
+      width: 22%;
+    }
+
+    .e-text {
+      width: 78%;
+    }
+  }
+}

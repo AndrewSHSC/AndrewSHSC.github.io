@@ -1,0 +1,156 @@
+.blockpadding {
+    /*& + .blockpadding {
+    padding-top: 30px;
+  }*/
+}
+
+.rte-block {
+    & + .rte-block {
+        padding-top: 0;
+
+        @media (min-width: $screen-sm) {
+            margin-top: -20px;
+        }
+
+        @media (min-width: $screen-xl) {
+            margin-top: -40px;
+        }
+    }
+}
+
+
+//colour buttons and links for backgrounds
+
+.background-black {
+    .btn {
+        color: $c-white;
+
+        &:hover {
+            color: $c-white;
+        }
+    }
+
+    a {
+        color: $c-white;
+
+        &:hover {
+            color: $c-lightcyan;
+        }
+    }
+}
+
+.background-blue {
+    .btn {
+        color: $c-white;
+        border-color: $c-white;
+
+        &:hover {
+            background: $c-white;
+            color: $c-lightcyan;
+
+            .icon {
+                fill: $c-lightcyan;
+            }
+        }
+
+        .icon {
+            fill: $c-white;
+        }
+    }
+
+    a {
+        color: $c-white;
+
+        &:hover {
+            color: $c-navy;
+        }
+    }
+}
+
+section {
+    .container {
+        ul li > a, ol li > a {
+            margin: 0;
+        }
+    }
+}
+
+
+.content-block {
+    padding: 50px 0px;
+
+    .content-block__intro {
+        margin-bottom: 40px;
+
+        h2 {
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+
+        .preamble {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: block;
+            margin-top: 0px;
+        }
+    }
+
+    @media(min-width:$screen-xs) {
+
+        .content-block__intro {
+
+            .btn {
+                display: inline-block;
+            }
+
+            .preamble {
+                display: block;
+            }
+        }
+    }
+
+    @media(min-width: $screen-sm) {
+        padding: 80px 0;
+
+        .content-block__intro {
+        }
+    }
+
+    @media(min-width:$screen-lg) {
+
+        .content-block__intro {
+
+            h2 {
+            }
+
+            .preamble {
+                margin-top: 0px;
+                padding-right: 10%;
+            }
+        }
+
+        .content-block__intro-row {
+            display: flex;
+
+            > *:first-child {
+                width: 100%;
+                max-width: 30%;
+            }
+
+            > *:nth-child(2) {
+                flex: 1;
+            }
+        }
+    }
+
+    @media(min-width: $screen-md) {
+        padding: 100px 0;
+    }
+
+    @media(min-width: $screen-xl) {
+        padding: 120px 0;
+    }
+}

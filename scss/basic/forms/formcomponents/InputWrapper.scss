@@ -1,0 +1,111 @@
+﻿$grey-4: grey;
+$grey-6: $c-softgrey;
+
+.input-wrapper {
+
+    &:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    input[type="text"] {
+        font-size: 1.8rem;
+        padding: 12px 17px !important;
+        color: $c-text;
+        margin: 0px;
+    }
+}
+
+.input-wrapper__label {
+    display: inline-block;
+    color: $c-navy;
+    margin-bottom: 0px;
+    //padding-left: 2px;
+    font-size: 1.8rem;
+}
+
+.input__container {
+    background-color: white;
+    /*box-sizing: border-box;
+    border: 1px solid $grey-4;
+    padding: 8px 10px;*/
+
+    /*input, textarea {
+        width: 100%;
+        padding: 0px;
+        border: none;
+        background-color: transparent;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    input:focus, textarea:focus {
+        border: none !important;
+        outline: none !important;
+    }*/
+    
+}
+
+.input-wrapper--disabled {
+
+    //@extend .input-wrapper !optional;
+
+    .input__container, input {
+        background-color: $grey-6;
+    }
+}
+
+.input-wrapper__validation {
+    transition: padding 0.1s;
+
+    .input-wrapper__validation-message {
+        position: relative;
+        display: none;
+        color: white;
+        padding: 0px 5px 0px 5px;
+        font-size: 13px;
+        line-height: 17px;
+        margin-bottom: 6px;
+
+        svg {
+            display: none;
+            /*position: absolute;
+            left: 1px;
+            top: -1px;
+            font-size: 17px;*/
+        }
+    }
+}
+
+.input-wrapper__validation--active {
+    @extend .input-wrapper__validation;
+    background-color: $c-magenta;
+    padding: 7px 6px 6px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-top: 5px;
+
+    .input-wrapper__validation-message {
+        display: block;
+    }
+
+    input {
+        border-color: white;
+
+        &:focus {
+            border-color: white;
+        }
+    }
+}
+
+.input-wrapper--short {
+    @extend .input-wrapper !optional;
+    max-width: 235px;
+}
+
+.input-wrapper--inline {
+    @extend .input-wrapper !optional;
+    display: inline-block;
+}

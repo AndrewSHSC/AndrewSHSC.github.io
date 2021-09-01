@@ -1,0 +1,272 @@
+.m-careersbanner {
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	background: $c-black;
+
+	&.dark-overlay {
+		&:before {
+			content:'';
+			background: $c-black;
+			opacity: 0.4;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+	}
+
+	.container {
+		@include centre(both);
+		z-index: 2;
+
+		//to space off header
+		margin-top: 25px;
+	}
+
+	.mob-button {
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		border: none;
+		text-align: center;
+		margin: 0;
+		@include font-size(1.8, 2.6);
+		font-weight: 500;
+		color: $c-white;
+		background: $c-lightcyan;
+		padding: 27px 40px;
+
+		.icon {
+			fill: $c-white;
+			display: inline-block;
+			float: none;
+			width: 25px;
+			height: 25px;
+			margin-right: 10px;
+			vertical-align: middle;
+			margin-top: -3px;
+		}
+	}
+
+	.e-text {
+		position: relative;
+		z-index: 2;
+
+		form {
+      width: 100%;
+      padding-top: 20px;
+      display: none;
+
+      .e-search {
+        margin-bottom: 10px;
+				vertical-align: top;
+
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          color: $c-textgrey;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+          color: $c-textgrey;
+        }
+        :-ms-input-placeholder { /* IE 10+ */
+          color: $c-textgrey;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+          color: $c-textgrey;
+        }
+
+        input {
+          color: $c-textgrey;
+          background-color: $c-white;
+          border: none;
+          @include font-size(1.6, 2.4);
+          background-image: url(/images/svgs/icon_search-lightblue.svg) !important;
+          padding-right: 50px !important;
+          background-position: right 15px center;
+          background-repeat: no-repeat;
+          background-size: 16px 16px !important;
+          box-sizing: border-box;
+					outline: none;
+        }
+      }
+
+      .e-select {
+        margin-bottom: 10px;
+				vertical-align: top;
+
+        select {
+          background-color: $c-white;
+          width: 100%;
+          border: none;
+          color: $c-textgrey;
+          @include font-size(1.6, 2.4);
+					outline: none;
+        }
+      }
+
+      .e-submit {
+				vertical-align: top;
+
+        button {
+          background: $c-lightcyan;
+          color: $c-white;
+          border: 1px solid $c-lightcyan;
+          width: 100%;
+
+          &:hover, &:active {
+            background: $c-white;
+            color: $c-lightcyan;
+          }
+        }
+      }
+    }
+
+		h1, p {
+			color: $c-white;
+		}
+
+		h1 {
+			margin-top: 0;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: $screen-xs) {
+		p {
+			max-width: 70%;
+		}
+	}
+
+	@media (min-width: $screen-sm) {
+		.container {
+			margin-top: 30px;
+		}
+
+		.mob-button {
+			display: none;
+		}
+
+		.e-text {
+      form {
+        display: block!important;
+        font-size: 0;
+        margin-top: 45px;
+        padding-top: 0;
+
+        .e-search, .e-select {
+          display: inline-block;
+          margin: 0;
+
+          input, select {
+            border-right: 1px solid $c-linegrey;
+            margin: 0;
+            padding: 25px 20px !important;
+          }
+        }
+
+        .e-search {
+          width: 50%;
+        }
+
+        .e-select {
+          width: 25%;
+        }
+
+        .e-submit {
+          display: block;
+          margin-top: 10px;
+
+          button {
+            width: auto;
+          }
+        }
+      }
+		}
+	}
+
+  @media (min-width: $screen-md) {
+    .e-text {
+      form {
+        .e-search {
+          width: 40%;
+        }
+
+        .e-select {
+          width: 20%;
+        }
+
+        .e-submit {
+          width: 20%;
+          display: inline-block;
+          margin: 0;
+          padding: 10px 0;
+          background: $c-white;
+
+          button {
+            display: table;
+            margin: 0 auto;
+            padding: 18px 25px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    .e-text {
+      form {
+        .e-search, .e-select {
+          input, select {
+            padding: 38px 35px!important;
+						height: 100px;
+          }
+        }
+
+        .e-search {
+          width: 35%;
+
+          input {
+            background-position: right 35px center;
+            padding-right: 70px!important;
+          }
+        }
+
+        .e-select {
+          select {
+            padding-right: 70px!important;
+            background-position: right 35px center;
+          }
+        }
+
+        .e-submit {
+          padding: 23px 35px;
+          width: 25%;
+          box-sizing: border-box;
+
+          button {
+            display: block;
+            margin: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+	@media (min-width: 1930px) {
+		.e-image {
+			position: relative;
+			overflow: hidden;
+			height: 800px;
+
+			img {
+				@include image-cover();
+			}
+		}
+	}
+}

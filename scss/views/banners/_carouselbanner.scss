@@ -1,0 +1,148 @@
+.m-carouselbanner {
+  background: $c-black;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  video {
+    display: none;
+  }
+
+  &.no-breadcrumb {
+    @media (min-width: $screen-lg) {
+      .container {
+        margin-top: 75px !important;
+      }
+    }
+  }
+
+  &.dark-overlay {
+    .slide {
+      &:before {
+        content: '';
+        background: $c-black;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+  }
+
+  .slide-container {
+    line-height: 0;
+    overflow: hidden;
+
+    .slide {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      border: none;
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+    }
+  }
+
+  .container {
+    @include centre(both);
+    z-index: 2;
+    //to space off header
+    margin-top: 50px;
+  }
+
+  .e-text {
+    position: relative;
+    z-index: 2;
+
+    .tags {
+      margin-bottom: 15px;
+
+      p {
+        color: $c-lightcyan;
+        display: inline-block;
+        margin: 0;
+        font-weight: 600;
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    h1,
+    p {
+      color: $c-white;
+    }
+
+    h1 {
+      margin-top: 0;
+
+      &:after {
+        content: '';
+        background: $c-white;
+        display: block;
+        width: 45px;
+        height: 5px;
+        margin-top: 18px;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $screen-xs) {
+    p {
+      max-width: 70%;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    .e-text {
+      max-width: 80%;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    div.e-image {
+      &.has-video {
+        padding-top: 33.8%;
+
+        video {
+          display: block;
+          max-height: 640px;
+          @include image-cover();
+        }
+
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    .e-text {
+      max-width: 800px;
+    }
+  }
+
+  @media (min-width: 1930px) {
+    .e-image {
+      position: relative;
+      overflow: hidden;
+      height: 800px;
+
+      img {
+        @include image-cover();
+      }
+    }
+  }
+}
