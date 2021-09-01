@@ -1,0 +1,82 @@
+@use '../references/variables' as *;
+@use '../references/mixins' as *;
+
+.formComponent {
+  @include centre(both);
+  width: 100%;
+  text-align: center;
+
+  &.hidden {
+    display: none;
+  }
+
+  .container {
+    max-width: 950px;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    color: $white;
+  }
+
+  .preamble {
+    @media (min-width: $screen-md) {
+      max-width: 80%;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    @media (min-width: $screen-sm) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+
+  .btn,
+  button {
+    @include font-size(1.4);
+    transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+    border: 2px solid $white;
+    text-decoration: none;
+    padding: 14px 20px 12px;
+    box-sizing: border-box;
+    min-height: 52px;
+    min-width: 220px;
+    background: $white;
+    color: $black;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+
+    @media (max-width: 767px) {
+      @include flex(100%);
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $screen-sm) {
+      margin: 0 10px;
+    }
+
+    &:hover {
+      background: transparent;
+      color: $white;
+    }
+  }
+}
