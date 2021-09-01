@@ -1,107 +1,41 @@
-@mixin cutoff() {
-  @media (min-width: $screen-xl) {
-    position: relative;
+@mixin clearHeader() {
+  margin-top: 100px;
 
-    &.cutoff-right {
-      &:after {
-        right: 0;
-      }
-    }
+  @media (min-width: 1050px) {
+    margin-top: 120px;
+  }
+}
 
-    &.cutoff-left {
-      &:after {
-        left: 0;
-      }
-    }
+@mixin resetlist() {
+  ul {
+    padding: 0;
+    margin: 0;
 
-    &.cutoff-right,
-    &.cutoff-left {
-      &:after {
-        content: "";
-        background: $c-white;
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: calc((100% - 1530px) / 2);
+    li {
+      padding: 0;
+
+      &:before {
+        display: none;
       }
     }
   }
 }
 
-//Animation
-@mixin animation($animate...) {
-  $max: length($animate);
-  $animations: "";
-
-  @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
-
-    @if $i < $max {
-      $animations: #{$animations + ", "};
-    }
-  }
-
-  -webkit-animation: $animations;
-  -moz-animation: $animations;
-  -o-animation: $animations;
-  animation: $animations;
+@mixin sticky() {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
-@mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
-    @content;
-  }
-
-  @-moz-keyframes #{$animationName} {
-    @content;
-  }
-
-  @-o-keyframes #{$animationName} {
-    @content;
-  }
-
-  @keyframes #{$animationName} {
-    @content;
-  }
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
 }
 
-@mixin border-radius($radius) {
-  border-radius: $radius;
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  -ms-border-radius: $radius;
-}
-
-@mixin transition($property) {
-  -webkit-transition: $property;
-  -moz-transition: $property;
-  -ms-transition: $property;
-  -o-transition: $property;
-  transition: $property;
-}
-
-@mixin transform($transforms) {
-  -moz-transform: $transforms;
-  -o-transform: $transforms;
-  -ms-transform: $transforms;
-  -webkit-transform: $transforms;
-  transform: $transforms;
-}
-
-@mixin scale($scale) {
-  @include transform(scale($scale));
-}
-
-@mixin rotate($rotate) {
-  @include transform(rotate($rotate));
-}
-
-@mixin transform-origin($origin) {
-  moz-transform-origin: $origin;
-  -o-transform-origin: $origin;
-  -ms-transform-origin: $origin;
-  -webkit-transform-origin: $origin;
-  transform-origin: $origin;
+@mixin flex($value) {
+  flex-basis: $value;
+  max-width: $value;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 @mixin centre($axis: "both") {
@@ -109,31 +43,24 @@
 
   @if $axis == "y" {
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 
   @if $axis == "x" {
     left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     transform: translateX(-50%);
   }
 
   @if $axis == "both" {
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+}
+
+@mixin height-aspect-ratio($width, $height) {
+  $ratio: ($width / $height);
+  height: 100vw / $ratio;
 }
 
 @mixin image-cover($width: "", $height: "") {
@@ -147,8 +74,6 @@
   min-height: 100%;
   min-width: 100%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
 
   @if $width != "" and $height != "" {
     $ratio: ($width / $height);
@@ -163,168 +88,5 @@
     clear: both;
     display: block;
     visibility: hidden;
-  }
-}
-
-@mixin webkitfix {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-@mixin contentBlockInset {
-  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-}
-
-@mixin contentBlockInset--navy {
-  $color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset 0px 0px 5px 0px $color;
-  -moz-box-shadow: inset 0px 0px 5px 0px $color;
-  box-shadow: inset 0px 0px 5px 0px $color;
-}
-
-@mixin contentBlockInset--light-navy {
-  $color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: inset 0px 0px 5px 0px $color;
-  -moz-box-shadow: inset 0px 0px 5px 0px $color;
-  box-shadow: inset 0px 0px 5px 0px $color;
-}
-
-@mixin contentBlockInset--cyan {
-  $color: rgb(0, 114, 138);
-  -webkit-box-shadow: inset 0px 0px 5px 0px $color;
-  -moz-box-shadow: inset 0px 0px 5px 0px $color;
-  box-shadow: inset 0px 0px 5px 0px $color;
-}
-
-@mixin contentBlockInset--grey {
-  $color: rgb(0, 0, 0);
-  -webkit-box-shadow: inset 0px 0px 5px 0px $color;
-  -moz-box-shadow: inset 0px 0px 5px 0px $color;
-  box-shadow: inset 0px 0px 5px 0px $color;
-}
-
-@mixin contentBlockInset--light-grey {
-  $color: rgb(223, 221, 210);
-  -webkit-box-shadow: inset 0px 0px 5px 0px $color;
-  -moz-box-shadow: inset 0px 0px 5px 0px $color;
-  box-shadow: inset 0px 0px 5px 0px $color;
-}
-
-@mixin contentBlockInset--white {
-  $color: rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0px 0px 5px 0px $color;
-  -moz-box-shadow: inset 0px 0px 5px 0px $color;
-  box-shadow: inset 0px 0px 5px 0px $color;
-}
-
-@mixin flex($value) {
-  flex-basis: $value;
-  max-width: $value;
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
-@mixin opacity($value) {
-  $IEValue: $value * 100;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $IEValue +
-    ")";
-  filter: alpha(opacity=$IEValue);
-  -moz-opacity: $value;
-  -khtml-opacity: $value;
-  opacity: $value;
-}
-
-@mixin boxShadow($value) {
-  -webkit-box-shadow: $value;
-  -moz-box-shadow: $value;
-  box-shadow: $value;
-}
-
-@mixin fullHeightContentBlock() {
-  min-height: 100vh;
-  //min-height: var(--view-hight);
-}
-
-@mixin halfHeightContentBlock() {
-  min-height: 50vh;
-  //min-height: calc(var(--view-hight)/2);
-}
-
-@mixin centralisedContentBlock {
-  .centred-container {
-    padding-left: 35px !important;
-    padding-right: 35px !important;
-    margin: 0 auto;
-    width: 100%;
-    padding: 50px 15px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    //min-height: 100vh;
-    .centred-container__content {
-    }
-
-    @media (min-width: $screen-sm) {
-      padding: 80px 15px;
-      max-width: 750px;
-    }
-
-    @media (min-width: $screen-md) {
-      padding: 100px 15px;
-      max-width: 970px;
-    }
-
-    @media (min-width: $screen-lg) {
-      max-width: 1200px;
-    }
-
-    @media (min-width: $screen-xl) {
-      padding: 120px 15px;
-      max-width: 1430px;
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-  }
-}
-
-@mixin centralisedFullHeightContentBlock {
-  @include centralisedContentBlock();
-  min-height: 100vh;
-
-  .content {
-    display: flex;
-  }
-}
-
-@mixin placeholderColor($value) {
-  &::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: $value;
-  }
-
-  &::-moz-placeholder {
-    /* Firefox 19+ */
-    color: $value;
-  }
-
-  &:-ms-input-placeholder {
-    /* IE 10+ */
-    color: $value;
-  }
-
-  &:-moz-placeholder {
-    /* Firefox 18- */
-    color: $value;
   }
 }
