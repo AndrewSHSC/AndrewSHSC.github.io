@@ -1,0 +1,27 @@
+.gm-style .gm-style-iw-c {
+  bottom: -545px;
+  left: -170px;
+  transform: none;
+  top: auto;
+  position: fixed;
+  max-width: none !important;
+  width: 400px;
+  text-align: center;
+  padding: 24px !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.gm-style .gm-style-iw-d {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.gm-style .gm-style-iw-t::after {
+  display: none;
+}
