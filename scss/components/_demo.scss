@@ -26,6 +26,16 @@ body {
       align-items: center;
       justify-content: center;
 
+      &.hoverMain,
+      &.hoverAfterOne,
+      &.hoverAfterTwo,
+      &.hoverPreviousOne,
+      &.hoverPreviousTwo {
+        img {
+          transition: all 0.4s ease;
+        }
+      }
+
       &.hoverMain {
         img {
           transform: scale(1.15);
@@ -57,7 +67,7 @@ body {
       }
 
       img {
-        transition: all 0.3s ease;
+        transition: all 1s ease;
         transform-origin: 50% 50%;
       }
     }
