@@ -54,8 +54,8 @@
   });
 
   var movement = 0;
-  block.addEventListener("wheel", function (e) {
-    disableScroll();
+  container.addEventListener("wheel", function (e) {
+    // disableScroll();
 
     if (event.deltaY < 0) {
       movement = movement + 100;
