@@ -9,13 +9,36 @@ $black: #000000;
 $border: #d7d7d7;
 
 //GRID
+
 $screen-xxs: 375px;
 $screen-xs: 500px;
 $screen-sm: 768px;
 $screen-md: 1050px;
 $screen-lg: 1230px;
-$screen-xl: 1460px;
+$screen-xl: 1420px;
 $screen-xxl: 1700px;
+
+$breakpointsMin: (
+  "smallMobile": 320px,
+  "mobile": 375px,
+  "smallTablet": 500px,
+  "tablet": 768px,
+  "smallDesktop": 1050px,
+  "mediumDesktop": 1230px,
+  "desktop": 1420px,
+  "largeDesktop": 1700px
+);
+
+$breakpointsMax: (
+  "smallMobile": 319px,
+  "mobile": 374px,
+  "smallTablet": 499px,
+  "tablet": 767px,
+  "smallDesktop": 1049px,
+  "mediumDesktop": 1229px,
+  "desktop": 1419px,
+  "largeDesktop": 1699px
+);
 
 //FONTS
 @import url("https://use.typekit.net/fop8don.css");

@@ -1,5 +1,5 @@
-@use '../references/variables' as *;
-@use '../references/mixins' as *;
+@use "../references/variables" as *;
+@use "../references/mixins" as *;
 
 .container {
   @include clearfix();

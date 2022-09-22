@@ -13,23 +13,28 @@ body {
 .text {
   position: absolute;
   top: 50px;
+  text-align: center;
+  color: $white;
   width: 100%;
-
-  h2,
-  p {
-    color: $white;
-    text-align: center;
-  }
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .testBlock {
   padding-left: 8vw;
+  position: relative;
+  overflow: hidden;
 
   .itemContainer {
     display: flex;
     position: relative;
     z-index: 2;
     transition: transform 0.5s ease-out;
+
+    @include maxWidth(smallDesktop) {
+      overflow: scroll;
+      padding-left: 100vw;
+    }
 
     .item {
       padding-right: 20px;
