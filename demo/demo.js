@@ -53,22 +53,32 @@
     });
   });
 
-  var movement = 0;
-  block.addEventListener("wheel", function (e) {
-    // disableScroll();
-
-    if (event.deltaY < 0) {
-      movement = movement + 100;
-      container.style.transform = "translateX(" + movement + "px)";
-    } else if (event.deltaY > 0) {
-      movement = movement - 100;
-      container.style.transform = "translateX(" + movement + "px)";
-    }
+  container.addEventListener("mouseleave", () => {
+    enableScroll();
   });
 
-  document.body.addEventListener("wheel", function (e) {
-    // console.log(123);
-    // enableScroll();
+  container.addEventListener("mouseenter", () => {
+    disableScroll();
+  });
+
+  function debounce(method, delay) {
+    clearTimeout(method._tId);
+    method._tId = setTimeout(function () {
+      method();
+    }, delay);
+  }
+
+  var movement = 0;
+  block.addEventListener("wheel", function (event) {
+    debounce(() => {
+      if (event.deltaY < 0) {
+        movement = movement + 100;
+        container.style.transform = "translateX(" + movement + "px)";
+      } else if (event.deltaY > 0) {
+        movement = movement - 100;
+        container.style.transform = "translateX(" + movement + "px)";
+      }
+    }, 100);
   });
 
   // left: 37, up: 38, right: 39, down: 40,

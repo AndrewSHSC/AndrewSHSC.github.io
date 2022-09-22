@@ -2,11 +2,20 @@
 @use "../references/mixins" as *;
 
 body {
-  height: 100vh;
+  height: 200vh;
   background: rgba(black, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  color: $white;
+  width: 100%;
 }
 
 .testBlock {
@@ -19,7 +28,7 @@ body {
     transition: transform 0.5s ease-out;
 
     .item {
-      margin-right: 20px;
+      padding-right: 20px;
       flex-shrink: 0;
       transform-style: preserve-3d;
       backface-visibility: hidden;
@@ -72,7 +81,7 @@ body {
       img {
         transition: all 1s ease;
         transform-origin: 50% 50%;
-        opacity: 0.6;
+        opacity: 0.5;
       }
     }
   }
