@@ -1,0 +1,65 @@
+@use "../references/variables" as *;
+@use "../references/mixins" as *;
+
+body {
+  height: 200vh;
+  background: rgba(black, 0.6);
+  padding: 500px 0;
+}
+
+.testBlock {
+  padding-left: 8vw;
+
+  .itemContainer {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease-out;
+
+    .item {
+      padding-right: 20px;
+      flex-shrink: 0;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      perspective: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.hoverMain {
+        img {
+          transform: scale(1.15);
+        }
+      }
+
+      &.hoverAfterOne {
+        img {
+          transform: scale(1.09) rotateY(1deg);
+        }
+      }
+
+      &.hoverPreviousOne {
+        img {
+          transform: scale(1.09) rotateY(-1deg);
+        }
+      }
+
+      &.hoverAfterTwo {
+        img {
+          transform: scale(1.02) rotateY(1deg);
+        }
+      }
+
+      &.hoverPreviousTwo {
+        img {
+          transform: scale(1.02) rotateY(-1deg);
+        }
+      }
+
+      img {
+        transition: all 0.3s ease;
+        transform-origin: 50% 50%;
+      }
+    }
+  }
+}
