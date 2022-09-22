@@ -13,9 +13,13 @@ body {
 .text {
   position: absolute;
   top: 50px;
-  text-align: center;
-  color: $white;
   width: 100%;
+
+  h2,
+  p {
+    color: $white;
+    text-align: center;
+  }
 }
 
 .testBlock {
