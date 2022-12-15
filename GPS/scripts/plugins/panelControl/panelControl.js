@@ -5,11 +5,12 @@
 //   components.forEach(function (component) {
 //     const getPanel = component.querySelectorAll(".yourpanel")[0];
 //     const getPanelButtons = component.querySelectorAll(".yourbuttons");
-
-//     new panelControl({
-//       panel: getPanel,
-//       panelButtons: getPanelButtons
-//     });
+//     if (typeof getPanel !== "undefined") {
+//      new panelControl({
+//         panel: getPanel,
+//        panelButtons: getPanelButtons
+//      });
+//     }
 //   });
 // })();
 
