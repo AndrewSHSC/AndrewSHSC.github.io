@@ -7,7 +7,8 @@
   if (typeof getPanel !== "undefined") {
     new panelControl({
       panel: getPanel,
-      panelButtons: getPanelButtons
+      panelButtons: getPanelButtons,
+      preventScrolling: true
     });
   }
 
