@@ -18,4 +18,21 @@
       mainHeader.classList.remove("mobnav-isActive");
     }
   });
+
+  // subnav
+  var components = document.querySelectorAll(".mobileNavigation li");
+
+  components.forEach(function (component) {
+    const getPanel = component.querySelectorAll(".subNav")[0];
+    const getPanelButtons = component.querySelectorAll(".subnavButton");
+    const getCloseBtn = component.querySelectorAll(".closeBtn")[0];
+
+    if (typeof getPanel !== "undefined") {
+      new panelControl({
+        panel: getPanel,
+        panelButtons: getPanelButtons,
+        closeButton: getCloseBtn
+      });
+    }
+  });
 })();
