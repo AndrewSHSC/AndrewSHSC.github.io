@@ -16,12 +16,17 @@
   });
 
   var megaButtons = document.querySelectorAll(".megaButton");
+  var megamenus = document.querySelectorAll(".megamenu");
   var imitationMega = document.querySelectorAll(".imitationMega")[0];
-  var mainHeader = document.querySelectorAll(".mainHeader")[0];
 
   megaButtons.forEach(function (button) {
     button.addEventListener("click", function (e) {
-      imitationMega.classList.add("isActive");
+      if (button.classList.contains("pc-isActive")) {
+        imitationMega.classList.add("isActive");
+      } else {
+        imitationMega.classList.remove("isActive");
+      }
+
       var megamenu = button.nextElementSibling;
       var megaPos = megamenu.getBoundingClientRect();
       imitationMega.style.height = megamenu.offsetHeight;
@@ -33,5 +38,22 @@
     document.body.addEventListener("click", function () {
       imitationMega.classList.remove("isActive");
     });
+  });
+
+  window.addEventListener("resize", function () {
+    if (imitationMega.classList.contains("isActive")) {
+      imitationMega.classList.remove("isActive");
+      megaButtons.forEach(function (button) {
+        if (button.classList.contains("pc-isActive")) {
+          button.classList.remove("pc-isActive");
+          button.setAttribute("aria-expanded", "false");
+        }
+      });
+      megamenus.forEach(function (mega) {
+        if (mega.classList.contains("pc-isActive")) {
+          mega.classList.remove("pc-isActive");
+        }
+      });
+    }
   });
 })();

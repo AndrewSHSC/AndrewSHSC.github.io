@@ -17,18 +17,20 @@
             mainHeader.classList.add("scrollDown");
 
             //close mega
-            imitationMega.classList.remove("isActive");
-            megaButtons.forEach(function (button) {
-              if (button.classList.contains("pc-isActive")) {
-                button.classList.remove("pc-isActive");
-                button.setAttribute("aria-expanded", "false");
-              }
-            });
-            megamenus.forEach(function (mega) {
-              if (mega.classList.contains("pc-isActive")) {
-                mega.classList.remove("pc-isActive");
-              }
-            });
+            if (imitationMega.classList.contains("isActive")) {
+              imitationMega.classList.remove("isActive");
+              megaButtons.forEach(function (button) {
+                if (button.classList.contains("pc-isActive")) {
+                  button.classList.remove("pc-isActive");
+                  button.setAttribute("aria-expanded", "false");
+                }
+              });
+              megamenus.forEach(function (mega) {
+                if (mega.classList.contains("pc-isActive")) {
+                  mega.classList.remove("pc-isActive");
+                }
+              });
+            }
           }
         } else {
           if (window.scrollY) {
