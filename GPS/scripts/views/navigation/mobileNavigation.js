@@ -8,17 +8,10 @@
     new panelControl({
       panel: getPanel,
       panelButtons: getPanelButtons,
-      preventScrolling: true
+      preventScrolling: true,
+      shareActiveState: mainHeader
     });
   }
-
-  mobnavButton.addEventListener("click", function (e) {
-    if (mobnavButton.classList.contains("pc-isActive")) {
-      mainHeader.classList.add("mobnav-isActive");
-    } else {
-      mainHeader.classList.remove("mobnav-isActive");
-    }
-  });
 
   // subnav
   var components = document.querySelectorAll(".mobileNavigation li");

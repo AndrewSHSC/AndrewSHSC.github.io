@@ -23,13 +23,15 @@ function panelControl(options) {
     bodyOverlay: false, //Add dark overlay class to body
     bodyClose: false, //Close panel by clicking on body
     preventScrolling: false, //Prevent body scrolling when panel is open
-    closePreviousContainer: null //Close previous active panel. To enable pass a container that wraps panels
+    closePreviousContainer: null, //Close previous active panel. To enable pass a container that wraps panels
+    shareActiveState: null //Share panel active state with another element
   };
   options = { ...defaultOptions, ...options };
 
   this.init = function () {
     const panelButtons = options.panelButtons;
     const panel = options.panel;
+    const shareActiveState = options.shareActiveState;
     const closeButton = options.closeButton;
     const closePreviousContainer = options.closePreviousContainer;
 
@@ -108,6 +110,11 @@ function panelControl(options) {
         document.body.classList.add("pc-preventScrolling");
       }
 
+      //shareActiveState option
+      if (shareActiveState != null) {
+        shareActiveState.classList.add("pc-isActive");
+      }
+
       //bodyClose option
       if (options.bodyClose === true) {
         setTimeout(() => {
@@ -147,6 +154,11 @@ function panelControl(options) {
       if (options.preventScrolling === true) {
         document.documentElement.classList.remove("pc-preventScrolling");
         document.body.classList.remove("pc-preventScrolling");
+      }
+
+      //shareActiveState option
+      if (shareActiveState != null) {
+        shareActiveState.classList.remove("pc-isActive");
       }
 
       //bodyClose option

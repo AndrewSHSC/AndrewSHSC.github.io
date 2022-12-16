@@ -14,7 +14,7 @@
       ScrollTrigger.create({
         trigger: card,
         start: "top center",
-        onEnter: () => setActiveState(card),
+        onEnter: () => setActiveState(card)
       });
     });
   });

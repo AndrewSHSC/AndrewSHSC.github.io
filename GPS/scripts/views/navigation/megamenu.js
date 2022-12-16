@@ -1,5 +1,6 @@
 (function () {
   var components = document.querySelectorAll(".mainNavList li");
+  const imitationMega = document.querySelectorAll(".imitationMega")[0];
 
   components.forEach(function (component) {
     const getPanel = component.querySelectorAll(".megamenu")[0];
@@ -10,23 +11,17 @@
         panel: getPanel,
         panelButtons: getPanelButtons,
         closePreviousContainer: document.querySelectorAll(".mainNavList")[0],
-        bodyClose: true
+        bodyClose: true,
+        shareActiveState: imitationMega
       });
     }
   });
 
-  var megaButtons = document.querySelectorAll(".megaButton");
-  var megamenus = document.querySelectorAll(".megamenu");
-  var imitationMega = document.querySelectorAll(".imitationMega")[0];
+  const megaButtons = document.querySelectorAll(".megaButton");
+  const megamenus = document.querySelectorAll(".megamenu");
 
   megaButtons.forEach(function (button) {
     button.addEventListener("click", function (e) {
-      if (button.classList.contains("pc-isActive")) {
-        imitationMega.classList.add("isActive");
-      } else {
-        imitationMega.classList.remove("isActive");
-      }
-
       var megamenu = button.nextElementSibling;
       var megaPos = megamenu.getBoundingClientRect();
       imitationMega.style.height = megamenu.offsetHeight;
@@ -34,15 +29,11 @@
       imitationMega.style.top = megaPos.top;
       imitationMega.style.left = megaPos.left;
     });
-
-    document.body.addEventListener("click", function () {
-      imitationMega.classList.remove("isActive");
-    });
   });
 
   window.addEventListener("resize", function () {
-    if (imitationMega.classList.contains("isActive")) {
-      imitationMega.classList.remove("isActive");
+    if (imitationMega.classList.contains("pc-isActive")) {
+      imitationMega.classList.remove("pc-isActive");
       megaButtons.forEach(function (button) {
         if (button.classList.contains("pc-isActive")) {
           button.classList.remove("pc-isActive");
