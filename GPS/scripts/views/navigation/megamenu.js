@@ -31,7 +31,7 @@
     });
   });
 
-  window.addEventListener("resize", function () {
+  function closeMega() {
     if (imitationMega.classList.contains("pc-isActive")) {
       imitationMega.classList.remove("pc-isActive");
       megaButtons.forEach(function (button) {
@@ -46,5 +46,13 @@
         }
       });
     }
+  }
+
+  window.addEventListener("resize", function () {
+    closeMega();
+  });
+
+  window.addEventListener("scroll", function () {
+    closeMega();
   });
 })();
