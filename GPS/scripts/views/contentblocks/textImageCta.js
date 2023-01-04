@@ -21,10 +21,19 @@
       )
     );
 
+    const leftColumn = block.querySelector(".leftCol");
+    const rightImage = block.querySelector(".image");
+
+    const setActiveState = () => {
+      leftColumn.classList.add("active");
+      rightImage.classList.add("active");
+      rightAnimation.goToAndPlay(0, true);
+    };
+
     ScrollTrigger.create({
       trigger: block,
       start: "top center+=50px",
-      onEnter: () => rightAnimation.goToAndPlay(0, true),
+      onEnter: () => setActiveState(),
     });
   });
 })();

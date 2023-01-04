@@ -1,5 +1,6 @@
 (function () {
   gsap.registerPlugin(ScrollTrigger);
+  let mm = gsap.matchMedia();
 
   //horizontal scroll
   const thisPinWrap = document.querySelectorAll(
@@ -14,93 +15,69 @@
   const horizontalLottieDesktop = document.querySelector(
     ".cb-horizontalCardScroller .lottie-horizontalAnimationDesktop"
   );
-
-  //card transition
-  const cardLottie = document.querySelectorAll(
-    ".cardTransition .lottie-cardAnimation"
-  )[0];
-  const cardWrap = document.querySelectorAll(".cardTransition .cardWrap")[0];
-  const card = document.querySelectorAll(".cardTransition")[0];
-  const cardTransition = document.querySelectorAll(
-    ".cardTransition .transition"
-  )[0];
-
-  //horizontal scroll functionality
-  horizontalAnimationDesktop = lottie.loadAnimation({
-    container: horizontalLottieDesktop,
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-    path: "images/contentblocks/horizontalCardScroller/lightblue_Strip.json"
-  });
-
-  var endValue = thisAnimWrap.scrollWidth - window.innerWidth;
-  gsap.fromTo(
-    thisAnimWrap,
-    {
-      x: 0
-    },
-    {
-      x: -(thisAnimWrap.scrollWidth - window.innerWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: horizontal,
-        start: "top top",
-        end: endValue.toString(),
-        pin: thisPinWrap,
-        invalidateOnRefresh: true,
-        scrub: true,
-        onEnter() {
-          horizontal.classList.add("pinActive");
-          horizontalAnimationDesktop.goToAndPlay(0, true);
-        },
-        onEnterBack() {
-          card.classList.remove("cardActive");
-        },
-        onLeaveBack() {
-          horizontal.classList.remove("pinActive");
-        },
-        onLeave() {
-          cardAnimation.goToAndPlay(0, true);
-          card.classList.add("cardActive");
-        }
-      }
-    }
+  const lottieMobile = document.querySelector(
+    ".cb-horizontalCardScroller .lottie-animationMobile"
   );
 
-  //card scroll functionality
-  cardAnimation = lottie.loadAnimation({
-    container: cardLottie,
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-    path: "images/contentblocks/horizontalCardScroller/green_FullWidthWipe.json"
-  });
+  mm.add("(min-width: 1050px)", () => {
+    //horizontal scroll functionality
+    horizontalAnimationDesktop = lottie.loadAnimation({
+      container: horizontalLottieDesktop,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      path: "images/contentblocks/horizontalCardScroller/lightblue_Strip.json"
+    });
 
-  var cardEnd =
-    window.innerHeight +
-    document.querySelectorAll(".scrollBlock .card")[0].offsetHeight * 1.5;
-  console.log(cardEnd);
-
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: card,
-        start: "top top",
-        end: cardEnd.toString(),
-        scrub: true,
-        pin: cardTransition,
-        onEnterBack() {
-          card.classList.add("cardActive");
-        },
-        onLeave() {
-          card.classList.remove("cardActive");
+    var endValue = thisAnimWrap.scrollWidth - window.innerWidth;
+    gsap.fromTo(
+      thisAnimWrap,
+      {
+        x: 0
+      },
+      {
+        x: -(thisAnimWrap.scrollWidth - window.innerWidth),
+        ease: "none",
+        scrollTrigger: {
+          trigger: horizontal,
+          start: "top top",
+          end: endValue.toString(),
+          pin: thisPinWrap,
+          invalidateOnRefresh: true,
+          scrub: true,
+          onEnter() {
+            horizontal.classList.add("pinActive");
+            horizontalAnimationDesktop.goToAndPlay(0, true);
+            ScrollTrigger.refresh();
+          },
+          onLeaveBack() {
+            horizontal.classList.remove("pinActive");
+            ScrollTrigger.refresh();
+          }
         }
       }
-    })
-    .to(cardWrap, {
-      top: 100,
-      width: 383,
-      height: 603
+    );
+  });
+
+  mm.add("(max-width: 1049px)", () => {
+    mm.revert();
+
+    animationMobile = lottie.loadAnimation({
+      container: lottieMobile,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      path: "images/contentblocks/horizontalCardScroller/lightblue_strip-mobile.json"
     });
+
+    ScrollTrigger.create({
+      trigger: horizontal,
+      start: "top top",
+      once: true,
+      onEnter() {
+        horizontal.classList.add("mobileActive");
+        animationMobile.goToAndPlay(0, true);
+      }
+    });
+  });
 })();

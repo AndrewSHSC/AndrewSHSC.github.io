@@ -24,10 +24,10 @@
     button.addEventListener("click", function (e) {
       var megamenu = button.nextElementSibling;
       var megaPos = megamenu.getBoundingClientRect();
-      imitationMega.style.height = megamenu.offsetHeight;
-      imitationMega.style.width = megamenu.offsetWidth;
-      imitationMega.style.top = megaPos.top;
-      imitationMega.style.left = megaPos.left;
+      imitationMega.style.height = megamenu.offsetHeight + "px";
+      imitationMega.style.width = megamenu.offsetWidth + "px";
+      imitationMega.style.top = megaPos.top + "px";
+      imitationMega.style.left = megaPos.left + "px";
     });
   });
 
