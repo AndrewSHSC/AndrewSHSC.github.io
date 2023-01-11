@@ -78,8 +78,16 @@
       .to(cardWrap, {
         width: scrollBlockCardWidth,
         height: scrollBlockCardHeight,
-        delay: 0.5
+        delay: 0.2
       });
+
+    LottieScrollTrigger({
+      target: "#animationWindow",
+      path: "lottie/fullScreen/homepage-wipe.json",
+      speed: "slow",
+      scrub: 0,
+      pin: false
+    });
 
     //   fade ins
     const fadeInItems = block.querySelectorAll(".fade");
@@ -90,53 +98,48 @@
         onEnter: () => item.classList.add("active")
       });
     });
-
-    function LottieScrollTrigger(vars) {
-      let playhead = { frame: 0 },
-        target = gsap.utils.toArray(vars.target)[0],
-        st = {
-          trigger: target,
-          pin: false,
-          start: "top top",
-          end: "1000px",
-          scrub: 1
-        },
-        ctx = gsap.context && gsap.context(),
-        animation = lottie.loadAnimation({
-          container: target,
-          renderer: vars.renderer || "svg",
-          loop: false,
-          autoplay: false,
-          path: vars.path,
-          rendererSettings: vars.rendererSettings || {
-            preserveAspectRatio: "xMidYMid slice"
-          }
-        });
-      for (let p in vars) {
-        st[p] = vars[p];
-      }
-      animation.addEventListener("DOMLoaded", function () {
-        let createTween = function () {
-          animation.frameTween = gsap.to(playhead, {
-            frame: animation.totalFrames - 1,
-            ease: "none",
-            onUpdate: () => animation.goToAndStop(playhead.frame, true),
-            scrollTrigger: st
-          });
-          return () => animation.destroy && animation.destroy();
-        };
-        ctx && ctx.add ? ctx.add(createTween) : createTween();
-        ScrollTrigger.sort();
-        ScrollTrigger.refresh();
-      });
-      return animation;
-    }
-
-    LottieScrollTrigger({
-      target: "#animationWindow",
-      path: "lottie/fullScreen/homepage-wipe.json",
-      speed: "medium",
-      scrub: 0
-    });
   });
+
+  function LottieScrollTrigger(vars) {
+    let playhead = { frame: 0 },
+      target = gsap.utils.toArray(vars.target)[0],
+      speeds = { slow: "+=1150", medium: "+=1000", fast: "+=500" },
+      st = {
+        trigger: target,
+        pin: true,
+        start: "top top",
+        end: speeds[vars.speed] || "+=1000",
+        scrub: 1
+      },
+      ctx = gsap.context && gsap.context(),
+      animation = lottie.loadAnimation({
+        container: target,
+        renderer: vars.renderer || "svg",
+        loop: false,
+        autoplay: false,
+        path: vars.path,
+        rendererSettings: vars.rendererSettings || {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      });
+    for (let p in vars) {
+      st[p] = vars[p];
+    }
+    animation.addEventListener("DOMLoaded", function () {
+      let createTween = function () {
+        animation.frameTween = gsap.to(playhead, {
+          frame: animation.totalFrames - 1,
+          ease: "none",
+          onUpdate: () => animation.goToAndStop(playhead.frame, true),
+          scrollTrigger: st
+        });
+        return () => animation.destroy && animation.destroy();
+      };
+      ctx && ctx.add ? ctx.add(createTween) : createTween();
+
+      ScrollTrigger.sort();
+      ScrollTrigger.refresh();
+    });
+    return animation;
+  }
 })();
