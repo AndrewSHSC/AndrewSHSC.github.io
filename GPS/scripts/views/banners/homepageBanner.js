@@ -1,6 +1,7 @@
 (function () {
   const firstSlide = document.querySelectorAll(".homepageBanner .slide")[0];
-  var videos = document.querySelectorAll(".homepageBanner video");
+  const slides = document.querySelectorAll(".homepageBanner .slide");
+  const videos = document.querySelectorAll(".homepageBanner video");
 
   videos.forEach(function (video) {
     var dataSrc = video.getAttribute("data-src");

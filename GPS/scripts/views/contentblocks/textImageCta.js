@@ -1,6 +1,7 @@
 (function () {
   gsap.registerPlugin(ScrollTrigger);
-  console.log("textImageCta");
+  let mm = gsap.matchMedia(),
+    breakPoint = 1050;
 
   const textImageCtaBlocks = document.querySelectorAll(".cb-textImageCta");
 
@@ -27,13 +28,23 @@
     const setActiveState = () => {
       leftColumn.classList.add("active");
       rightImage.classList.add("active");
-      rightAnimation.goToAndPlay(0, true);
+      rightAnimation.play();
     };
 
-    ScrollTrigger.create({
-      trigger: block,
-      start: "top center+=50px",
-      onEnter: () => setActiveState(),
-    });
+    mm.add(
+      {
+        isDesktop: `(min-width: ${breakPoint}px)`,
+        isMobile: `(max-width: ${breakPoint - 1}px)`,
+      },
+      (context) => {
+        let { isDesktop, isMobile } = context.conditions;
+
+        ScrollTrigger.create({
+          trigger: block,
+          start: isMobile && "top center",
+          onEnter: () => setActiveState(),
+        });
+      }
+    );
   });
 })();
