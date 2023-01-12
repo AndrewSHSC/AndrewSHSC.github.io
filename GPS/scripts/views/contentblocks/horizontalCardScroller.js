@@ -36,7 +36,7 @@
         x: 0
       },
       {
-        x: -(thisAnimWrap.scrollWidth - window.innerWidth),
+        x: -(thisAnimWrap.scrollWidth - window.innerWidth + 50),
         ease: "none",
         scrollTrigger: {
           trigger: horizontal,

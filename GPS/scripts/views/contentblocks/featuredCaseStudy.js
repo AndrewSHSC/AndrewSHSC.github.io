@@ -57,6 +57,7 @@
       fullWidthTransition.offsetHeight +
       scrollBlockCardHeight * 0.5 +
       fullWidthTransition.offsetHeight / 2;
+    console.log(cardEnd);
 
     //   scrolling animation
     gsap
@@ -78,14 +79,14 @@
       .to(cardWrap, {
         width: scrollBlockCardWidth,
         height: scrollBlockCardHeight,
+        borderRadius: "36px",
         delay: 0.2
       });
 
     LottieScrollTrigger({
       target: "#animationWindow",
       path: "lottie/fullScreen/homepage-wipe.json",
-      speed: "slow",
-      scrub: 0,
+      end: "+=250",
       pin: false
     });
 
@@ -103,7 +104,7 @@
   function LottieScrollTrigger(vars) {
     let playhead = { frame: 0 },
       target = gsap.utils.toArray(vars.target)[0],
-      speeds = { slow: "+=1150", medium: "+=1000", fast: "+=500" },
+      speeds = { slow: "+=1500", medium: "+=1000", fast: "+=500" },
       st = {
         trigger: target,
         pin: true,
