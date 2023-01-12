@@ -10,12 +10,23 @@
   featuredCaseStudyBlocks.forEach((block) => {
     const fullWidthTransition = block.querySelector(".fullWidthTransition");
     const cardLottie = block.querySelector(".lottie");
-    const test = block.querySelector(".scrollBlock .cardInner");
+    const cardInner = block.querySelector(".scrollBlock .cardInner");
     const cardWrap = block.querySelector(".cardWrap");
     const cardTransition = block.querySelector(".transition");
+    const scrollBlockCard = block.querySelector(".scrollBlock .card");
+    const scrollBlockCardHeight = scrollBlockCard.offsetHeight;
+    const scrollBlockCardWidth = scrollBlockCard.offsetWidth;
+    const horizontal = document.querySelector(
+      ".cb-horizontalCardScroller .horizontalWrap"
+    );
+
+    var cardEnd =
+      fullWidthTransition.offsetHeight +
+      scrollBlockCardHeight * 0.5 +
+      fullWidthTransition.offsetHeight / 2;
 
     const greenFullScreenWipe = lottie.loadAnimation({
-      container: test,
+      container: cardInner,
       renderer: "svg",
       loop: false,
       autoplay: false,
@@ -25,10 +36,12 @@
 
     const setActiveCard = () => {
       fullWidthTransition.classList.add("cardActive");
+      horizontal.classList.add("cardActive");
     };
 
     removeActiveCard = () => {
       fullWidthTransition.classList.remove("cardActive");
+      horizontal.classList.remove("cardActive");
     };
 
     mm.add(
@@ -46,49 +59,42 @@
           onLeave: () => removeActiveCard(),
           onLeaveBack: () => removeActiveCard()
         });
+
+        if (isDesktop) {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: fullWidthTransition,
+                start: "top top",
+                end: cardEnd.toString(),
+                scrub: true,
+                pin: cardTransition,
+                onEnterBack() {
+                  fullWidthTransition.classList.add("cardActive");
+                },
+                onLeave() {
+                  fullWidthTransition.classList.remove("cardActive");
+                }
+              }
+            })
+            .to(cardWrap, {
+              width: scrollBlockCardWidth,
+              height: scrollBlockCardHeight,
+              borderRadius: "36px",
+              delay: 0.2
+            });
+
+          LottieScrollTrigger({
+            target: cardLottie,
+            path: "lottie/fullScreen/homepage-wipe.json",
+            end: "+=250",
+            pin: false
+          });
+        } else {
+          mm.revert();
+        }
       }
     );
-
-    const scrollBlockCard = block.querySelector(".scrollBlock .card");
-    const scrollBlockCardHeight = scrollBlockCard.offsetHeight;
-    const scrollBlockCardWidth = scrollBlockCard.offsetWidth;
-
-    var cardEnd =
-      fullWidthTransition.offsetHeight +
-      scrollBlockCardHeight * 0.5 +
-      fullWidthTransition.offsetHeight / 2;
-    console.log(cardEnd);
-
-    //   scrolling animation
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: fullWidthTransition,
-          start: "top top",
-          end: cardEnd.toString(),
-          scrub: true,
-          pin: cardTransition,
-          onEnterBack() {
-            fullWidthTransition.classList.add("cardActive");
-          },
-          onLeave() {
-            fullWidthTransition.classList.remove("cardActive");
-          }
-        }
-      })
-      .to(cardWrap, {
-        width: scrollBlockCardWidth,
-        height: scrollBlockCardHeight,
-        borderRadius: "36px",
-        delay: 0.2
-      });
-
-    LottieScrollTrigger({
-      target: "#animationWindow",
-      path: "lottie/fullScreen/homepage-wipe.json",
-      end: "+=250",
-      pin: false
-    });
 
     //   fade ins
     const fadeInItems = block.querySelectorAll(".fade");
@@ -143,4 +149,8 @@
     });
     return animation;
   }
+
+  addEventListener("resize", (event) => {
+    ScrollTrigger.refresh();
+  });
 })();
