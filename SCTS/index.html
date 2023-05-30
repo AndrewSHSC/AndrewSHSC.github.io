@@ -10,12 +10,485 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css" />
-        <meta name="robots" content="noINDEX, NOFOLLOW">
+
+        <link rel="stylesheet" href="css/views/navigation/header.css" />
+        <link rel="stylesheet" href="css/views/navigation/navigation.css" />
+        <link rel="stylesheet" href="css/views/navigation/mobileNavigation.css" />
+        <link rel="stylesheet" href="css/views/navigation/megamenu.css" />
+
+        <script src="scripts/plugins/panelControl/panelControl.js" defer></script>
+        <script src="scripts/views/navigation/header.js" defer></script>
+        <script src="scripts/views/navigation/megamenu.js" defer></script>
+        <script src="scripts/views/navigation/mobilemenu.js" defer></script>
+        <meta name="robots" content="NOINDEX, NOFOLLOW">
 
     </head>
 
     <body>
-        <main>
+        <a href="#main" class="skipToMain">Skip to main</a>
+        <header class="header">
+            <nav class="utilityNavigation">
+                <div class="container">
+                    <div class="utilityInner">
+                        <a href="" class="logo" aria-label="Link to home">
+                            <img src="/images/SCTS-Logo-White.svg" alt="">
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="">Publications</a>
+                            </li>
+                            <li>
+                                <a href="">Partner organisations</a>
+                            </li>
+                            <li>
+                                <a href="">About</a>
+                            </li>
+                            <li>
+                                <a href="">Find a court</a>
+                            </li>
+                            <li>
+                                <a href="">FAQs</a>
+                            </li>
+                        </ul>
+
+                        <button class="searchButton" aria-label="Site search">
+                            <img src="/images/icons/search-White.svg" alt="">
+                        </button>
+
+                        <div class="menutoggle">
+                            <button class="inner mobileMenuButton">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <nav class="mainNavigation">
+                <div class="container">
+                    <ul class="mainmenu">
+                        <li>
+                            <div class="mainLink ">
+                                <button class=" hasChildren">
+                                    Courts and Tribunals
+                                    <img src="/images/icons/angleDown-Cyan.svg" alt="">
+                                </button>
+                                <div class="megamenu pc-panel">
+                                    <div class="megaInner">
+                                        <div class="preview">
+                                            <h3>Courts and Tribunals</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                            <a href="/" class="ctaLink">
+                                                Overview
+                                            </a>
+                                        </div>
+                                        <div class="megaRow">
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Supreme courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Court of Session</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">High Court</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Appeals Courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Appeals Courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">About the courts and justice system</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">The Accountant of Court</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Scottish Tribunals</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Find us</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlap"></div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mainLink ">
+                                <button class=" hasChildren">
+                                    Coming to Court
+                                    <img src="/images/icons/angleDown-Cyan.svg" alt="">
+                                </button>
+                                <div class="megamenu pc-panel">
+                                    <div class="megaInner">
+                                        <div class="preview">
+                                            <h3>Coming to Court</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                            <a href="/" class="ctaLink">
+                                                Overview
+                                            </a>
+                                        </div>
+                                        <div class="megaRow">
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Supreme courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Court of Session</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">High Court</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Appeals Courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Appeals Courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">About the courts and justice system</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">The Accountant of Court</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Scottish Tribunals</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Find us</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlap"></div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mainLink ">
+                                <button class=" hasChildren">
+                                    Taking Action
+                                    <img src="/images/icons/angleDown-Cyan.svg" alt="">
+                                </button>
+                                <div class="megamenu pc-panel">
+                                    <div class="megaInner">
+                                        <div class="preview">
+                                            <h3>Taking Action</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                            <a href="/" class="ctaLink">
+                                                Overview
+                                            </a>
+                                        </div>
+                                        <div class="megaRow">
+                                            <div class="megaItem hasItems">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Supreme courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Court of Session</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">High Court</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem hasItems">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Appeals Courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem hasItems">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Appeals Courts</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">Lorem ipsum dolor</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">About the courts and justice system</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">The Accountant of Court</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Scottish Tribunals</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="megaItem">
+                                                <ul>
+                                                    <li>
+                                                        <a href="">Find us</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlap"></div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mainLink ">
+                                <a href="/" class="">
+                                    Court Rolls, Inquiries and Appeals
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mainLink ">
+                                <a href="/" class="">
+                                    Judgements
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mainLink ">
+                                <a href="/" class="">
+                                    Rules and Practice
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header> <div class="n-mobile-nav pc-panel">
+            <div class="navInner">
+                <ul class="mainLinks">
+                    <li>
+                        <button class="next">
+                            Level 1
+                        </button>
+                        <div class="subnav pc-panel">
+                            <button class="back">
+                                Level 1
+                            </button>
+                            <ul>
+                                <li>
+                                    <button class="next">
+                                        Level 2
+                                    </button>
+                                    <div class="subnav pc-panel">
+                                        <button class="back">
+                                            Level 2
+                                        </button>
+                                        <ul>
+                                            <li>
+                                                <a href="/">Level 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="/">Link</a>
+                                            </li>
+                                            <li>
+                                                <a href="/">Link</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="/">Link</a>
+                                </li>
+                                <li>
+                                    <a href="/">Link</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="/" class="">
+                            Link
+                        </a>
+                    </li>
+
+                    <li>
+                        <button class="next">
+                            Level 1
+                        </button>
+                        <div class="subnav pc-panel">
+                            <button class="back">
+                                Level 1
+                            </button>
+                            <ul>
+                                <li>
+                                    <a href="/">Level 1</a>
+                                </li>
+                                <li>
+                                    <a href="/">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="/">Link 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="/" class="">
+                            Link
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/" class="">
+                            Link
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobileNavOverlay"></div>
+
+        <main id="main">
             <link rel="stylesheet" href="css/views/banners/homepageHeader.css" />
 
             <section class="homepageHeader textBox">
