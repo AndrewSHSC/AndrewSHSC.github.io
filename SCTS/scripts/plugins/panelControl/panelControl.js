@@ -1,4 +1,4 @@
-// PanelControl v2.0.2
+// PanelControl v2.0.4
 
 // Example basic usage for a component
 // (function () {
@@ -156,9 +156,7 @@ function panelControl(options) {
 
       //bodyClose option
       if (options.bodyClose === true) {
-        setTimeout(() => {
-          document.body.addEventListener("click", bodyCloseOption);
-        }, 0);
+        bodyCloseOption();
       }
     }
 
@@ -201,13 +199,6 @@ function panelControl(options) {
       //shareActiveState option
       if (shareActiveState != null) {
         shareActiveState.classList.remove("pc-isActive");
-      }
-
-      //bodyClose option
-      if (options.bodyClose === true) {
-        setTimeout(() => {
-          document.body.removeEventListener("click", bodyCloseOption);
-        }, 0);
       }
     }
 
@@ -331,26 +322,29 @@ function panelControl(options) {
 
     //bodyClose option
     function bodyCloseOption() {
-      const activePanel = document.querySelectorAll(".pc-panel.pc-isActive")[0];
+      const activePanel = panel;
+      document.body.addEventListener("click", bodyCloseCall);
 
-      if (activePanel) {
-        const activePanelIds = activePanel
-          .getAttribute("aria-labelledby")
-          .split(" ");
+      function bodyCloseCall() {
+        if (activePanel.classList.contains("pc-isActive")) {
+          const activePanelIds = activePanel
+            .getAttribute("aria-labelledby")
+            .split(" ");
 
-        activePanelIds.forEach(function (activePanelId) {
-          const activePanelButton = document.getElementById(activePanelId);
+          activePanelIds.forEach(function (activePanelId) {
+            const activePanelButton = document.getElementById(activePanelId);
 
-          if (activePanelButton != null) {
-            activePanelButton.setAttribute("aria-expanded", "false");
-            activePanelButton.classList.remove("pc-isActive");
-            activePanel.classList.remove("pc-isActive");
-            closePanelOptions();
-          }
-        });
+            if (activePanelButton != null) {
+              activePanelButton.setAttribute("aria-expanded", "false");
+              activePanelButton.classList.remove("pc-isActive");
+              activePanel.classList.remove("pc-isActive");
+              closePanelOptions();
+            }
+          });
+        }
+
+        document.body.removeEventListener("click", bodyCloseCall);
       }
-
-      document.body.removeEventListener("click", bodyCloseOption);
     }
   };
 
