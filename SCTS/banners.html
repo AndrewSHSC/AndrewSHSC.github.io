@@ -483,9 +483,36 @@
         </div>
         <div class="mobileNavOverlay"></div>
 
+        <link rel="stylesheet" href="css/views/components/searchOverlay.css" />
+        <div class="searchOverlay pc-panel" id="pc-840579029" aria-labelledby="pc-828560492 ">
+            <div class="container">
+                <div class="inner">
+                    <button class="closeButton" aria-label="Close search overlay">
+                        <svg aria-hidden="true" role="img" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5742 0.454694C13.4399 0.320062 13.2804 0.21325 13.1048 0.140373C12.9292 0.0674964 12.7409 0.0299849 12.5508 0.0299849C12.3607 0.0299849 12.1725 0.0674964 11.9969 0.140373C11.8213 0.21325 11.6617 0.320062 11.5274 0.454694L7.21863 4.7661C7.16438 4.82021 7.09091 4.85059 7.01431 4.85059C6.9377 4.85059 6.86423 4.82021 6.80998 4.7661L2.50001 0.454694C2.36719 0.313726 2.20745 0.200862 2.03025 0.122786C1.85305 0.0447101 1.66199 0.00301051 1.46839 0.00015707C1.27479 -0.00269637 1.08259 0.0333545 0.903165 0.106174C0.723742 0.178994 0.560749 0.287101 0.423839 0.424094C0.286929 0.561086 0.178886 0.724177 0.10611 0.903707C0.0333345 1.08324 -0.00269475 1.27556 0.000156975 1.46927C0.0030087 1.66299 0.0446832 1.85416 0.122712 2.03147C0.200741 2.20877 0.313538 2.36861 0.454421 2.50151L4.76323 6.81291C4.79019 6.83981 4.81157 6.87177 4.82616 6.90695C4.84075 6.94213 4.84826 6.97985 4.84826 7.01794C4.84826 7.05603 4.84075 7.09375 4.82616 7.12893C4.81157 7.16411 4.79019 7.19607 4.76323 7.22297L0.454421 11.5367C0.183243 11.8084 0.0309263 12.1767 0.0309263 12.5607C0.0309263 12.9447 0.183243 13.313 0.454421 13.5847C0.728577 13.851 1.09567 14 1.47779 14C1.85992 14 2.22701 13.851 2.50116 13.5847L6.80998 9.27326C6.83676 9.24633 6.8686 9.22496 6.90367 9.21037C6.93873 9.19579 6.97633 9.18828 7.01431 9.18828C7.05228 9.18828 7.08988 9.19579 7.12494 9.21037C7.16001 9.22496 7.19185 9.24633 7.21863 9.27326L11.5298 13.5823C11.8043 13.8479 12.1713 13.9963 12.5531 13.9963C12.935 13.9963 13.3019 13.8479 13.5765 13.5823C13.8477 13.3106 14 12.9424 14 12.5584C14 12.1744 13.8477 11.8061 13.5765 11.5344L9.26769 7.22297C9.24074 7.19607 9.21936 7.16411 9.20477 7.12893C9.19018 7.09375 9.18266 7.05603 9.18266 7.01794C9.18266 6.97985 9.19018 6.94213 9.20477 6.90695C9.21936 6.87177 9.24074 6.83981 9.26769 6.81291L13.5742 2.50151C13.7086 2.36715 13.8152 2.20761 13.8879 2.03201C13.9606 1.85641 13.9981 1.66819 13.9981 1.4781C13.9981 1.28802 13.9606 1.0998 13.8879 0.924195C13.8152 0.748594 13.7086 0.589055 13.5742 0.454694Z"></path>
+                        </svg>
+
+                    </button>
+
+                    <div class="top">
+                        <h2>Search</h2>
+                        <p>What can we help you with today?</p>
+                    </div>
+
+                    <form action="/searchResults">
+                        <label for="siteSearchInput">Search</label>
+                        <div class="inputButton">
+                            <input type="text" id="siteSearchInput">
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <main id="main">
-            <h1>Homepage Header - Default</h1>
-            <link rel="stylesheet" href="css/views/banners/homepageHeader.css" />
+            <span class="componentName">Homepage Header - Default</span>
+            <link rel="stylesheet" href="css/views/banners/homepageHeader.css">
 
             <section class="homepageHeader ">
                 <div class="container">
@@ -499,7 +526,7 @@
                                 <source srcset="https://picsum.photos/1920/1280" media="(min-width:768px)">
                                 <source srcset="https://picsum.photos/768/350" media="(min-width:500px)">
                                 <source srcset="https://picsum.photos/450/300" media="(min-width:0px)">
-                                <img src="https://picsum.photos/500/500" alt="" />
+                                <img src="https://picsum.photos/500/500" alt="">
                             </picture>
                         </div>
                         <div class="ctaLinks">
@@ -509,8 +536,9 @@
                         </div>
                     </div>
                 </div>
-            </section><h1>Homepage Header - With text box</h1>
-            <link rel="stylesheet" href="css/views/banners/homepageHeader.css" />
+            </section>
+            <span class="componentName">Homepage Header - With text box</span>
+            <link rel="stylesheet" href="css/views/banners/homepageHeader.css">
 
             <section class="homepageHeader textBox">
                 <div class="container">
@@ -524,7 +552,7 @@
                                 <source srcset="https://picsum.photos/1920/1280" media="(min-width:768px)">
                                 <source srcset="https://picsum.photos/768/350" media="(min-width:500px)">
                                 <source srcset="https://picsum.photos/450/300" media="(min-width:0px)">
-                                <img src="https://picsum.photos/500/500" alt="" />
+                                <img src="https://picsum.photos/500/500" alt="">
                             </picture>
                         </div>
                         <div class="ctaLinks">
@@ -535,5 +563,302 @@
                     </div>
                 </div>
             </section>
-        </main>
+            <span class="componentName">header banner - L1 with Quick Links</span>
+            <link rel="stylesheet" href="css/views/banners/headerBanner.css">
+
+            <section class="headerBanner ">
+
+                <div class="inner">
+                    <div class="text">
+                        <link rel="stylesheet" href="css/views/navigation/breadcrumb.css">
+
+                        <nav aria-label="Breadcrumb" class="breadcrumb">
+                            <ol>
+                                <li>
+                                    <a href="/">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" aria-current="page">
+                                        Coming to Court
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav> <h1>Coming to court</h1>
+                        <p>If you’re attending a court, either as part of a case or just visiting, you can find all the resources you need here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                        <img class="backgroundLogo" src="/images/banners/headerBanner/background-L1.svg" alt="">
+                    </div>
+
+                    <div class="links">
+                        <div class="linksInner">
+                            <h2>Quick links</h2>
+                            <ul>
+                                <li>
+                                    <a href="">A guide to jury duty</a>
+                                </li>
+                                <li>
+                                    <a href="">Guides to attending court</a>
+                                </li>
+                                <li>
+                                    <a href="">Claim expenses for attending court</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <span class="componentName">header banner - L1</span>
+            <link rel="stylesheet" href="css/views/banners/headerBanner.css">
+
+            <section class="headerBanner ">
+
+                <div class="inner">
+                    <div class="text">
+                        <link rel="stylesheet" href="css/views/navigation/breadcrumb.css">
+
+                        <nav aria-label="Breadcrumb" class="breadcrumb">
+                            <ol>
+                                <li>
+                                    <a href="/">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" aria-current="page">
+                                        Coming to Court
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav> <h1>Coming to court</h1>
+                        <p>If you’re attending a court, either as part of a case or just visiting, you can find all the resources you need here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                        <img class="backgroundLogo" src="/images/banners/headerBanner/background-L1.svg" alt="">
+                    </div>
+
+                </div>
+            </section>
+            <span class="componentName">header banner - L2 - Background image</span>
+            <link rel="stylesheet" href="css/views/banners/headerBanner.css">
+
+            <section class="headerBanner ">
+                <picture>
+                    <source srcset="https://picsum.photos/1920/420" media="(min-width:768px)">
+                    <source srcset="https://picsum.photos/768/300" media="(min-width:500px)">
+                    <source srcset="https://picsum.photos/480/300" media="(min-width:0px)">
+                    <img class="backgroundImage" src="https://picsum.photos/500/500" alt="">
+                </picture>
+
+                <div class="inner">
+                    <div class="text">
+                        <link rel="stylesheet" href="css/views/navigation/breadcrumb.css">
+
+                        <nav aria-label="Breadcrumb" class="breadcrumb">
+                            <ol>
+                                <li>
+                                    <a href="/">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" aria-current="page">
+                                        Coming to Court
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav> <h1>Coming to court</h1>
+                        <p>If you’re attending a court, either as part of a case or just visiting, you can find all the resources you need here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                        <img class="backgroundLogo" src="/images/banners/headerBanner/background-L2.svg" alt="">
+                    </div>
+
+                </div>
+            </section>
+            <span class="componentName">header banner - L2</span>
+            <link rel="stylesheet" href="css/views/banners/headerBanner.css">
+
+            <section class="headerBanner ">
+
+                <div class="inner">
+                    <div class="text">
+                        <link rel="stylesheet" href="css/views/navigation/breadcrumb.css">
+
+                        <nav aria-label="Breadcrumb" class="breadcrumb">
+                            <ol>
+                                <li>
+                                    <a href="/">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" aria-current="page">
+                                        Coming to Court
+                                    </a>
+                                </li>
+                            </ol>
+                        </nav> <h1>Coming to court</h1>
+                        <p>If you’re attending a court, either as part of a case or just visiting, you can find all the resources you need here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                        <img class="backgroundLogo" src="/images/banners/headerBanner/background-L2.svg" alt="">
+                    </div>
+
+                </div>
+            </section>
+
+            <span class="componentName">404</span>
+
+            <section class="headerBanner error404">
+                <div class="inner">
+                    <div class="text">
+                        <h1>404</h1>
+                        <h3>Page not found</h3>
+                        <p>The page you are looking for was moved, removed, renamed or might never have existed.</p>
+                        <a href="" class="button">Go to homepage</a>
+
+                        <img class="backgroundLogo" src="/images/banners/headerBanner/background-L2.svg" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <link rel="stylesheet" href="css/views/navigation/footer.css">
+
+            <footer class="mainFooter">
+                <div class="container">
+                    <div class="inner">
+                        <a href="" class="logo" aria-label="link to home">
+                            <img src="/images/SCTS-Logo-White.svg" alt="">
+                        </a>
+
+                        <div class="itemContainer">
+                            <div class="item address">
+                                <p>
+                                    Scottish Courts and Tribunals Service
+                                </p>
+                                <p>
+                                    Saughton House
+                                </p>
+                                <p>
+                                    Broomhouse Drive
+                                </p>
+                                <p>
+                                    Edinburgh
+                                </p>
+                                <p>
+                                    EH11 3XD
+                                </p>
+                            </div>
+                            <div class="item contact">
+                                <p>Tel: <a href="tel:01314443300">0131 444 3300</a></p>
+                                <p>Fax: <a href="tel:01314443300">0131 444 3300</a></p>
+                                <a href="mailto:enquiries@scotcourts.gov.uk" class="email">enquiries@scotcourts.gov.uk</a>
+
+                                <ul class="socialLinks">
+                                    <li>
+                                        <a href="" aria-label="twitter">
+                                            <svg role="img" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.9728 6.7174C20.5084 7.33692 19.947 7.87733 19.3103 8.31776C19.3103 8.47959 19.3103 8.64142 19.3103 8.81225C19.3154 11.7511 18.1415 14.5691 16.0518 16.6345C13.962 18.6999 11.1312 19.8399 8.19405 19.7989C6.49599 19.8046 4.81967 19.4169 3.29642 18.6661C3.21428 18.6302 3.16131 18.549 3.16162 18.4593V18.3604C3.16162 18.2313 3.26623 18.1267 3.39527 18.1267C5.06442 18.0716 6.67402 17.4929 7.99634 16.4724C6.48553 16.4419 5.12619 15.5469 4.5006 14.1707C4.46901 14.0956 4.47884 14.0093 4.52657 13.9432C4.57429 13.8771 4.653 13.8407 4.73425 13.8471C5.19342 13.8932 5.65718 13.8505 6.1002 13.7212C4.43239 13.375 3.17921 11.9904 2.99986 10.2957C2.99349 10.2144 3.02992 10.1357 3.096 10.0879C3.16207 10.0402 3.24824 10.0303 3.32338 10.062C3.77094 10.2595 4.25409 10.3635 4.74324 10.3676C3.28184 9.40846 2.65061 7.58405 3.20655 5.92622C3.26394 5.76513 3.40181 5.64612 3.5695 5.61294C3.73718 5.57975 3.90996 5.63728 4.02432 5.76439C5.99639 7.86325 8.70604 9.11396 11.5819 9.25279C11.5083 8.95885 11.4721 8.65676 11.4741 8.35372C11.501 6.76472 12.4842 5.34921 13.9634 4.76987C15.4425 4.19054 17.1249 4.56203 18.223 5.71044C18.9714 5.56785 19.695 5.31645 20.3707 4.96421C20.4202 4.93331 20.483 4.93331 20.5325 4.96421C20.5634 5.01373 20.5634 5.07652 20.5325 5.12604C20.2052 5.87552 19.6523 6.50412 18.9509 6.92419C19.5651 6.85296 20.1685 6.70807 20.7482 6.49264C20.797 6.45942 20.8611 6.45942 20.9099 6.49264C20.9508 6.51134 20.9814 6.54711 20.9935 6.59042C21.0056 6.63373 20.998 6.68018 20.9728 6.7174Z"></path>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" aria-label="linkedin">
+                                            <svg role="img" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3ZM8 18C8.27614 18 8.5 17.7761 8.5 17.5V10.5C8.5 10.2239 8.27614 10 8 10H6.5C6.22386 10 6 10.2239 6 10.5V17.5C6 17.7761 6.22386 18 6.5 18H8ZM7.25 9C6.42157 9 5.75 8.32843 5.75 7.5C5.75 6.67157 6.42157 6 7.25 6C8.07843 6 8.75 6.67157 8.75 7.5C8.75 8.32843 8.07843 9 7.25 9ZM17.5 18C17.7761 18 18 17.7761 18 17.5V12.9C18.0325 11.3108 16.8576 9.95452 15.28 9.76C14.177 9.65925 13.1083 10.1744 12.5 11.1V10.5C12.5 10.2239 12.2761 10 12 10H10.5C10.2239 10 10 10.2239 10 10.5V17.5C10 17.7761 10.2239 18 10.5 18H12C12.2761 18 12.5 17.7761 12.5 17.5V13.75C12.5 12.9216 13.1716 12.25 14 12.25C14.8284 12.25 15.5 12.9216 15.5 13.75V17.5C15.5 17.7761 15.7239 18 16 18H17.5Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="" aria-label="youtube">
+                                            <svg role="img" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23.7609 7.1998C23.7609 7.1998 23.5266 5.54512 22.8047 4.81855C21.8906 3.8623 20.8688 3.85762 20.4 3.80137C17.0438 3.55762 12.0047 3.55762 12.0047 3.55762H11.9953C11.9953 3.55762 6.95625 3.55762 3.6 3.80137C3.13125 3.85762 2.10938 3.8623 1.19531 4.81855C0.473438 5.54512 0.24375 7.1998 0.24375 7.1998C0.24375 7.1998 0 9.14512 0 11.0857V12.9045C0 14.8451 0.239062 16.7904 0.239062 16.7904C0.239062 16.7904 0.473437 18.4451 1.19062 19.1717C2.10469 20.1279 3.30469 20.0951 3.83906 20.1982C5.76094 20.3811 12 20.4373 12 20.4373C12 20.4373 17.0438 20.4279 20.4 20.1889C20.8688 20.1326 21.8906 20.1279 22.8047 19.1717C23.5266 18.4451 23.7609 16.7904 23.7609 16.7904C23.7609 16.7904 24 14.8498 24 12.9045V11.0857C24 9.14512 23.7609 7.1998 23.7609 7.1998ZM9.52031 15.1123V8.36699L16.0031 11.7514L9.52031 15.1123Z"></path>
+                                            </svg>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item links">
+                                <ul>
+                                    <li>
+                                        <a href="">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Careers</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Publications</a>
+                                    </li>
+                                    <li>
+                                        <a href="">News and blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Contact us</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="item links">
+                                <ul>
+                                    <li>
+                                        <a href="">A-Z glossary</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Partner organisations</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Information in other languages</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="item links">
+                                <ul>
+                                    <li>
+                                        <a href="" target="_blank">Civil online</a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">Media</a>
+                                    </li>
+                                    <li>
+                                        <a href="" target="_blank">SCTS staff</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="lowerLinks">
+                            <p>© Scottish Courts and Tribunal Service 2022</p>
+
+                            <ul>
+                                <li>
+                                    <a href="">Data protection</a>
+                                </li>
+                                <li>
+                                    <a href="">Cookies</a>
+                                </li>
+                                <li>
+                                    <a href="">Copyright</a>
+                                </li>
+                                <li>
+                                    <a href="">Acessibility</a>
+                                </li>
+                                <li>
+                                    <a href="">Complaints</a>
+                                </li>
+                                <li>
+                                    <a href="">Equality and Diversity</a>
+                                </li>
+                                <li>
+                                    <a href="">Unacceptable Actions</a>
+                                </li>
+                                <li>
+                                    <a href="">Energy Accreditation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> </main>
     </html>

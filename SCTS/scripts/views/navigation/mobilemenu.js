@@ -13,9 +13,9 @@
   let components = document.querySelectorAll(".n-mobile-nav .mainLinks li");
 
   components.forEach(function (component) {
-    let getSubnavPanel = component.querySelectorAll(".subnav")[0];
-    let getSubnavPanelButtons = component.querySelectorAll(".next")[0];
-    let getCloseButton = component.querySelectorAll(".back")[0];
+    const getSubnavPanel = component.querySelectorAll(".subnav")[0];
+    const getSubnavPanelButtons = component.querySelectorAll(".next")[0];
+    const getCloseButton = component.querySelectorAll(".back")[0];
 
     if (typeof getSubnavPanel !== "undefined") {
       new panelControl({
