@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../../../objects/container" as container;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\components\pages\publicationIndex\appliedFilters.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../../../objects/container\" as container;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\components\\pages\\publicationIndex\\appliedFilters.scss 1:1  root stylesheet";
-}
+.appliedFilters{margin-top:35px;margin-bottom:50px}@media(min-width: 1050px){.appliedFilters{margin-bottom:70px}}.appliedFilters__container{max-width:1400px;margin:0 auto;padding:0 5%;box-sizing:content-box}@media(min-width: 768px){.appliedFilters__container{padding:0 8%}}.appliedFilters__inner{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.appliedFilters__title{font-size:1.6rem;font-weight:700;margin-right:10px}.appliedFilters__item{font-size:1.6rem;border:none;width:auto;max-width:100%;font-weight:600;padding:15px;min-height:50px;min-width:175px;text-decoration:none;text-align:center;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer;border-radius:5px;z-index:1;padding:14px 15px 13px;background-color:var(--colour-white);border:1px solid var(--colour-primaryLight);color:var(--colour-primaryLight);transition:background-color .3s ease,color .3s ease,border-color .3s ease}.appliedFilters__item.disabled,.appliedFilters__item[disabled]{pointer-events:none}.appliedFilters__item:focus-visible{outline:var(--colour-primary) 1px solid;outline-offset:2px}.appliedFilters__item:hover:not(:disabled){background-color:var(--colour-primary);color:var(--colour-white);border-color:var(--colour-primary)}.appliedFilters__item.disabled,.appliedFilters__item[disabled]{border-color:var(--colour-beige);color:var(--colour-beige);opacity:.6}.appliedFilters__clearAll{font-size:1.6rem;text-decoration-line:underline;text-decoration-color:inherit;transition:text-decoration .2s ease;margin-left:10px}.appliedFilters__clearAll:focus-visible{outline:var(--colour-black) 1px solid;outline-offset:2px}.appliedFilters__clearAll:hover{text-decoration-color:rgba(0,0,0,0)}

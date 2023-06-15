@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../../settings/media" as media;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\components\contentblocks\socialFollow.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../../settings/media\" as media;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\components\\contentblocks\\socialFollow.scss 1:1  root stylesheet";
-}
+.socialFollow{background-color:var(--colour-blue1);padding:40px 0 50px}@media(min-width: 1050px){.socialFollow{padding:40px 0}}.socialFollow__container{max-width:1400px;margin:0 auto;padding:0 5%;box-sizing:content-box}@media(min-width: 768px){.socialFollow__container{padding:0 8%}}@media(min-width: 1050px){.socialFollow__inner{display:flex;align-items:center;justify-content:space-between}}.socialFollow__title{line-height:1.3;font-family:var(--font-title);color:var(--colour-title);margin:0 0 10px;font-weight:700;font-size:2.4rem;font-weight:normal;color:var(--colour-white)}@media(min-width: 1050px){.socialFollow__title{margin-bottom:20px}}@media(min-width: 768px){.socialFollow__title{font-size:2.8rem}}@media(min-width: 1420px)and (min-height: 800px){.socialFollow__title{font-size:3.2rem}}@media(max-width: 1049.5px){.socialFollow__title{text-align:center}}@media(min-width: 1050px){.socialFollow__title{max-width:min(755px,60%);margin:0}}.socialFollow__list{display:flex;align-items:center;justify-content:space-between;flex-shrink:0}@media(max-width: 1049.5px){.socialFollow__list{max-width:215px;margin-top:20px;margin-right:auto;margin-left:auto}}@media(min-width: 1050px){.socialFollow__list{min-width:min(485px,30%)}}.socialFollow__link{color:var(--colour-white);text-decoration-line:underline;text-decoration-color:rgba(0,0,0,0);transition:text-decoration .2s ease;display:flex;align-items:center}.socialFollow__link:focus-visible{outline:var(--colour-white) 1px solid;outline-offset:2px}@media(max-width: 1049.5px){.socialFollow__link{font-size:0px}}.socialFollow__link:hover{text-decoration-color:inherit}@media(min-width: 1050px){.socialFollow__linkIcon{margin-right:10px}}

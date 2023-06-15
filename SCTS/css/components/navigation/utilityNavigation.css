@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../../settings/media" as media;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\components\navigation\utilityNavigation.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../../settings/media\" as media;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\components\\navigation\\utilityNavigation.scss 1:1  root stylesheet";
-}
+.utilityNavigation{background-color:var(--colour-white);padding:20px 0;border-bottom:1px solid var(--colour-lightBorder)}@media(min-width: 1050px){.utilityNavigation{position:absolute;left:0;right:0;top:64px;border-radius:10px;border:1px solid var(--colour-border);padding:30px 30px 43px 30px;z-index:1000;display:grid;grid-template-columns:1fr 3fr;gap:60px}}.utilityNavigation .h3{line-height:1.3;font-family:var(--font-title);color:var(--colour-title);margin:0 0 10px;font-weight:700;font-size:2.4rem}@media(min-width: 1050px){.utilityNavigation .h3{margin-bottom:20px}}@media(min-width: 768px){.utilityNavigation .h3{font-size:2.8rem}}@media(min-width: 1420px)and (min-height: 800px){.utilityNavigation .h3{font-size:3.2rem}}.utilityNavigation .h5{line-height:1.3;font-family:var(--font-title);color:var(--colour-title);margin:0 0 10px;font-weight:700;font-size:1.6rem}@media(min-width: 1050px){.utilityNavigation .h5{margin-bottom:20px}}@media(min-width: 768px){.utilityNavigation .h5{font-size:1.8rem}}@media(min-width: 1420px)and (min-height: 800px){.utilityNavigation .h5{font-size:2rem}}.utilityNavigation__h5.h5{margin:0}.utilityNavigation__paragraph--small{font-size:1.2rem;color:var(--colour-text)}@media(min-width: 1050px){.utilityNavigation__paragraph--small{font-size:1.4rem}}.utilityNavigation__logo{background-color:var(--colour-white);width:100%;height:100%;border-radius:10px;padding:10px;display:grid;place-items:center}.utilityNavigation__logo img{max-height:65px}.utilityNavigation__cardList{margin-top:22px}@media(min-width: 1050px){.utilityNavigation__cardList{display:grid;grid-template-columns:repeat(2, 1fr);column-gap:15px;row-gap:30px;margin-top:0}}.utilityNavigation__card{background-color:var(--colour-snowWhite);border-radius:10px;padding:15px}@media(max-width: 1049.5px){.utilityNavigation__card+.utilityNavigation__card{margin-top:8px}}.utilityNavigation__card a{display:grid;grid-template-columns:1fr 2fr;place-items:center;column-gap:20px}.utilityNavigation__card a:focus-visible{outline:var(--colour-primary) 1px solid;outline-offset:2px}@media(min-width: 1050px){.utilityNavigation__card a{height:100%}}

@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../../objects/container" as container;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\components\contentblocks\testimonialTextBlock.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../../objects/container\" as container;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\components\\contentblocks\\testimonialTextBlock.scss 1:1  root stylesheet";
-}
+﻿.cb-testimonialTextBlock__text{line-height:1.4;font-family:var(--font-body);color:var(--colour-text);margin:0}.cb-testimonialTextBlock{padding:55px 0}@media(min-width: 500px){.cb-testimonialTextBlock{padding:60px 0}}@media(min-width: 768px){.cb-testimonialTextBlock{padding:80px 0}}@media(min-width: 1230px){.cb-testimonialTextBlock{padding:100px 0}}@media(min-width: 1420px){.cb-testimonialTextBlock{padding:130px 0}}.cb-testimonialTextBlock.background-white{background:var(--colour-white)}.cb-testimonialTextBlock.background-white+link+.background-white:not(.customPadding){padding-top:0px}.cb-testimonialTextBlock.background-snowWhite{background:var(--colour-snowWhite)}.cb-testimonialTextBlock.background-snowWhite+link+.background-snowWhite:not(.customPadding){padding-top:0px}.cb-testimonialTextBlock.background-grey{background:var(--colour-corpGrey)}.cb-testimonialTextBlock.background-grey+link+.background-grey:not(.customPadding){padding-top:0px}.cb-testimonialTextBlock__container{max-width:1400px;margin:0 auto;padding:0 5%;box-sizing:content-box}@media(min-width: 768px){.cb-testimonialTextBlock__container{padding:0 8%}}.cb-testimonialTextBlock__blockquote{font-size:2rem;position:relative;margin:0;display:block;padding-top:15px;padding-left:30px;font-family:var(--font-title);text-align:center;margin-bottom:13px}@media(min-width: 768px){.cb-testimonialTextBlock__blockquote{font-size:2.8rem}}@media(min-width: 1700px){.cb-testimonialTextBlock__blockquote{font-size:3.2rem}}.cb-testimonialTextBlock__blockquote:before,.cb-testimonialTextBlock__blockquote:after{background-repeat:no-repeat;background-size:cover;font-size:60px;line-height:.84;color:var(--colour-secondary);display:inline;position:absolute}.cb-testimonialTextBlock__blockquote:before{content:"“";margin-bottom:15px;left:0px}.cb-testimonialTextBlock__blockquote:after{content:"”";margin-left:15px}.cb-testimonialTextBlock__blockquote+.cite,.cb-testimonialTextBlock__blockquote+cite{margin-top:24px}@media(min-width: 1700px){.cb-testimonialTextBlock__blockquote+.cite,.cb-testimonialTextBlock__blockquote+cite{margin-top:30px}}@media(min-width: 768px){.cb-testimonialTextBlock__blockquote{margin-bottom:28px}}.cb-testimonialTextBlock__item{display:flex;justify-content:center;align-items:center}.cb-testimonialTextBlock__img{border-radius:50%;border:2px solid var(--colour-orange)}.cb-testimonialTextBlock__text{font-size:1.6rem;font-weight:400;padding-left:24px}@media(min-width: 768px){.cb-testimonialTextBlock__text{font-size:1.8rem}}.cb-testimonialTextBlock__text--bold{font-weight:700}@media(min-width: 768px){.cb-testimonialTextBlock__text{padding-left:22px}}

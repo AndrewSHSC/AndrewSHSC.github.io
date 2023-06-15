@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../../settings/media" as media;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\components\contentblocks\statsBlock.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../../settings/media\" as media;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\components\\contentblocks\\statsBlock.scss 1:1  root stylesheet";
-}
+.statsBlock__statsWrapper p{line-height:1.4;font-family:var(--font-body);color:var(--colour-text);margin:0}.statsBlock{padding:55px 0}@media(min-width: 500px){.statsBlock{padding:60px 0}}@media(min-width: 768px){.statsBlock{padding:80px 0}}@media(min-width: 1230px){.statsBlock{padding:100px 0}}@media(min-width: 1420px){.statsBlock{padding:130px 0}}.statsBlock.background-white{background:var(--colour-white)}.statsBlock.background-white+link+.background-white:not(.customPadding){padding-top:0px}.statsBlock.background-snowWhite{background:var(--colour-snowWhite)}.statsBlock.background-snowWhite+link+.background-snowWhite:not(.customPadding){padding-top:0px}.statsBlock.background-grey{background:var(--colour-corpGrey)}.statsBlock.background-grey+link+.background-grey:not(.customPadding){padding-top:0px}.statsBlock__container{max-width:1400px;margin:0 auto;padding:0 5%;box-sizing:content-box}@media(min-width: 768px){.statsBlock__container{padding:0 8%}}.statsBlock__introText{text-align:left;margin-bottom:30px}@media(min-width: 768px){.statsBlock__introText{text-align:center;max-width:920px;margin:0 auto 40px}}@media(min-width: 1420px){.statsBlock__introText{margin-bottom:60px}}.statsBlock__introText h2{line-height:1.3;font-family:var(--font-title);color:var(--colour-title);margin:0 0 10px;font-weight:700;font-size:3.2rem;margin:0}@media(min-width: 1050px){.statsBlock__introText h2{margin-bottom:20px}}@media(min-width: 768px){.statsBlock__introText h2{font-size:3.6rem}}@media(min-width: 1420px)and (min-height: 800px){.statsBlock__introText h2{font-size:4rem}}.statsBlock__itemsWrapper{display:grid;grid-gap:25px}@media(min-width: 500px){.statsBlock__itemsWrapper{grid-gap:30px}}@media(min-width: 768px){.statsBlock__itemsWrapper{grid-template-columns:repeat(2, 1fr);grid-gap:40px}}@media(min-width: 1050px){.statsBlock__itemsWrapper{grid-template-columns:repeat(4, 1fr);grid-gap:50px 30px}}@media(min-width: 1420px){.statsBlock__itemsWrapper{grid-gap:50px}}.statsBlock__item{text-align:center}@media(max-width: 767.5px){.statsBlock__item{max-width:480px;margin:0 auto}}.statsBlock__statsWrapper{display:flex;text-align:center;align-items:center;justify-content:center}@media(min-width: 500px){.statsBlock__statsWrapper{margin-bottom:5px}}@media(min-width: 1050px){.statsBlock__statsWrapper{margin-bottom:10px}}.statsBlock__statsWrapper span{font-size:2.4rem;font-family:var(--font-title);color:var(--colour-title);font-weight:700}@media(min-width: 768px){.statsBlock__statsWrapper span{font-size:2.8rem}}@media(min-width: 1420px)and (min-height: 800px){.statsBlock__statsWrapper span{font-size:3.2rem}}.statsBlock__statsWrapper p{font-size:1.6rem;font-weight:400}@media(min-width: 768px){.statsBlock__statsWrapper p{font-size:1.8rem}}

@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../../../objects/container" as container;
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\components\pages\leftNavLayout\leftNavLayout.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../../../objects/container\" as container;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\components\\pages\\leftNavLayout\\leftNavLayout.scss 1:1  root stylesheet";
-}
+.leftNavLayout{padding:60px 0 80px}@media(min-width: 1050px){.leftNavLayout{padding:90px 0 100px}}.leftNavLayout__container{max-width:1400px;margin:0 auto;padding:0 5%;box-sizing:content-box}@media(min-width: 768px){.leftNavLayout__container{padding:0 8%}}@media(min-width: 1050px){.leftNavLayout__inner{display:grid;grid-template-columns:325px 1fr}}@media(min-width: 1050px){.leftNavLayout__nav{padding-right:43px;border-right:1px solid var(--colour-border)}}@media(min-width: 1050px){.leftNavLayout__content{padding-left:30px}}.leftNavLayout .cb-rte{padding:0}.leftNavLayout .cb-rte__container{padding:0}
