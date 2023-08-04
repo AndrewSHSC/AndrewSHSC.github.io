@@ -1,0 +1,17 @@
+@use "../tools/media";
+
+@mixin label {
+  font-size: 1.6rem;
+  color: var(--colour-navy);
+  margin-bottom: 4px;
+  display: block;
+  font-weight: 700;
+
+  @include media.minWidth(tablet) {
+    font-size: calc(1.9rem * 0.9);
+  }
+
+  @include media.minWidth(smallDesktop) {
+    font-size: 1.9rem;
+  }
+}

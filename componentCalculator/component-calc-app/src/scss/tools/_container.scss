@@ -1,0 +1,16 @@
+@use "media";
+
+@mixin container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: content-box;
+
+  &.small {
+    max-width: 750px;
+  }
+
+  @include media.minWidth(smallDesktop) {
+    padding: 0 8%;
+  }
+}

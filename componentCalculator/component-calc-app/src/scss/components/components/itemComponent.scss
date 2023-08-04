@@ -1,0 +1,27 @@
+@use "../../elements";
+@use "../../tools";
+
+.itemComponent {
+  margin: 100px 0;
+
+  .container {
+    @include tools.container;
+  }
+
+  h2 {
+    @include elements.h2;
+  }
+
+  input[type="text"] {
+    @include elements.input;
+    display: block;
+  }
+
+  .option {
+    margin: 30px 0;
+  }
+
+  .button {
+    @include elements.buttonPrimary;
+  }
+}

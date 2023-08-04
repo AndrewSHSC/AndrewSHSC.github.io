@@ -1,0 +1,33 @@
+@use "../tools/media";
+@use "../tools/focus";
+
+@mixin select {
+  @include focus.focus(var(--colour-black));
+  moz-appearance: none;
+  -webkit-appearance: none;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--colour-black);
+  padding: 12px 45px 12px 12px;
+  border: solid 1px var(--colour-border);
+  background-image: url("/images/icons/selectArrow.svg");
+  background-position: right 17px top 55%;
+  background-repeat: no-repeat;
+  border-radius: 0px;
+  min-height: 50px;
+  text-align: left;
+  background-color: var(--colour-white);
+
+  @include media.minWidth(smallDesktop) {
+    font-size: 1.6rem;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
