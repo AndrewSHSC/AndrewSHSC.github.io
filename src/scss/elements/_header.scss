@@ -1,0 +1,84 @@
+@use "../tools/media";
+
+@mixin headerShared {
+  margin: 0 0 16px;
+  line-height: 1.27;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: var(--colour-navy);
+}
+
+@mixin h1 {
+  @include headerShared;
+  font-size: 3rem;
+
+  @include media.minWidth(tablet) {
+    font-size: calc(4.4rem * 0.8);
+  }
+
+  @include media.minWidth(desktop) {
+    @include media.minHeight(null, 800px) {
+      font-size: 4.4rem;
+    }
+  }
+}
+
+@mixin h2 {
+  @include headerShared;
+  font-size: 2.2rem;
+
+  @include media.minWidth(tablet) {
+    font-size: calc(3rem * 0.85);
+  }
+
+  @include media.minWidth(desktop) {
+    @include media.minHeight(null, 800px) {
+      font-size: 3rem;
+    }
+  }
+}
+
+@mixin h3 {
+  @include headerShared;
+  font-size: 1.9rem;
+
+  @include media.minWidth(tablet) {
+    font-size: calc(2.2rem * 0.9);
+  }
+
+  @include media.minWidth(desktop) {
+    @include media.minHeight(null, 800px) {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+@mixin h4 {
+  @include headerShared;
+  font-size: 1.6rem;
+
+  @include media.minWidth(tablet) {
+    font-size: calc(1.8rem * 0.9);
+  }
+
+  @include media.minWidth(desktop) {
+    @include media.minHeight(null, 800px) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@mixin h5 {
+  @include headerShared;
+  font-size: 1.4rem;
+
+  @include media.minWidth(tablet) {
+    font-size: calc(1.6rem * 0.9);
+  }
+
+  @include media.minWidth(desktop) {
+    @include media.minHeight(null, 800px) {
+      font-size: 1.6rem;
+    }
+  }
+}

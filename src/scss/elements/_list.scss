@@ -1,0 +1,90 @@
+@use "../tools/media";
+
+@mixin listShared {
+  margin: 16px 0;
+
+  @include media.minWidth(tablet) {
+    margin: 32px 0;
+  }
+
+  li {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: var(--font-body);
+
+    @include media.minWidth(tablet) {
+      font-size: calc(1.9rem * 0.9);
+    }
+
+    @include media.minWidth(desktop) {
+      @include media.minHeight(null, 800px) {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}
+
+@mixin unorderedList {
+  @include listShared;
+
+  li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 5px;
+
+    @include media.minWidth(tablet) {
+      padding-left: 20px;
+    }
+
+    &:before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      background: var(--colour-black);
+      border-radius: 100%;
+
+      @include media.minWidth(tablet) {
+        width: 6px;
+        height: 6px;
+        top: 10px;
+      }
+
+      @include media.minWidth(desktop) {
+        @include media.minHeight(null, 800px) {
+          top: 12px;
+        }
+      }
+    }
+  }
+}
+
+@mixin orderedList {
+  @include listShared;
+
+  li {
+    position: relative;
+    margin-bottom: 5px;
+    padding-left: 17px;
+    counter-increment: step-counter;
+
+    @include media.minWidth(tablet) {
+      padding-left: 25px;
+    }
+
+    &:before {
+      content: counter(step-counter) ".";
+      font-size: inherit;
+      position: absolute;
+      color: var(--colour-black);
+      top: 0;
+      left: 0px;
+
+      @include media.minWidth(tablet) {
+        top: 0;
+      }
+    }
+  }
+}
